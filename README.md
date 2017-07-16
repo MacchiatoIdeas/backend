@@ -27,7 +27,7 @@ git pull
 . venv/bin/activate
 ```
 
-If the `requirements.txt` changed install the missing dependencies.
+If the `requirements.txt` file changed, install the missing dependencies.
 
-If at a certain point you need to add a dependency installed with pip, execute: `pip freeze`, check that you only have dependencies that THE PROJECT needs, and then `pip freeze > requirements.txt` to save, lastly commit and push.
+If at any point you need to add a dependency with pip, execute: `pip freeze`, check that you only have dependencies that THE PROJECT needs, and then `pip freeze > requirements.txt` to save. Lastly commit and push.
 
