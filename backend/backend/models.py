@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 """
 ###########################################################
@@ -6,18 +7,21 @@ USERS:
 ###########################################################
 """
 
-class User(models.Model):
-	firstName = models.CharField(max_length=30)
-	lastName = models.CharField(max_length=30)
+class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    forename = models.CharField(max_length=30)
+	fst_surname = models.CharField(max_length=30)
+	snd_surname = models.CharField(max_length=30)
 
 	def __init__(self):
 		pass
 
-class Student(User):
-	def __init__(self):
-		pass
+class Teacher(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    forename = models.CharField(max_length=30)
+	fst_surname = models.CharField(max_length=30)
+	snd_surname = models.CharField(max_length=30)
 
-class Teacher(User):
 	def __init__(self):
 		pass
 
