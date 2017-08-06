@@ -1,5 +1,6 @@
+from __future__ import unicode_literals
+
 from django.db import models
-from django.contrib.auth.models import User
 
 """
 ###########################################################
@@ -10,20 +11,20 @@ USERS:
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     forename = models.CharField(max_length=30)
-	fst_surname = models.CharField(max_length=30)
-	snd_surname = models.CharField(max_length=30)
+    fst_surname = models.CharField(max_length=30)
+    snd_surname = models.CharField(max_length=30)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     forename = models.CharField(max_length=30)
-	fst_surname = models.CharField(max_length=30)
-	snd_surname = models.CharField(max_length=30)
+    fst_surname = models.CharField(max_length=30)
+    snd_surname = models.CharField(max_length=30)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 class Course(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
@@ -39,24 +40,24 @@ CONTENT:
 """
 
 class Area(models.Model):
-	name = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=50, unique=True)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 class Unit(models.Model):
-	name = models.CharField(max_length=50, unique=True)
-	area = models.ForeignKey(Area, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, unique=True)
+    area = models.ForeignKey(Area, on_delete=models.CASCADE)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 class SubUnit(models.Model):
-	name = models.CharField(max_length=50, unique=True)
-	unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, unique=True)
+    unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 class Exercise(models.Model):
     subunits = models.ManyToManyField(SubUnit)
@@ -86,7 +87,7 @@ Answers that point to an ExerciseOnGuide are answers to a particular guide, whil
 
 class ExerciseOnGuide(Exercise):
     original_exercise = models.ForeignKey(Exercise,
-        on_delete=models.SET_NULL, null=True)
+                                          on_delete=models.SET_NULL, null=True)
     guide = models.ForeignKey(Guide, on_delete=models.CASCADE)
     ordering = models.IntegerField()
 
@@ -95,7 +96,7 @@ class ExerciseOnGuide(Exercise):
 
 class SubjectMatterOnGuide(SubjectMatter):
     original_smatter = models.ForeignKey(SubjectMatter,
-        on_delete=models.SET_NULL, null=True)
+                                         on_delete=models.SET_NULL, null=True)
     guide = models.ForeignKey(Guide, on_delete=models.CASCADE)
     ordering = models.IntegerField()
 
@@ -103,33 +104,33 @@ class SubjectMatterOnGuide(SubjectMatter):
         pass
 
 class Guide(models.Model):
-	name = models.CharField(max_length=100)
-	exercises = models.ManyToManyField(ExerciseOnGuide)
-	smatters = models.ManyToManyField(SubjectMatterOnGuide)
-	teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    exercises = models.ManyToManyField(ExerciseOnGuide)
+    smatters = models.ManyToManyField(SubjectMatterOnGuide)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 class Answer(models.Model):
-	exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
-	student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 class Correction(models.Model):
-	answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
+    answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 class Comment(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	exercise = models.ForeignKey(Exercise,
-        on_delete=models.CASCADE, null=True)
-	smatter = models.ForeignKey(SubjectMatter,
-        on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    exercise = models.ForeignKey(Exercise,
+                                 on_delete=models.CASCADE, null=True)
+    smatter = models.ForeignKey(SubjectMatter,
+                                on_delete=models.CASCADE, null=True)
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
