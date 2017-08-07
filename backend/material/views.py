@@ -30,7 +30,6 @@ class ContentViewSet(viewsets.ModelViewSet):
         serializer.save(author=self.request.user.teacher)
 
     def get_serializer_class(self):
-        print(self.action)
         if self.action in ('list',):
             return ContentListSerializer
         if self.action in ('retrieve',):
