@@ -63,6 +63,10 @@ class Content(models.Model):
     def __str__(self):
         return str(self.sub_unit)
 
+    def abstract(self):
+        # FIXME: use a real approach.
+        return self.text[0:50]
+
 
 class Comment(models.Model):
     """

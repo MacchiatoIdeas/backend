@@ -1,4 +1,6 @@
 from rest_framework import serializers
+
+from users.serializers import TeacherSerializer
 from .models import *
 
 
@@ -25,8 +27,27 @@ class FieldOfStudySerializer(serializers.ModelSerializer):
 
 
 class ContentSerializer(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.user.username')
     # TODO: Change user name for the proper full name of a teacher.
+    author = serializers.ReadOnlyField(source='author.user.full_name')
+
+    class Meta:
+        model = Content
+        fields = ('id', 'sub_unit', 'text', 'author')
+
+
+class ContentListSerializer(serializers.ModelSerializer):
+    text = serializers.ReadOnlyField(source='abstract')
+    author = TeacherSerializer()
+    sub_unit = SubUnitSerializer()
+
+    class Meta:
+        model = Content
+        fields = ('id', 'sub_unit', 'text', 'author')
+
+
+class ContentRetrieveSerializer(serializers.ModelSerializer):
+    author = TeacherSerializer()
+    sub_unit = SubUnitSerializer()
 
     class Meta:
         model = Content

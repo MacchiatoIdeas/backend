@@ -4,6 +4,7 @@ from material.serializers import *
 
 from material.permissions import *
 
+
 class FieldOfStudyViewSet(viewsets.ModelViewSet):
     queryset = FieldOfStudy.objects.all()
     serializer_class = FieldOfStudySerializer
@@ -27,3 +28,11 @@ class ContentViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user.teacher)
+
+    def get_serializer_class(self):
+        print(self.action)
+        if self.action in ('list',):
+            return ContentListSerializer
+        if self.action in ('retrieve',):
+            return ContentRetrieveSerializer
+        return super().get_serializer_class()
