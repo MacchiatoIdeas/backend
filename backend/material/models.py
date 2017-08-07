@@ -19,8 +19,8 @@ class Unit(models.Model):
     """
 
     # area containing this unit.
-    area = models.ForeignKey(FieldOfStudy, related_name='units',
-                             on_delete=models.CASCADE)
+    field_of_study = models.ForeignKey(FieldOfStudy, related_name='units',
+                                       on_delete=models.CASCADE)
 
     # name of this unit.
     name = models.CharField(max_length=50, unique=True)

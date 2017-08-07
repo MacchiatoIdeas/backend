@@ -10,16 +10,40 @@ class SubUnitSerializer(serializers.ModelSerializer):
         fields = ('id', 'unit', 'name',)
 
 
+class SubUnitListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubUnit
+        fields = ('id', 'name',)
+
+
 class UnitSerializer(serializers.ModelSerializer):
-    sub_units = SubUnitSerializer(many=True, read_only=True)
+    sub_units = SubUnitListSerializer(many=True, read_only=True)
 
     class Meta:
         model = Unit
-        fields = ('id', 'area', 'name', 'sub_units')
+        fields = ('id', 'field_of_study', 'name', 'sub_units')
+
+
+class UnitListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Unit
+        fields = ('id', 'name')
 
 
 class FieldOfStudySerializer(serializers.ModelSerializer):
-    units = UnitSerializer(many=True, read_only=True)
+    class Meta:
+        model = FieldOfStudy
+        fields = ('id', 'name')
+
+
+class FieldOfStudyListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FieldOfStudy
+        fields = ('id', 'name')
+
+
+class FieldOfStudyRetrieveSerializer(serializers.ModelSerializer):
+    units = UnitListSerializer(many=True, read_only=True)
 
     class Meta:
         model = FieldOfStudy
@@ -27,8 +51,8 @@ class FieldOfStudySerializer(serializers.ModelSerializer):
 
 
 class ContentSerializer(serializers.ModelSerializer):
+    author = serializers.ReadOnlyField(source='author.user.username')
     # TODO: Change user name for the proper full name of a teacher.
-    author = serializers.ReadOnlyField(source='author.user.full_name')
 
     class Meta:
         model = Content
@@ -38,11 +62,18 @@ class ContentSerializer(serializers.ModelSerializer):
 class ContentListSerializer(serializers.ModelSerializer):
     text = serializers.ReadOnlyField(source='abstract')
     author = TeacherSerializer()
-    sub_unit = SubUnitSerializer()
 
     class Meta:
         model = Content
-        fields = ('id', 'sub_unit', 'text', 'author')
+        fields = ('id', 'text', 'author')
+
+
+class SubUnitRetrieveSerializer(serializers.ModelSerializer):
+    contents = ContentListSerializer(many=True)
+
+    class Meta:
+        model = SubUnit
+        fields = ('id', 'unit', 'name', 'contents')
 
 
 class ContentRetrieveSerializer(serializers.ModelSerializer):
