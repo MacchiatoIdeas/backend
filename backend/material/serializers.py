@@ -70,6 +70,7 @@ class ContentListSerializer(serializers.ModelSerializer):
 
 class SubUnitRetrieveSerializer(serializers.ModelSerializer):
     contents = ContentListSerializer(many=True)
+    unit = UnitListSerializer()
 
     class Meta:
         model = SubUnit
