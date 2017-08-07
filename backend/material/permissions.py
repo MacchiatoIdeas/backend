@@ -2,6 +2,7 @@ from rest_framework import permissions
 
 from users.models import Teacher
 
+
 class AuthenticatedTeacher(permissions.BasePermission):
     """
     Custom permission to only allow teachers.
