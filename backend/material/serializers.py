@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from .models import *
 
-from users.serializers import TeacherSerializer
-
 
 class SubUnitSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,9 +9,6 @@ class SubUnitSerializer(serializers.ModelSerializer):
 
 
 class ContentSerializer(serializers.ModelSerializer):
-    author = TeacherSerializer()
-    sub_unit = SubUnitSerializer()
-
     class Meta:
         model = Content
         fields = ('id', 'sub_unit', 'text', 'author')
