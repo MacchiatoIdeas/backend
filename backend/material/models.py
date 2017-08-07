@@ -84,5 +84,8 @@ class FeedbackComment(models.Model):
     # content related.
     content = models.ForeignKey(Content, on_delete=models.CASCADE)
 
+    # quoted section to feedback on.
+    quote = models.TextField()
+
     # text of this comment.
     text = models.TextField()
