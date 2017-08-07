@@ -15,11 +15,11 @@ class FieldOfStudy(models.Model):
 
 class Unit(models.Model):
     """
-    Unit of a particular field of study, for example Calculus.
+    Unit of a particular field of study, for example Differential equations.
     """
 
     # area containing this unit.
-    area = models.ForeignKey(FieldOfStudy, on_delete=models.CASCADE)
+    area = models.ForeignKey(FieldOfStudy, related_name='units', on_delete=models.CASCADE)
 
     # name of this unit.
     name = models.CharField(max_length=50, unique=True)
@@ -34,7 +34,7 @@ class SubUnit(models.Model):
     """
 
     # unit is the higher level unit.
-    unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
+    unit = models.ForeignKey(Unit, related_name='sub_units', on_delete=models.CASCADE)
 
     # name of this sub unit.
     name = models.CharField(max_length=50, unique=True)
@@ -49,10 +49,13 @@ class Content(models.Model):
     """
 
     # sub unit which will contain this subject matter.
-    sub_unit = models.ForeignKey(SubUnit)
+    sub_unit = models.ForeignKey(SubUnit, related_name='contents', on_delete=models.CASCADE)
 
     # author owner of this content.
     author = models.ForeignKey("users.Teacher", on_delete=models.CASCADE)
+
+    # text of this content.
+    text = models.TextField()
 
     def __str__(self):
         return str(self.sub_unit)
@@ -64,10 +67,10 @@ class Comment(models.Model):
     """
 
     # user who wrote the comment.
-    user = models.ForeignKey("auth.User", on_delete=models.CASCADE)
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
     # content related.
-    content = models.ForeignKey(Content, on_delete=models.CASCADE)
+    content = models.ForeignKey(Content, related_name='comments', on_delete=models.CASCADE)
 
     # text of this comment.
     text = models.TextField()
@@ -82,7 +85,8 @@ class FeedbackComment(models.Model):
     user = models.ForeignKey("auth.User", on_delete=models.CASCADE)
 
     # content related.
-    content = models.ForeignKey(Content, on_delete=models.CASCADE)
+    content = models.ForeignKey(Content, related_name='feedback_comments',
+                                on_delete=models.CASCADE)
 
     # quoted section to feedback on.
     quote = models.TextField()
