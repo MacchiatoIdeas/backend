@@ -3,4 +3,4 @@ venv/
 .idea/
 *.sqlite
 *.sqlite3
-backend/*/migrations
+
