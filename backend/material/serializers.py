@@ -8,12 +8,6 @@ class SubUnitSerializer(serializers.ModelSerializer):
         fields = ('id', 'unit', 'name',)
 
 
-class ContentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Content
-        fields = ('id', 'sub_unit', 'text', 'author')
-
-
 class UnitSerializer(serializers.ModelSerializer):
     sub_units = SubUnitSerializer(many=True, read_only=True)
 
@@ -28,3 +22,9 @@ class FieldOfStudySerializer(serializers.ModelSerializer):
     class Meta:
         model = FieldOfStudy
         fields = ('id', 'name', 'units')
+
+
+class ContentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Content
+        fields = ('id', 'sub_unit', 'text', 'author')

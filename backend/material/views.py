@@ -2,6 +2,7 @@ from rest_framework import viewsets
 
 from material.serializers import *
 
+from material.permissions import *
 
 class FieldOfStudyViewSet(viewsets.ModelViewSet):
     queryset = FieldOfStudy.objects.all()
@@ -21,3 +22,8 @@ class SubUnitViewSet(viewsets.ModelViewSet):
 class ContentViewSet(viewsets.ModelViewSet):
     queryset = Content.objects.all()
     serializer_class = ContentSerializer
+
+    permission_classes = (AuthenticatedTeacher,)
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user.teacher)
