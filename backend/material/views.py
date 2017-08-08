@@ -1,7 +1,10 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from material.serializers import *
 from material.permissions import *
+
+from .models import *
 
 
 class FieldOfStudyViewSet(viewsets.ModelViewSet):
@@ -53,3 +56,23 @@ class ContentViewSet(viewsets.ModelViewSet):
         if self.action in ('retrieve',):
             return ContentRetrieveSerializer
         return super().get_serializer_class()
+
+
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
+class FeedbackCommentViewSet(viewsets.ModelViewSet):
+    queryset = FeedbackComment.objects.all()
+    serializer_class = FeedbackCommentSerializer
+
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)

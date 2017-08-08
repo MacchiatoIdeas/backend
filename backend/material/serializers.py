@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from users.serializers import TeacherSerializer
+from users.serializers import *
 from .models import *
 
 
@@ -84,3 +84,21 @@ class ContentRetrieveSerializer(serializers.ModelSerializer):
     class Meta:
         model = Content
         fields = ('id', 'sub_unit', 'text', 'author')
+
+
+class CommentSerializer(serializers.ModelSerializer):
+    user = GenericUserSerializer(read_only=True)
+    # TODO: Should the content be retrieved?
+    #content = ContentSerializer()
+
+    class Meta:
+        model = Comment
+        fields = '__all__'
+
+
+class FeedbackCommentSerializer(serializers.ModelSerializer):
+    user = GenericUserSerializer(read_only=True)
+
+    class Meta:
+        model = FeedbackComment
+        fields = '__all__'
