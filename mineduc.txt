@@ -1,0 +1,105 @@
+Matematica:
+    1° Medio:
+        Unidad 1:
+            Operatoria de números racionales
+            Potencia de base racional y exponente entero
+            Productos notables de manera concreta, pictórica y simbólica
+            Área de la superficie y volumen del cono
+        Unidad 2:
+            Sistemas de ecuaciones lineales (2 x 2)
+            Relaciones lineales en dos variables de la forma f(x,y)=ax+by
+            Área y perímetro de sectores y segmentos circulares
+        Unidad 3:
+            Homotecia
+            Teoremas de Tales
+            Semejanza y sus propiedades
+            Homotecia en el plano cartesiano
+            Producto de un vector por un escalar
+        Unidad 4:
+            Distribuciones de dos características distintas
+            Separación de la distribución de dos poblaciones diferentes, de manera intuitiva
+            Reglas de las probabilidades, la regla aditiva, la regla multiplicativa y la combinación de ambas
+            Concepto de azar
+    2° Medio:
+        Unidad 1: Números
+            Números irracionales y propiedades
+            Números reales y propiedades
+            Operaciones aritméticas con números reales
+            Potencias de exponente racional
+            Propiedades de las potencias de exponente racional
+            Raíces enésimas
+            Propiedades de las raíces enésimas
+            Logaritmos
+            Propiedades de los logaritmos
+        Unidad 2: Geometría
+            Semejanza de figuras planas
+            Criterios de semejanza de figuras planas
+            Trazos proporcionales
+            Propiedades invariantes en modelos a escala
+            Teorema de Pitágoras
+            Teorema de Thales
+            Teorema de Euclides
+            Ángulo del centro en la circunferencia
+            Ángulo inscrito en una circunferencia
+        Unidad 3: Algebra
+            Función exponencial y representación gráfica
+            Función logarítmica y representación gráfica
+            Función raíz cuadrada y representación gráfica
+            Sistemas de ecuaciones lineales con dos incógnitas
+            Métodos de resolución de un sistema de ecuaciones lineales con dos incógnitas
+            Gráfica de un sistema de ecuaciones
+            Expresiones algebraicas fraccionarias
+            Operaciones de expresiones algebraicas fraccionarias
+        Unidad 4: Datos y azar
+            Medidas de dispersión: desviación estándar
+            Variables aleatorias
+            Media muestral
+            Ley de los grandes números
+            Pruebas independientes
+            Eventos independientes
+            Eventos mutuamente excluyentes
+            Cálculo de probabilidades de eventos independientes y mutuamente excluyentes
+    3° Medio
+        Unidad 1: Números
+            Números complejos
+            Operaciones aritméticas con números complejos
+            Conjugado de un número complejo
+        Unidad 2: Algebra
+            Función cuadrática
+            Ecuación de segundo grado
+        Unidad 3: Geometría
+            Geometría cartesiana
+            Homotecia
+            Vector
+            Producto por un escalar
+            Sistemas 2x2 de ecuaciones lineales
+        Unidad 4: Datos y Azar
+            Probabilidad condicional
+            Variable aleatoria discreta
+            Función de probabilidad
+            Distribuciones de probabilidad
+            Distribución binomial
+            Valor esperado de una distribución binominal
+            Varianza de una distribución binominal
+            Desviación estándar de una distribución binominal
+    4° Medio
+        Unidad 1: Algebra
+            Función potencia
+            Función inversa de una función
+            Sistemas de inecuaciones lineales
+        Unidad 2: Geometría
+            Puntos en el espacio
+            Ecuación vectorial de la recta en el espacio
+            Ecuación cartesiana de la recta en el espacio
+            Ecuación vectorial del plano en el espacio
+            Generación de cuerpos por traslación de figuras 2D en el espacio
+            Generación de cuerpos por rotación de figuras 2D en el espacio
+        Unidad 3: Datos y Azar 1
+            Variable aleatoria continua.
+            Distribución de probabilidad de una variable aleatoria continua
+            Función de densidad de probabilidad de una variable aleatoria continua
+        Unidad 4: Datos y Azar 2
+            Distribución normal
+            Función Φ de distribución acumulada
+            Estimación de medias poblacionales
+            Construcción de intervalos de confianza
