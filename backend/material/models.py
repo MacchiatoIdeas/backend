@@ -25,21 +25,8 @@ class Unit(models.Model):
     # name of this unit.
     name = models.CharField(max_length=50, unique=True)
 
-    def __str__(self):
-        return self.name
-
-
-class SubUnit(models.Model):
-    """
-    Sub unit is pretty much just a deeper unit.
-    """
-
-    # unit is the higher level unit.
-    unit = models.ForeignKey(Unit, related_name='sub_units',
-                             on_delete=models.CASCADE)
-
-    # name of this sub unit.
-    name = models.CharField(max_length=50, unique=True)
+    # 1st grade, 2nd grade, ...
+    academic_level = models.IntegerField()
 
     def __str__(self):
         return self.name
@@ -51,21 +38,24 @@ class Content(models.Model):
     """
 
     # sub unit which will contain this subject matter.
-    sub_unit = models.ForeignKey(SubUnit, related_name='contents',
-                                 on_delete=models.CASCADE)
+    unit = models.ForeignKey(Unit, related_name='contents',
+                             on_delete=models.CASCADE)
 
     # author owner of this content.
     author = models.ForeignKey("users.Teacher", on_delete=models.CASCADE)
+
+    # keep it atomic
+    subtitle = models.CharField(max_length=150)
 
     # text of this content.
     text = models.TextField()
 
     def __str__(self):
-        return str(self.sub_unit)
+        return str(self.unit)
 
     def abstract(self):
         # FIXME: use a real approach.
-        return self.text[0:50]
+        return self.text[0:170]
 
 
 class Comment(models.Model):

@@ -4,24 +4,12 @@ from users.serializers import *
 from .models import *
 
 
-class SubUnitSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SubUnit
-        fields = ('id', 'unit', 'name',)
-
-
-class SubUnitListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SubUnit
-        fields = ('id', 'name',)
-
-
 class UnitSerializer(serializers.ModelSerializer):
-    sub_units = SubUnitListSerializer(many=True, read_only=True)
+    #sub_units = SubUnitListSerializer(many=True, read_only=True)
 
     class Meta:
         model = Unit
-        fields = ('id', 'field_of_study', 'name', 'sub_units')
+        fields = ('id', 'field_of_study', 'name')
 
 
 class UnitListSerializer(serializers.ModelSerializer):
@@ -56,7 +44,7 @@ class ContentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Content
-        fields = ('id', 'sub_unit', 'text', 'author')
+        fields = ('id', 'unit', 'text', 'author')
 
 
 class ContentListSerializer(serializers.ModelSerializer):
@@ -68,22 +56,13 @@ class ContentListSerializer(serializers.ModelSerializer):
         fields = ('id', 'text', 'author')
 
 
-class SubUnitRetrieveSerializer(serializers.ModelSerializer):
-    contents = ContentListSerializer(many=True)
-    unit = UnitListSerializer()
-
-    class Meta:
-        model = SubUnit
-        fields = ('id', 'unit', 'name', 'contents')
-
-
 class ContentRetrieveSerializer(serializers.ModelSerializer):
     author = TeacherSerializer()
-    sub_unit = SubUnitSerializer()
+    unit = UnitSerializer()
 
     class Meta:
         model = Content
-        fields = ('id', 'sub_unit', 'text', 'author')
+        fields = ('id', 'unit', 'text', 'author')
 
 
 class CommentSerializer(serializers.ModelSerializer):

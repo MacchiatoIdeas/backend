@@ -29,18 +29,6 @@ class UnitViewSet(viewsets.ModelViewSet):
         return super().get_serializer_class()
 
 
-class SubUnitViewSet(viewsets.ModelViewSet):
-    queryset = SubUnit.objects.all()
-    serializer_class = SubUnitSerializer
-
-    def get_serializer_class(self):
-        if self.action in ('list',):
-            return SubUnitListSerializer
-        if self.action in ('retrieve',):
-            return SubUnitRetrieveSerializer
-        return super().get_serializer_class()
-
-
 class ContentViewSet(viewsets.ModelViewSet):
     queryset = Content.objects.all()
     serializer_class = ContentSerializer
