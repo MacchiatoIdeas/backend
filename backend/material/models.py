@@ -34,10 +34,10 @@ class Unit(models.Model):
 
 class Content(models.Model):
     """
-    A Subject Matter is a submission of a teacher to a certain Sub Unit.
+    A Subject Matter is a submission of a teacher to a certain Unit.
     """
 
-    # sub unit which will contain this subject matter.
+    # unit which will contain this subject matter.
     unit = models.ForeignKey(Unit, related_name='contents',
                              on_delete=models.CASCADE)
 

@@ -5,8 +5,6 @@ from .models import *
 
 
 class UnitSerializer(serializers.ModelSerializer):
-    #sub_units = SubUnitListSerializer(many=True, read_only=True)
-
     class Meta:
         model = Unit
         fields = ('id', 'field_of_study', 'name', 'academic_level')
