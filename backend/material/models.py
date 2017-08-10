@@ -47,6 +47,9 @@ class Content(models.Model):
     # keep it atomic
     subtitle = models.CharField(max_length=150)
 
+    # summary of content
+    summary = models.CharField(max_length=150)
+
     # text of this content.
     text = models.TextField()
 
