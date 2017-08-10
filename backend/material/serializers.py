@@ -42,7 +42,7 @@ class ContentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Content
-        fields = ('id', 'unit', 'subtitle', 'text', 'author')
+        fields = ('id', 'unit', 'subtitle', 'text', 'html_text', 'author')
 
 
 class ContentListSerializer(serializers.ModelSerializer):
@@ -51,7 +51,7 @@ class ContentListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Content
-        fields = ('id', 'text', 'author')
+        fields = ('id', 'text', 'html_text', 'author')
 
 
 class ContentRetrieveSerializer(serializers.ModelSerializer):
@@ -60,7 +60,7 @@ class ContentRetrieveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Content
-        fields = ('id', 'unit', 'subtitle', 'text', 'author')
+        fields = ('id', 'unit', 'subtitle', 'text', 'html_text', 'author')
 
 
 class CommentSerializer(serializers.ModelSerializer):

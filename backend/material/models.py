@@ -50,6 +50,9 @@ class Content(models.Model):
     # text of this content.
     text = models.TextField()
 
+    # editable html text of this content.
+    html_text = models.TextField()
+
     def __str__(self):
         return str(self.unit)
 
