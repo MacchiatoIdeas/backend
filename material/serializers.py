@@ -4,10 +4,21 @@ from users.serializers import *
 from .models import *
 
 
+class ContentListSerializer(serializers.ModelSerializer):
+    text = serializers.ReadOnlyField(source='abstract')
+    author = TeacherSerializer()
+
+    class Meta:
+        model = Content
+        fields = ('id', 'summary', 'text', 'html_text', 'author')
+
+
 class UnitSerializer(serializers.ModelSerializer):
+    contents = ContentListSerializer(many=True, read_only=True)
+
     class Meta:
         model = Unit
-        fields = ('id', 'field_of_study', 'name', 'academic_level')
+        fields = ('id', 'field_of_study', 'name', 'academic_level', 'contents')
 
 
 class UnitListSerializer(serializers.ModelSerializer):
@@ -43,15 +54,6 @@ class ContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Content
         fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author')
-
-
-class ContentListSerializer(serializers.ModelSerializer):
-    text = serializers.ReadOnlyField(source='abstract')
-    author = TeacherSerializer()
-
-    class Meta:
-        model = Content
-        fields = ('id', 'summary', 'text', 'html_text', 'author')
 
 
 class ContentRetrieveSerializer(serializers.ModelSerializer):
