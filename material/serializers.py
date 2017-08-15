@@ -10,7 +10,7 @@ class ContentListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Content
-        fields = ('id', 'summary', 'text', 'html_text', 'author')
+        fields = ('id', 'unit', 'summary', 'text', 'html_text', 'author')
 
 
 class UnitSerializer(serializers.ModelSerializer):
@@ -24,7 +24,7 @@ class UnitSerializer(serializers.ModelSerializer):
 class UnitListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Unit
-        fields = ('id', 'name')
+        fields = ('id', 'field_of_study', 'name')
 
 
 class FieldOfStudySerializer(serializers.ModelSerializer):
