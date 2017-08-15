@@ -1,4 +1,10 @@
 from django.db import models
+from os.path import splitext
+
+
+def generate_thumbnail_path(instance, filename):
+    return 'images/field_thumbnail/{0}.{1}'.format(instance.name,
+                                                   splitext(filename)[1])
 
 
 class FieldOfStudy(models.Model):
@@ -8,6 +14,12 @@ class FieldOfStudy(models.Model):
 
     # name of this field of study.
     name = models.CharField(max_length=50, unique=True)
+
+    # color #xxxxxxx (7 chars max)
+    color = models.CharField(max_length=7)
+
+    # field's image
+    thumbnail = models.ImageField(upload_to=generate_thumbnail_path, null=True)
 
     def __str__(self):
         return self.name
