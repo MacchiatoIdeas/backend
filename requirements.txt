@@ -7,7 +7,6 @@ gunicorn==19.7.1
 Markdown==2.6.8
 olefile==0.44
 Pillow==4.2.1
-pkg-resources==0.0.0
 psycopg2==2.7.3
 pytz==2017.2
 whitenoise==3.3.0
