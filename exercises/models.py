@@ -117,9 +117,15 @@ class AutomatedExercise(models.Model):
             if ransw["answer"]<0 or ransw["answer"]>=len(exerc["alts"]):
                 return False
         elif ransw["schema"]=="matching":
+            # Check if there are repeated matchs:
             if len(ransw["matchs"])!=len(set(ransw["matchs"])):
-                # ^ Check if there are repeated matchs.
                 return False
+            # Check if one match is invalid:
+            are_bad = [x<0 or x>=len(exerc['side_b'])
+                for x in ransw["matchs"]]
+            if any(are_bad):
+                return False
+            # Check if there are an incorrect number of matchs:
             if len(ransw["matchs"])!=len(exerc["side_a"]):
                 return False
         return True
