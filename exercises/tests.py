@@ -1,40 +1,58 @@
 from django.test import TestCase
 
+from .models import *
+from django.contrib.auth.models import User
+from users.models import Teacher
+
 # Program testing can be used to show the presence of bugs, but never to show their absence! - Edsger Dijkstra <(^_^)>
 
 class QuestionModelTests(TestCase):
-    def create_an_alternative_automatedexercise(self):
+    def setUp(self):
+        self.user = User()
+        self.user.username = "Test Boy"
+        self.user.password = "strong_password"
+        self.user.email = "example@mail.com"
+        self.user.save()
+        self.teacher = Teacher()
+        self.teacher.user = self.user
+        self.teacher.save()
+
+    def test_create_an_alternative_automatedexercise(self):
         """
         Checks if a single alternative exercise can be created, and check if check_right_answer_right passes.
         """
         ex = AutomatedExercise()
-        ex.exercise = '''{
+        ex.content = '''{
             "schema" : "alternatives",
-            "alts" : ["Not right!","I am the right one!","Also not right!"],
+            "alts" : ["Not right!","I am the right one!","Also not right!"]
         }'''
         ex.right_answer = '''{
             "schema" : "alternatives",
             "answer" : 1
         }'''
-        self.assertIs(ex.check_right_answer_right(),True)
+        #
+        ex.author = self.teacher
         ex.full_clean()
+        self.assertIs(ex.check_right_answer_right(),True)
 
-    def create_an_matching_automatedexercise(self):
+    def test_create_an_matching_automatedexercise(self):
         """
         Checks if a single matching exercise can be created, and check if check_right_answer_right passes.
         """
         ex = AutomatedExercise()
-        ex.exercise = '''{
+        ex.content = '''{
             "schema" : "matching",
-            "side_a" : ["Decimal 5","Decimal 7","Decimal 9"],
-            "side_b" : ["Roman IX","Roman V","Roman VII","Roman IV"],
+            "sideA" : ["Decimal 5","Decimal 7","Decimal 9"],
+            "sideB" : ["Roman IX","Roman V","Roman VII","Roman IV"]
         }'''
         ex.right_answer = '''{
             "schema" : "matching",
-            "answer" : [1,2,0]
+            "matchs" : [1,2,0]
         }'''
-        self.assertIs(ex.check_right_answer_right(),True)
+        #
+        ex.author = self.teacher
         ex.full_clean()
+        self.assertIs(ex.check_right_answer_right(),True)
 
 # enquiry = Enquiry(email="testtest.com")
 # self.assertRaises(ValidationError, enquiry.full_clean)

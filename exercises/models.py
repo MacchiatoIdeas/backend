@@ -9,7 +9,6 @@ MAX_ANSWER_LENGTH = 255
 
 exercise_schema = {
     "type" : "object",
-    "additionalProperties": False,
     "oneOf" : [
         {
             "properties": {
@@ -21,28 +20,29 @@ exercise_schema = {
                 },
             },
             "required": ["schema","alts"],
+            "additionalProperties": False,
         }, {
             "properties": {
                 "schema" : {"type" : "string", "const" : "matching"},
-                "side_a" : {
+                "sideA" : {
                     "type" : "array",
                     "items" : {"type" : "string"},
                     "minItems" : 1,
                 },
-                "side_d" : {
+                "sideB" : {
                     "type" : "array",
                     "items" : {"type" : "string"},
                     "minItems" : 1,
                 },
             },
-            "required": ["schema","side_a","side_b"],
+            "required": ["schema","sideA","sideB"],
+            "additionalProperties": False,
         },
     ],
 }
 
 answer_schema = {
     "type" : "object",
-    "additionalProperties": False,
     "oneOf" : [
         {
             "properties": {
@@ -50,6 +50,7 @@ answer_schema = {
                 "answer" : {"type" : "integer"},
             },
             "required": ["schema","answer"],
+            "additionalProperties": False,
         }, {
             "properties": {
                 "schema" : {"type" : "string", "const" : "matching"},
@@ -59,6 +60,7 @@ answer_schema = {
                 },
             },
             "required": ["schema","matchs"],
+            "additionalProperties": False,
         },
     ],
 }
@@ -78,7 +80,7 @@ def parse_json(content,schema):
     try:
         jsonschema.validate(parsed,schema)
     except jsonschema.exceptions.ValidationError as ex:
-        raise ValidationError(str(ex))
+        raise ValidationError.create_from(ex)
     return parsed
 
 def validate_exercise(content):
@@ -97,19 +99,19 @@ class AutomatedExercise(models.Model):
     # | Author owner of this exercise:
     author = models.ForeignKey("users.Teacher", on_delete=models.CASCADE)
     # | Briefing of the exercise:
-    briefing = models.TextField()
+    briefing = models.TextField(blank=True,default="")
     # | Content of the exercise:
     content = models.TextField(validators=[validate_exercise])
     # | Exercise's right answer:
     right_answer = models.CharField(validators=[validate_answer],
         max_length=MAX_ANSWER_LENGTH)
 
-    def check_right_answer_right():
+    def check_right_answer_right(self):
         """
         Checks if the right answer is appropiate for the exercise.
         """
-        exerc = json.loads(content)
-        ransw = json.loads(right_answer)
+        exerc = json.loads(self.content)
+        ransw = json.loads(self.right_answer)
         # Check if it is the same schema:
         if ransw["schema"]!=exerc["schema"]: return False
         # Evaluate each different schema:
@@ -121,19 +123,19 @@ class AutomatedExercise(models.Model):
             if len(ransw["matchs"])!=len(set(ransw["matchs"])):
                 return False
             # Check if one match is invalid:
-            are_bad = [x<0 or x>=len(exerc['side_b'])
+            are_bad = [x<0 or x>=len(exerc['sideB'])
                 for x in ransw["matchs"]]
             if any(are_bad):
                 return False
             # Check if there are an incorrect number of matchs:
-            if len(ransw["matchs"])!=len(exerc["side_a"]):
+            if len(ransw["matchs"])!=len(exerc["sideA"]):
                 return False
         return True
 
-    def calculate_score(answer):
+    def calculate_score(self,answer):
         # TODO: Evaluate if two matchs pointing to the same index give score.
         answ = json.loads(answer)
-        ransw = json.loads(right_answer)
+        ransw = json.loads(self.right_answer)
         # Check if it is the same schema:
         if answ["schema"]!=ransw["schema"]: return 0
         # Evaluate each different schema:
