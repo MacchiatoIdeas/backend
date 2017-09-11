@@ -3,4 +3,5 @@ venv/
 .idea/
 *.sqlite
 *.sqlite3
+*.bak
 
