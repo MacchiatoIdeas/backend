@@ -18,32 +18,32 @@ class UnitSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Unit
-        fields = ('id', 'field_of_study', 'name', 'academic_level', 'contents')
+        fields = ('id', 'subject', 'name', 'subtitle', 'academic_level', 'contents')
 
 
 class UnitListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Unit
-        fields = ('id', 'field_of_study', 'name')
+        fields = ('id', 'subject', 'name')
 
 
-class FieldOfStudySerializer(serializers.ModelSerializer):
+class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = FieldOfStudy
+        model = Subject
+        fields = ('id', 'name', 'color', 'thumbnail')
+
+
+class SubjectListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subject
         fields = ('id', 'name')
 
 
-class FieldOfStudyListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = FieldOfStudy
-        fields = ('id', 'name')
-
-
-class FieldOfStudyRetrieveSerializer(serializers.ModelSerializer):
+class SubjectRetrieveSerializer(serializers.ModelSerializer):
     units = UnitListSerializer(many=True, read_only=True)
 
     class Meta:
-        model = FieldOfStudy
+        model = Subject
         fields = ('id', 'name', 'units')
 
 

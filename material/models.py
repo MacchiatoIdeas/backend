@@ -7,7 +7,7 @@ def generate_thumbnail_path(instance, filename):
                                                    splitext(filename)[1])
 
 
-class FieldOfStudy(models.Model):
+class Subject(models.Model):
     """
     Field of Study as in Mathematics, History, etc.
     """
@@ -31,8 +31,8 @@ class Unit(models.Model):
     """
 
     # area containing this unit.
-    field_of_study = models.ForeignKey(FieldOfStudy, related_name='units',
-                                       on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, related_name='units',
+                                on_delete=models.CASCADE)
 
     # name of this unit.
     name = models.CharField(max_length=50, unique=True)

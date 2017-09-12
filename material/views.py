@@ -7,15 +7,15 @@ from users.permissions import *
 from .models import *
 
 
-class FieldOfStudyViewSet(viewsets.ModelViewSet):
-    queryset = FieldOfStudy.objects.all()
-    serializer_class = FieldOfStudySerializer
+class SubjectViewSet(viewsets.ModelViewSet):
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
 
     def get_serializer_class(self):
         if self.action in ('list',):
-            return FieldOfStudyListSerializer
+            return SubjectListSerializer
         if self.action in ('retrieve',):
-            return FieldOfStudyRetrieveSerializer
+            return SubjectRetrieveSerializer
         return super().get_serializer_class()
 
 
