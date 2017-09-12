@@ -30,7 +30,7 @@ class UnitListSerializer(serializers.ModelSerializer):
 class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subject
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'color', 'thumbnail')
 
 
 class SubjectListSerializer(serializers.ModelSerializer):
