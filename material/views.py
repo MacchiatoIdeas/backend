@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from material.serializers import *
-from material.permissions import *
+from users.permissions import *
 
 from .models import *
 

@@ -80,7 +80,7 @@ def parse_json(content,schema):
     try:
         jsonschema.validate(parsed,schema)
     except jsonschema.exceptions.ValidationError as ex:
-        raise ValidationError.create_from(ex)
+        raise ValidationError.create_from(str(ex))
     return parsed
 
 def validate_exercise(content):
