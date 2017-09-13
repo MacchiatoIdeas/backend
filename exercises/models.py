@@ -80,7 +80,7 @@ def parse_json(content,schema):
     try:
         jsonschema.validate(parsed,schema)
     except jsonschema.exceptions.ValidationError as ex:
-        raise ValidationError.create_from(ex)
+        raise ValidationError.create_from(str(ex))
     return parsed
 
 def validate_exercise(content):
@@ -98,6 +98,9 @@ class AutomatedExercise(models.Model):
     """
     # | Author owner of this exercise:
     author = models.ForeignKey("users.Teacher", on_delete=models.CASCADE)
+    # | Unit of the exercise:
+    unit = models.ForeignKey("material.Unit", on_delete=models.CASCADE)
+
     # | Briefing of the exercise:
     briefing = models.TextField(blank=True,default="")
     # | Content of the exercise:

@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from oauth2_provider.contrib.rest_framework.permissions import TokenHasResourceScope
 
 from material.serializers import *
-from material.permissions import *
+from users.permissions import *
 
 from .models import *
 
