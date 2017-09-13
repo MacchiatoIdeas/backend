@@ -17,7 +17,7 @@ class AuthenticatedUserType(permissions.BasePermission):
 			return False
 
 		# User must be type_user
-		return request.user.is_superuser or hasattr(request.user, self._type_attr)
+		return hasattr(request.user, self._type_attr)
 
 
 class AuthenticatedTeacher(AuthenticatedUserType):
