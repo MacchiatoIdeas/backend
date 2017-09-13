@@ -86,12 +86,16 @@ def parse_json(content, schema):
 
 def validate_exercise(content):
 	parsed = parse_json(content, exercise_schema)
-	# NOTE: schema specific validations should go here.
+
+
+# NOTE: schema specific validations should go here.
 
 
 def validate_answer(content):
 	parsed = parse_json(content, answer_schema)
-	# NOTE: schema specific validations should go here.
+
+
+# NOTE: schema specific validations should go here.
 
 
 def check_right_answer_right(content, right_answer):
