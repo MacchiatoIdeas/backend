@@ -30,4 +30,3 @@ git pull
 If the `requirements.txt` file changed, install the missing dependencies.
 
 If at any point you need to add a dependency with pip, execute: `pip freeze`, check that you only have dependencies that THE PROJECT needs, and then `pip freeze > requirements.txt` to save. Lastly commit and push.
-
