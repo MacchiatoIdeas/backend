@@ -9,6 +9,8 @@ class SubjectViewSet(viewsets.ModelViewSet):
 	queryset = Subject.objects.all()
 	serializer_class = SubjectSerializer
 
+	permission_classes = (AuthenticatedAppuntaAdmin,)
+
 	def get_serializer_class(self):
 		if self.action in ('list',):
 			return SubjectListSerializer
@@ -20,6 +22,8 @@ class SubjectViewSet(viewsets.ModelViewSet):
 class UnitViewSet(viewsets.ModelViewSet):
 	queryset = Unit.objects.all()
 	serializer_class = UnitSerializer
+
+	permission_classes = (AuthenticatedAppuntaAdmin,)
 
 	def get_serializer_class(self):
 		if self.action in ('list',):

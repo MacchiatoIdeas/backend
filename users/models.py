@@ -9,3 +9,9 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.user.get_full_name()
+
+
+class AppuntaAdmin(models.Model):
+    user = models.OneToOneField("auth.User",
+                                on_delete=models.CASCADE,
+                                related_name='appunta_admin')
