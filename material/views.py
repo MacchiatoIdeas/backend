@@ -1,10 +1,7 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from oauth2_provider.contrib.rest_framework.permissions import TokenHasResourceScope
 
 from material.serializers import *
 from users.permissions import *
-
 from .models import *
 
 
@@ -34,8 +31,7 @@ class ContentViewSet(viewsets.ModelViewSet):
 	queryset = Content.objects.all()
 	serializer_class = ContentSerializer
 
-	permission_classes = (TokenHasResourceScope,)  # (AuthenticatedTeacher,)
-	required_scopes = ['contents']
+	permission_classes = (AuthenticatedTeacher,)
 
 	def perform_create(self, serializer):
 		serializer.save(author=self.request.user.teacher)
@@ -52,8 +48,6 @@ class CommentViewSet(viewsets.ModelViewSet):
 	queryset = Comment.objects.all()
 	serializer_class = CommentSerializer
 
-	permission_classes = (IsAuthenticatedOrReadOnly,)
-
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
 
@@ -61,8 +55,6 @@ class CommentViewSet(viewsets.ModelViewSet):
 class FeedbackCommentViewSet(viewsets.ModelViewSet):
 	queryset = FeedbackComment.objects.all()
 	serializer_class = FeedbackCommentSerializer
-
-	permission_classes = (IsAuthenticatedOrReadOnly,)
 
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)

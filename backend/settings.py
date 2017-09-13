@@ -117,15 +117,10 @@ OAUTH2_PROVIDER = {
         'read': 'Read scope',
         'write': 'Write scope',
         'groups': 'Access to your groups',
-        'contents:write': 'Contents write permission',
-        'contents:read': 'Contents read permission',
-        'automatedex:write': 'Automated Excercise write permission',
-        'automatedex:read': 'Automated Excercise read permission',
     },
 }
 
 OAUTH2_PROVIDER_APPLICATION_MODEL = 'oauth2_provider.Application'
-OAUTH2_PROVIDER_ACCESS_TOKEN_MODEL = 'users.AppuntaAccessToken'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
