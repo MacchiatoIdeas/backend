@@ -1,9 +1,8 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from users.permissions import *
-
 from .serializers import *
+
 
 class AutomatedExerciseViewSet(viewsets.ModelViewSet):
     queryset = AutomatedExercise.objects.all()

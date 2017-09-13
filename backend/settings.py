@@ -113,8 +113,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 OAUTH2_PROVIDER = {
     # this is the list of available scopes
-    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'}
+    'SCOPES': {
+        'read': 'Read scope',
+        'write': 'Write scope',
+        'groups': 'Access to your groups',
+    },
 }
+
+OAUTH2_PROVIDER_APPLICATION_MODEL = 'oauth2_provider.Application'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -124,6 +130,17 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     )
+}
+
+APPUNTA_ALLOWED_SCOPES = {
+    'student': [],
+    'teacher': [
+        'contents:write',
+        'automatedex:write'
+    ],
+    'uncategorized': [
+        'contents:read'
+    ]
 }
 
 #APPEND_SLASH = False

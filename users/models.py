@@ -1,8 +1,11 @@
 from django.db import models
+from oauth2_provider.models import AbstractAccessToken
 
 
 class Teacher(models.Model):
-    user = models.OneToOneField("auth.User", on_delete=models.CASCADE)
+    user = models.OneToOneField("auth.User",
+                                on_delete=models.CASCADE,
+                                related_name='teacher')
 
     def __str__(self):
         return self.user.get_full_name()
