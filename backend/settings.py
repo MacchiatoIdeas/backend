@@ -118,7 +118,9 @@ OAUTH2_PROVIDER = {
         'write': 'Write scope',
         'groups': 'Access to your groups',
         'contents:write': 'Contents write permission',
-        'contents:read': 'Contents read permission'
+        'contents:read': 'Contents read permission',
+        'automatedex:write': 'Automated Excercise write permission',
+        'automatedex:read': 'Automated Excercise read permission',
     },
 }
 
@@ -138,7 +140,8 @@ REST_FRAMEWORK = {
 APPUNTA_ALLOWED_SCOPES = {
     'student': [],
     'teacher': [
-        'contents:write'
+        'contents:write',
+        'automatedex:write'
     ],
     'uncategorized': [
         'contents:read'
