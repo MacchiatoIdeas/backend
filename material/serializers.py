@@ -36,7 +36,7 @@ class SubjectSerializer(serializers.ModelSerializer):
 class SubjectListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subject
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'color', 'thumbnail')
 
 
 class SubjectRetrieveSerializer(serializers.ModelSerializer):
