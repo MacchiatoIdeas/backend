@@ -113,8 +113,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 OAUTH2_PROVIDER = {
     # this is the list of available scopes
-    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'}
+    'SCOPES': {
+        'read': 'Read scope',
+        'write': 'Write scope',
+        'groups': 'Access to your groups',
+        'contents:write': 'Contents write permission',
+        'contents:read': 'Contents read permission'
+    },
 }
+
+OAUTH2_PROVIDER_APPLICATION_MODEL = 'oauth2_provider.Application'
+OAUTH2_PROVIDER_ACCESS_TOKEN_MODEL = 'users.AppuntaAccessToken'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -124,6 +133,16 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     )
+}
+
+APPUNTA_ALLOWED_SCOPES = {
+    'student': [],
+    'teacher': [
+        'contents:write'
+    ],
+    'uncategorized': [
+        'contents:read'
+    ]
 }
 
 #APPEND_SLASH = False
