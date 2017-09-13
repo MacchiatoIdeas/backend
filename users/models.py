@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.db import models
 from oauth2_provider.models import AbstractAccessToken
 
