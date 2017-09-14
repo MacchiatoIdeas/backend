@@ -51,15 +51,7 @@ class SubjectRetrieveSerializer(serializers.ModelSerializer):
 
 class ContentSerializer(serializers.ModelSerializer):
 	author = TeacherSerializer(read_only=True)
-
-	class Meta:
-		model = Content
-		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author')
-
-
-class ContentRetrieveSerializer(serializers.ModelSerializer):
-	author = TeacherSerializer(read_only=True)
-	unit = UnitSerializer()
+	unit = UnitListSerializer()
 
 	class Meta:
 		model = Content

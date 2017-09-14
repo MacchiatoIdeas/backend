@@ -43,8 +43,6 @@ class ContentViewSet(viewsets.ModelViewSet):
 	def get_serializer_class(self):
 		if self.action in ('list',):
 			return ContentListSerializer
-		if self.action in ('retrieve',):
-			return ContentRetrieveSerializer
 		return super().get_serializer_class()
 
 
