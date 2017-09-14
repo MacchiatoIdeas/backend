@@ -145,7 +145,7 @@ class GuideItem(models.Model):
     # Either content
     content = models.ForeignKey(Content, blank=True, null=True)
 
-    # Or excercise
+    # Or exercise
     exercise = models.ForeignKey(AutomatedExercise, blank=True, null=True)
 
     # Order in guide

@@ -1,8 +1,8 @@
-from rest_framework import serializers
-
+from exercises.serializers import (
+	AutomatedExerciseSerializer,
+	AutomatedExerciseListSerializer
+)
 from users.serializers import *
-from exercises.serializers import AutomatedExerciseSerializer
-from exercises.serializers import AutomatedExerciseListSerializer
 from .models import *
 
 
@@ -137,7 +137,7 @@ class GuideItemSerializer(serializers.ModelSerializer):
 	def get_item(self, gitem):
 		if gitem.content is not None:
 			return ContentGuideSerializer(instance=gitem.content).data
-		elif gitem.excercise is not None:
+		elif gitem.exercise is not None:
 			return AutomatedExerciseSerializer(instance=gitem.exercise).data
 		else:
 			return None

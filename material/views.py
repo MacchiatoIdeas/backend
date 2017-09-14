@@ -1,5 +1,4 @@
 from rest_framework import viewsets
-from rest_framework.response import Response
 
 from material.serializers import *
 from users.permissions import *
