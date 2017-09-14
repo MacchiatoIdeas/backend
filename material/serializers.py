@@ -1,15 +1,18 @@
+from rest_framework import serializers
+
 from users.serializers import *
 from exercises.serializers import AutomatedExerciseSerializer
+from exercises.serializers import AutomatedExerciseListSerializer
 from .models import *
 
 
 class ContentListSerializer(serializers.ModelSerializer):
 	text = serializers.ReadOnlyField(source='abstract')
-	author = TeacherSerializer()
+	author = TeacherSerializer(read_only=True)
 
 	class Meta:
 		model = Content
-		fields = ('id', 'unit', 'summary', 'text', 'html_text', 'author')
+		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author')
 
 
 class GuideListSerializer(serializers.ModelSerializer):
@@ -33,7 +36,14 @@ class SubjectListSerializer(serializers.ModelSerializer):
 
 
 class UnitSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Unit
+		fields = ('id', 'subject', 'name', 'academic_level')
+
+
+class UnitRetrieveSerializer(serializers.ModelSerializer):
 	contents = ContentListSerializer(many=True, read_only=True)
+	exercises = AutomatedExerciseListSerializer(many=True, read_only=True)
 	subject = SubjectSerializer(read_only=True)
 
 	class Meta:
@@ -41,6 +51,14 @@ class UnitSerializer(serializers.ModelSerializer):
 		fields = ('id', 'subject', 'name', 'academic_level', 'contents')
 
 
+class UnitWithSubjectRetrieveSerializer(serializers.ModelSerializer):
+	subject = SubjectSerializer(read_only=True)
+
+	class Meta:
+		model = Unit
+		fields = ('id', 'subject', 'name', 'academic_level')
+
+# TODO: Considerate to destroy UnitListSerializer and replace it with UnitSerializer wherever it appears.
 class UnitListSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Unit
@@ -57,9 +75,7 @@ class SubjectRetrieveSerializer(serializers.ModelSerializer):
 
 
 class ContentSerializer(serializers.ModelSerializer):
-	author = serializers.ReadOnlyField(source='author.user.username')
-
-	# TODO: Change user name for the proper full name of a teacher.
+	author = TeacherSerializer(read_only=True)
 
 	class Meta:
 		model = Content
@@ -67,8 +83,8 @@ class ContentSerializer(serializers.ModelSerializer):
 
 
 class ContentRetrieveSerializer(serializers.ModelSerializer):
-	author = TeacherSerializer()
-	unit = UnitSerializer()
+	author = TeacherSerializer(read_only=True)
+	unit = UnitWithSubjectRetrieveSerializer()
 
 	class Meta:
 		model = Content

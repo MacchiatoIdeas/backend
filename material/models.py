@@ -56,7 +56,7 @@ class Content(models.Model):
                              on_delete=models.CASCADE)
 
     # author owner of this content.
-    author = models.ForeignKey("users.Teacher", on_delete=models.CASCADE)
+    author = models.ForeignKey("users.Teacher", related_name='contents', on_delete=models.CASCADE)
 
     # keep it atomic
     subtitle = models.CharField(max_length=150)
@@ -87,7 +87,7 @@ class Comment(models.Model):
     """
 
     # user who wrote the comment.
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    user = models.ForeignKey('auth.User', related_name='comments', on_delete=models.CASCADE)
 
     # content related.
     content = models.ForeignKey(Content, related_name='comments',
@@ -103,7 +103,7 @@ class FeedbackComment(models.Model):
     """
 
     # user who wrote the comment.
-    user = models.ForeignKey("auth.User", on_delete=models.CASCADE)
+    user = models.ForeignKey("auth.User", related_name='feedback_comments', on_delete=models.CASCADE)
 
     # content related.
     content = models.ForeignKey(Content, related_name='feedback_comments',
