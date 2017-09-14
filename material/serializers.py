@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from users.serializers import *
+from exercises.serializers import AutomatedExerciseListSerializer
 from .models import *
 
 
@@ -27,12 +28,12 @@ class SubjectListSerializer(serializers.ModelSerializer):
 
 class UnitSerializer(serializers.ModelSerializer):
 	contents = ContentListSerializer(many=True, read_only=True)
+	exercises = AutomatedExerciseListSerializer(many=True, read_only=True)
 	subject = SubjectSerializer(read_only=True)
 
 	class Meta:
 		model = Unit
-		fields = ('id', 'subject', 'name', 'academic_level', 'contents')
-
+		fields = ('id', 'subject', 'name', 'academic_level', 'contents', 'exercises')
 
 class UnitListSerializer(serializers.ModelSerializer):
 	class Meta:

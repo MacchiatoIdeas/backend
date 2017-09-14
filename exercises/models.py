@@ -101,8 +101,8 @@ def validate_answer(content):
 
 def check_right_answer_right(content, right_answer):
 	"""
-    Checks if the right answer is appropiate for the exercise.
-    """
+	Checks if the right answer is appropiate for the exercise.
+	"""
 	exerc = json.loads(content)
 	ransw = json.loads(right_answer)
 	# Check if it is the same schema:
@@ -117,7 +117,7 @@ def check_right_answer_right(content, right_answer):
 			return False
 		# Check if one match is invalid:
 		are_bad = [x < 0 or x >= len(exerc['sideB'])
-		           for x in ransw["matchs"]]
+				   for x in ransw["matchs"]]
 		if any(are_bad):
 			return False
 		# Check if there are an incorrect number of matchs:
@@ -128,13 +128,13 @@ def check_right_answer_right(content, right_answer):
 
 class AutomatedExercise(models.Model):
 	"""
-    An exercise that can come in many formats and can be automatically evaluated.
-    """
+	An exercise that can come in many formats and can be automatically evaluated.
+	"""
 	difficulty = models.IntegerField(default=1,validators=[MinValueValidator(1),MaxValueValidator(4)])
 	# | Author owner of this exercise:
-	author = models.ForeignKey("users.Teacher", on_delete=models.CASCADE)
+	author = models.ForeignKey("users.Teacher", related_name='exercises', on_delete=models.CASCADE)
 	# | Unit of the exercise:
-	unit = models.ForeignKey("material.Unit", on_delete=models.CASCADE)
+	unit = models.ForeignKey("material.Unit", related_name='exercises', on_delete=models.CASCADE)
 
 	# | Briefing of the exercise:
 	briefing = models.TextField(blank=True, default="")
@@ -142,7 +142,11 @@ class AutomatedExercise(models.Model):
 	content = models.TextField(validators=[validate_exercise])
 	# | Exercise's right answer:
 	right_answer = models.CharField(validators=[validate_answer],
-	                                max_length=MAX_ANSWER_LENGTH)
+									max_length=MAX_ANSWER_LENGTH)
+
+	def schema(self):
+		exerc = json.loads(self.content)
+		return exerc["schema"]
 
 	def calculate_score(self, answer):
 		# TODO: Evaluate if two matchs pointing to the same index give score.
@@ -168,4 +172,4 @@ class AutomatedExerciseAnswer(models.Model):
 	exercise = models.ForeignKey(AutomatedExercise, on_delete=models.CASCADE)
 	#  | The given answer:
 	answer = models.CharField(validators=[validate_answer],
-	                          max_length=MAX_ANSWER_LENGTH)
+							  max_length=MAX_ANSWER_LENGTH)
