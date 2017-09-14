@@ -15,6 +15,7 @@ class ContentListSerializer(serializers.ModelSerializer):
 
 class UnitSerializer(serializers.ModelSerializer):
     contents = ContentListSerializer(many=True, read_only=True)
+    subject = SubjectSerializer(read_only=True)
 
     class Meta:
         model = Unit
@@ -44,7 +45,7 @@ class SubjectRetrieveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Subject
-        fields = ('id', 'name', 'units')
+        fields = ('id', 'name', 'units', 'color', 'thumbnail')
 
 
 class ContentSerializer(serializers.ModelSerializer):
