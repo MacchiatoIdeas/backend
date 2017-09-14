@@ -28,6 +28,8 @@ class UnitViewSet(viewsets.ModelViewSet):
 	def get_serializer_class(self):
 		if self.action in ('list',):
 			return UnitListSerializer
+		elif self.action in ('retrieve',):
+			return UnitRetrieveSerializer
 		return super().get_serializer_class()
 
 
