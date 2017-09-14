@@ -27,6 +27,11 @@ class SubjectListSerializer(serializers.ModelSerializer):
 
 
 class UnitSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Unit
+		fields = ('id', 'subject', 'name', 'academic_level')
+
+class UnitRetrieveSerializer(serializers.ModelSerializer):
 	contents = ContentListSerializer(many=True, read_only=True)
 	exercises = AutomatedExerciseListSerializer(many=True, read_only=True)
 	subject = SubjectSerializer(read_only=True)
@@ -35,6 +40,14 @@ class UnitSerializer(serializers.ModelSerializer):
 		model = Unit
 		fields = ('id', 'subject', 'name', 'academic_level', 'contents', 'exercises')
 
+class UnitWithSubjectRetrieveSerializer(serializers.ModelSerializer):
+	subject = SubjectSerializer(read_only=True)
+
+	class Meta:
+		model = Unit
+		fields = ('id', 'subject', 'name', 'academic_level')
+
+# TODO: Considerate to destroy UnitListSerializer and replace it with UnitSerializer wherever it appears.
 class UnitListSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Unit
@@ -58,7 +71,7 @@ class ContentSerializer(serializers.ModelSerializer):
 
 class ContentRetrieveSerializer(serializers.ModelSerializer):
 	author = TeacherSerializer(read_only=True)
-	unit = UnitListSerializer()
+	unit = UnitWithSubjectRetrieveSerializer()
 
 	class Meta:
 		model = Content
