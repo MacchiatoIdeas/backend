@@ -1,6 +1,5 @@
-from rest_framework import serializers
-
 from users.serializers import *
+from exercises.serializers import AutomatedExerciseSerializer
 from .models import *
 
 
@@ -11,6 +10,14 @@ class ContentListSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Content
 		fields = ('id', 'unit', 'summary', 'text', 'html_text', 'author')
+
+
+class GuideListSerializer(serializers.ModelSerializer):
+	user = GenericUserSerializer(read_only=True)
+
+	class Meta:
+		model = Guide
+		fields = ('id', 'user', 'title', 'brief')
 
 
 class SubjectSerializer(serializers.ModelSerializer):
@@ -42,10 +49,11 @@ class UnitListSerializer(serializers.ModelSerializer):
 
 class SubjectRetrieveSerializer(serializers.ModelSerializer):
 	units = UnitListSerializer(many=True, read_only=True)
+	guides = GuideListSerializer(source='guide_set', many=True, read_only=True)
 
 	class Meta:
 		model = Subject
-		fields = ('id', 'name', 'units', 'color', 'thumbnail')
+		fields = ('id', 'name', 'units', 'color', 'thumbnail', 'guides')
 
 
 class ContentSerializer(serializers.ModelSerializer):
@@ -84,3 +92,46 @@ class FeedbackCommentSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = FeedbackComment
 		fields = '__all__'
+
+
+class ContentGuideSerializer(serializers.ModelSerializer):
+	author = TeacherSerializer(read_only=True)
+
+	class Meta:
+		model = Content
+		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author')
+
+
+class GuideItemSerializer(serializers.ModelSerializer):
+	type = serializers.SerializerMethodField()
+	item = serializers.SerializerMethodField()
+
+	class Meta:
+		model = GuideItem
+		fields = ('type', 'item')
+
+	def get_type(self, gitem):
+		if gitem.content is not None:
+			return 'content'
+		elif gitem.exercise is not None:
+			return 'exercise'
+		else:
+			return 'unknown'
+
+	def get_item(self, gitem):
+		if gitem.content is not None:
+			return ContentGuideSerializer(instance=gitem.content).data
+		elif gitem.excercise is not None:
+			return AutomatedExerciseSerializer(instance=gitem.exercise).data
+		else:
+			return None
+
+
+class GuideSerializer(serializers.ModelSerializer):
+	user = GenericUserSerializer(read_only=True)
+	items = GuideItemSerializer(source='guideitem_set', many=True, read_only=True)
+	subject = SubjectSerializer(read_only=True)
+
+	class Meta:
+		model = Guide
+		fields = ('id', 'user', 'title', 'brief', 'subject', 'items')

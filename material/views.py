@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework.response import Response
 
 from material.serializers import *
 from users.permissions import *
@@ -62,3 +63,16 @@ class FeedbackCommentViewSet(viewsets.ModelViewSet):
 
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
+
+
+class GuideViewSet(viewsets.ModelViewSet):
+	queryset = Guide.objects.all()
+	serializer_class = GuideSerializer
+
+	def perform_create(self, serializer):
+		serializer.save(author=self.request.user)
+
+	def get_serializer_class(self):
+		if self.action in ('list',):
+			return GuideListSerializer
+		return super().get_serializer_class()

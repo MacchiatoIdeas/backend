@@ -1,5 +1,6 @@
 from django.db import models
 from os.path import splitext
+from exercises.models import AutomatedExercise
 
 
 def generate_thumbnail_path(instance, filename):
@@ -76,6 +77,9 @@ class Content(models.Model):
         # FIXME: use a real approach.
         return self.text[0:170]
 
+    def serialize(self):
+        pass
+
 
 class Comment(models.Model):
     """
@@ -110,3 +114,43 @@ class FeedbackComment(models.Model):
 
     # text of this comment.
     text = models.TextField()
+
+
+class Guide(models.Model):
+    """
+    Ordered collection of content and material
+    """
+
+    # user who wrote the Guide
+    user = models.ForeignKey("auth.User", on_delete=models.CASCADE)
+
+    # subject of the guide
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+
+    # guide title
+    title = models.TextField(max_length=64)
+
+    # brief text
+    brief = models.TextField(max_length=140)
+
+
+class GuideItem(models.Model):
+    """
+    Generic guide item
+    """
+
+    # Belongs to Guide
+    guide = models.ForeignKey(Guide, on_delete=models.CASCADE)
+
+    # Either content
+    content = models.ForeignKey(Content, blank=True, null=True)
+
+    # Or excercise
+    exercise = models.ForeignKey(AutomatedExercise, blank=True, null=True)
+
+    # Order in guide
+    order = models.IntegerField()
+
+    class Meta:
+        unique_together = ('guide', 'order')
+        ordering = ['order']
