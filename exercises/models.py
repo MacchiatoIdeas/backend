@@ -38,6 +38,13 @@ exercise_schema = {
 			},
 			"required": ["schema", "sideA", "sideB"],
 			"additionalProperties": False,
+		}, {
+			"properties": {
+				"schema": {"type": "string", "pattern": "completion"},
+				"text": {"type": "string", "pattern": ".*\?\?.*"},
+			},
+			"required": ["schema", "text"],
+			"additionalProperties": False,
 		},
 	],
 }
@@ -61,6 +68,16 @@ answer_schema = {
 				},
 			},
 			"required": ["schema", "matchs"],
+			"additionalProperties": False,
+		}, {
+			"properties": {
+				"schema": {"type": "string", "pattern": "completion"},
+				"words": {
+					"type": "array",
+					"items": {"type": "string"},
+				},
+			},
+			"required": ["schema", "words"],
 			"additionalProperties": False,
 		},
 	],
@@ -87,9 +104,6 @@ def parse_json(content, schema):
 
 def validate_exercise(content):
 	parsed = parse_json(content, exercise_schema)
-
-
-# NOTE: schema specific validations should go here.
 
 
 def validate_answer(content):
@@ -122,6 +136,10 @@ def check_right_answer_right(content, right_answer):
 			return False
 		# Check if there are an incorrect number of matchs:
 		if len(ransw["matchs"]) != len(exerc["sideA"]):
+			return False
+	elif ransw["schema"] == "completion":
+		slots = len(exerc["text"].split("??"))-1
+		if slots != len(ransw["words"]):
 			return False
 	return True
 
@@ -163,6 +181,12 @@ class AutomatedExercise(models.Model):
 			for i in range(ml):
 				score += float(ransw["matchs"][i] == answ["matchs"][i])
 			return score / len(ransw["matchs"])
+		elif ransw["schema"] == "completion":
+			ml = min(len(answ["words"]), len(ransw["words"]))
+			score = 0.0
+			for i in range(ml):
+				score += float(ransw["words"][i].upper() == answ["words"][i].upper())
+			return score / len(ransw["words"])
 
 
 class AutomatedExerciseAnswer(models.Model):

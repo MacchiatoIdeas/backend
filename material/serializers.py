@@ -7,7 +7,7 @@ from .models import *
 
 class ContentListSerializer(serializers.ModelSerializer):
 	text = serializers.ReadOnlyField(source='abstract')
-	author = TeacherSerializer()
+	author = TeacherSerializer(read_only=True)
 
 	class Meta:
 		model = Content
@@ -50,9 +50,7 @@ class SubjectRetrieveSerializer(serializers.ModelSerializer):
 
 
 class ContentSerializer(serializers.ModelSerializer):
-	author = serializers.ReadOnlyField(source='author.user.username')
-
-	# TODO: Change user name for the proper full name of a teacher.
+	author = TeacherSerializer(read_only=True)
 
 	class Meta:
 		model = Content
@@ -60,7 +58,7 @@ class ContentSerializer(serializers.ModelSerializer):
 
 
 class ContentRetrieveSerializer(serializers.ModelSerializer):
-	author = TeacherSerializer()
+	author = TeacherSerializer(read_only=True)
 	unit = UnitSerializer()
 
 	class Meta:
