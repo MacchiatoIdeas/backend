@@ -20,7 +20,7 @@ class Subject(models.Model):
 
     # field's image
     #thumbnail = models.ImageField(upload_to=generate_thumbnail_path, null=True)
-    thumbnail = models.URLField(default='')
+    thumbnail = models.URLField(default='', blank=True)
 
     def __str__(self):
         return self.name
