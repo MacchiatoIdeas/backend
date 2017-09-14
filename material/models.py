@@ -96,6 +96,9 @@ class Comment(models.Model):
     # text of this comment.
     text = models.TextField()
 
+    def __str__(self):
+        return self.text
+
 
 class FeedbackComment(models.Model):
     """
@@ -115,6 +118,9 @@ class FeedbackComment(models.Model):
     # text of this comment.
     text = models.TextField()
 
+    def __str__(self):
+        return self.text
+
 
 class Guide(models.Model):
     """
@@ -132,6 +138,9 @@ class Guide(models.Model):
 
     # brief text
     brief = models.TextField(max_length=140)
+
+    def __str__(self):
+        return self.title
 
 
 class GuideItem(models.Model):
@@ -154,3 +163,6 @@ class GuideItem(models.Model):
     class Meta:
         unique_together = ('guide', 'order')
         ordering = ['order']
+
+    def __str__(self):
+        return "guide: {0}, order: {1}".format(self.guide.title, self.order)

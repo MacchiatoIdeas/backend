@@ -187,6 +187,9 @@ class AutomatedExercise(models.Model):
 	right_answer = models.CharField(validators=[validate_answer],
 									max_length=MAX_ANSWER_LENGTH)
 
+	def __str__(self):
+		return "id: {0}, schema: {1}".format(self.id, self.schema())
+
 	def schema(self):
 		exerc = json.loads(self.content)
 		return exerc["schema"]
