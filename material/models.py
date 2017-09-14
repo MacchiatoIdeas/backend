@@ -19,7 +19,8 @@ class Subject(models.Model):
     color = models.CharField(max_length=7)
 
     # field's image
-    thumbnail = models.ImageField(upload_to=generate_thumbnail_path, null=True)
+    #thumbnail = models.ImageField(upload_to=generate_thumbnail_path, null=True)
+    thumbnail = models.URLField(default='')
 
     def __str__(self):
         return self.name
