@@ -11,7 +11,7 @@ class ContentListSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Content
-		fields = ('id', 'unit', 'summary', 'text', 'html_text', 'author')
+		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author')
 
 
 class SubjectSerializer(serializers.ModelSerializer):

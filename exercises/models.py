@@ -45,6 +45,17 @@ exercise_schema = {
 			},
 			"required": ["schema", "text"],
 			"additionalProperties": False,
+		}, {
+			"properties": {
+				"schema": {"type": "string", "pattern": "trueorfalse"},
+				"sentences": {
+					"type": "array",
+					"items": {"type": "string"},
+					"minItems": 1,
+				},
+			},
+			"required": ["schema", "sentences"],
+			"additionalProperties": False,
 		},
 	],
 }
@@ -78,6 +89,17 @@ answer_schema = {
 				},
 			},
 			"required": ["schema", "words"],
+			"additionalProperties": False,
+		}, {
+			"properties": {
+				"schema": {"type": "string", "pattern": "trueorfalse"},
+				"choices": {
+					"type": "array",
+					"items": {"type": "boolean"},
+					"minItems": 1,
+				},
+			},
+			"required": ["schema", "choices"],
 			"additionalProperties": False,
 		},
 	],
@@ -141,6 +163,9 @@ def check_right_answer_right(content, right_answer):
 		slots = len(exerc["text"].split("??"))-1
 		if slots != len(ransw["words"]):
 			return False
+	elif ransw["schema"] == "trueorfalse":
+		if len(exerc["sentences"])!=len(ransw["choices"]):
+			return False
 	return True
 
 
@@ -187,6 +212,12 @@ class AutomatedExercise(models.Model):
 			for i in range(ml):
 				score += float(ransw["words"][i].upper() == answ["words"][i].upper())
 			return score / len(ransw["words"])
+		elif ransw["schema"] == "trueorfalse":
+			ml = min(len(answ["choices"]), len(ransw["choices"]))
+			score = 0.0
+			for i in range(ml):
+				score += float(ransw["choices"][i] == answ["choices"][i])
+			return score / len(ransw["choices"])
 
 
 class AutomatedExerciseAnswer(models.Model):
