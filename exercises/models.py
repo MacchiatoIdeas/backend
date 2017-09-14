@@ -1,6 +1,7 @@
 from django.db import models
 
 from django.core.exceptions import ValidationError
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 import json
 import jsonschema
@@ -129,6 +130,7 @@ class AutomatedExercise(models.Model):
 	"""
     An exercise that can come in many formats and can be automatically evaluated.
     """
+	difficulty = models.IntegerField(default=1,validators=[MinValueValidator(1),MaxValueValidator(4)])
 	# | Author owner of this exercise:
 	author = models.ForeignKey("users.Teacher", on_delete=models.CASCADE)
 	# | Unit of the exercise:
