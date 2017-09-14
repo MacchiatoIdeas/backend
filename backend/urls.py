@@ -7,7 +7,7 @@ from exercises import views as eviews
 
 # Set routes
 router = DefaultRouter()
-router.register(r'users', uviews.User)
+router.register(r'users', uviews.UserViewSet)
 router.register(r'exercises', eviews.AutomatedExerciseViewSet)
 
 urlpatterns = [
