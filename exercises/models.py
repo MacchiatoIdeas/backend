@@ -194,10 +194,19 @@ class AutomatedExercise(models.Model):
 		exerc = json.loads(self.content)
 		return exerc["schema"]
 
-	def calculate_score(self, answer):
-		# TODO: Evaluate if two matchs pointing to the same index give score.
-		answ = json.loads(answer)
-		ransw = json.loads(self.right_answer)
+
+class AutomatedExerciseAnswer(models.Model):
+	# | The user that answered:
+	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	# | The answered exercise:
+	exercise = models.ForeignKey(AutomatedExercise, on_delete=models.CASCADE)
+	#  | The given answer:
+	answer = models.CharField(validators=[validate_answer],
+							  max_length=MAX_ANSWER_LENGTH)
+	def get_score(self):
+		# TODO: Think if two matchs pointing to the same index give score.
+		answ = json.loads(self.answer)
+		ransw = json.loads(self.exercise.right_answer)
 		# Check if it is the same schema:
 		if answ["schema"] != ransw["schema"]: return 0
 		# Evaluate each different schema:
@@ -221,13 +230,3 @@ class AutomatedExercise(models.Model):
 			for i in range(ml):
 				score += float(ransw["choices"][i] == answ["choices"][i])
 			return score / len(ransw["choices"])
-
-
-class AutomatedExerciseAnswer(models.Model):
-	# | The user that answered:
-	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-	# | The answered exercise:
-	exercise = models.ForeignKey(AutomatedExercise, on_delete=models.CASCADE)
-	#  | The given answer:
-	answer = models.CharField(validators=[validate_answer],
-							  max_length=MAX_ANSWER_LENGTH)

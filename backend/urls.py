@@ -5,8 +5,8 @@ from rest_framework.routers import DefaultRouter
 from exercises import views as eviews
 
 # Set routes
+
 router = DefaultRouter()
-router.register(r'exercises', eviews.AutomatedExerciseViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

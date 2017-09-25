@@ -1,5 +1,5 @@
 from users.serializers import *
-from .models import AutomatedExercise, check_right_answer_right
+from .models import *
 
 
 class AutomatedExerciseListSerializer(serializers.ModelSerializer):
@@ -21,3 +21,11 @@ class AutomatedExerciseSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = AutomatedExercise
 		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer')
+
+class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
+	user = GenericUserSerializer(read_only=True)
+	score = serializers.ReadOnlyField(source="get_score")
+
+	class Meta:
+		model = AutomatedExerciseAnswer
+		fields = ('user','exercise','answer','score')
