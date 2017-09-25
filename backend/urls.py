@@ -2,6 +2,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 
+from users import views as uviews
 from exercises import views as eviews
 
 # Set routes
