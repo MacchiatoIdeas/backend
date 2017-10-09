@@ -194,6 +194,10 @@ class AutomatedExercise(models.Model):
 		exerc = json.loads(self.content)
 		return exerc["schema"]
 
+	# If the exercise is a copy from another one:
+	original = models.ForeignKey("AutomatedExercise", null=True, blank= True,
+		on_delete=models.SET_NULL)
+
 
 class AutomatedExerciseAnswer(models.Model):
 	# | The user that answered:

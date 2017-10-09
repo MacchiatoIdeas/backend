@@ -15,3 +15,7 @@ class AppuntaAdmin(models.Model):
     user = models.OneToOneField("auth.User",
                                 on_delete=models.CASCADE,
                                 related_name='appunta_admin')
+
+class Course(models.Model):
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    participants = models.ManyToManyField("auth.User")

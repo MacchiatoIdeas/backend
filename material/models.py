@@ -1,6 +1,7 @@
 from django.db import models
 from os.path import splitext
 from exercises.models import AutomatedExercise
+from users.models import Course
 
 
 def generate_thumbnail_path(instance, filename):
@@ -141,6 +142,11 @@ class Guide(models.Model):
 
     def __str__(self):
         return self.title
+
+    # If it belongs to a course or it is public:
+    course = models.ForeignKey(Course, null=True, blank=True,
+            on_delete=models.CASCADE)
+
 
 
 class GuideItem(models.Model):
