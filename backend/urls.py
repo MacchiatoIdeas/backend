@@ -7,12 +7,14 @@ from exercises import views as eviews
 
 # Set routes
 
+#TODO: delete not useful router?
 router = DefaultRouter()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^material/', include('material.urls', namespace='material')),
     url(r'^exercises/', include('exercises.urls', namespace='exercises')),
+    url(r'^users/', include('users.urls', namespace='users')),
     url(r'^', include(router.urls)),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
