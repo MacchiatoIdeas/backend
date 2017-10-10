@@ -21,8 +21,14 @@ class GroupViewSet(ModelViewSet):
 
 class CourseViewSet(ModelViewSet):
 	permission_classes = [AuthenticatedTeacher,IsMemberOfCourse]
-	queryset = Course.objects.all()
 	serializer_class = CourseSerializer
+	queryset = Course.objects.all()
+
+	def get_queryset(self):
+		if hasattr(self.request.user,'teacher'):
+			return Course.objects.filter(teacher=self.request.user.teacher)
+		else:
+			return None
 
 	def perform_create(self, serializer):
 		serializer.save(teacher=self.request.user.teacher)
