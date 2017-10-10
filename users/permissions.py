@@ -28,3 +28,16 @@ class AuthenticatedTeacher(AuthenticatedUserType):
 class AuthenticatedAppuntaAdmin(AuthenticatedUserType):
 	def __init__(self):
 		super(AuthenticatedAppuntaAdmin, self).__init__('appunta_admin')
+
+
+class IsMemberOfCourse(permissions.BasePermission):
+    # Only allow users related to the course.
+    """
+    Only members can do anything, and only the teacher can do unsafe things.
+    """
+
+    def has_object_permission(self, request, view, obj):
+        is_safe = request.method in permissions.SAFE_METHODS
+        participant = request.user in obj.participants.all()
+        the_teacher = hasattr(request.user,'teacher') and (request.user.teacher == obj.teacher)
+        return ((participant and is_safe) or the_teacher)

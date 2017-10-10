@@ -3,7 +3,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
 from .serializers import GenericUserSerializer, GroupSerializer, CourseSerializer
-from .permissions import AuthenticatedTeacher
+from .permissions import AuthenticatedTeacher,IsMemberOfCourse
 from .models import Course
 
 
@@ -20,7 +20,7 @@ class GroupViewSet(ModelViewSet):
 	serializer_class = GroupSerializer
 
 class CourseViewSet(ModelViewSet):
-	permission_classes = [AuthenticatedTeacher]
+	permission_classes = [AuthenticatedTeacher,IsMemberOfCourse]
 	queryset = Course.objects.all()
 	serializer_class = CourseSerializer
 
