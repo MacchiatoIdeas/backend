@@ -24,7 +24,7 @@ class AutomatedExerciseViewSet(viewsets.ModelViewSet):
 		if search!='':
 			words = primitivize_string(search).split(" ")
 			for w in words:
-				query = query.filter(primitive__icontains=w)
+				query = query.filter(primitive__contains=w)
 		return query
 
 class AutomatedExerciseAnswerViewSet(viewsets.ModelViewSet):

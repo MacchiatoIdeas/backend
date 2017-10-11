@@ -164,7 +164,8 @@ class GuideItem(models.Model):
     """
 
     # Belongs to Guide
-    guide = models.ForeignKey(Guide, on_delete=models.CASCADE)
+    guide = models.ForeignKey(Guide, on_delete=models.CASCADE,
+        related_name='items')
 
     # Either content
     content = models.ForeignKey(Content, blank=True, null=True)

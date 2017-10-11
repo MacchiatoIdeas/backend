@@ -61,7 +61,7 @@ class ContentViewSet(viewsets.ModelViewSet):
 		if search!='':
 			words = primitivize_string(search).split(" ")
 			for w in words:
-				query = query.filter(primitive__icontains=w)
+				query = query.filter(primitive__contains=w)
 		return query
 
 
@@ -86,7 +86,7 @@ class GuideViewSet(viewsets.ModelViewSet):
 	serializer_class = GuideSerializer
 
 	def perform_create(self, serializer):
-		serializer.save(author=self.request.user)
+		serializer.save(user=self.request.user)
 
 	def get_serializer_class(self):
 		if self.action in ('list',):
