@@ -39,8 +39,13 @@ class ContentViewSet(viewsets.ModelViewSet):
 
 	permission_classes = (AuthenticatedTeacher,)
 
+	def perform_update(self, serializer):
+		instance = serializer.save(author=self.request.user.teacher)
+		instance.primitive = instance.make_primitive()
+		instance.save()
+
 	def perform_create(self, serializer):
-		serializer.save(author=self.request.user.teacher)
+		self.perform_update(serializer)
 
 	def get_serializer_class(self):
 		if self.action in ('list',):

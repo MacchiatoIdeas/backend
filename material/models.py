@@ -3,6 +3,8 @@ from os.path import splitext
 from exercises.models import AutomatedExercise
 from users.models import Course
 
+from primitivizer import primitivize_string
+
 
 def generate_thumbnail_path(instance, filename):
     return 'images/field_thumbnail/{0}.{1}'.format(instance.name,
@@ -80,6 +82,13 @@ class Content(models.Model):
 
     def serialize(self):
         pass
+
+    # Primitivized version for searching
+    primitive = models.TextField(blank=True)
+
+    def make_primitive(self):
+        return primitivize_string(" ".join([
+            str(self.author),self.subtitle,self.summary,self.text]))
 
 
 class Comment(models.Model):

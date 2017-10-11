@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'material',
     'exercises',
     'corsheaders',
-    'oauth2_provider'
+    'oauth2_provider',
 ]
 
 MIDDLEWARE = [

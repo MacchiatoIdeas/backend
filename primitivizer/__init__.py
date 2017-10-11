@@ -1,0 +1,1 @@
+from .primitive import primitivize_word,primitivize_string
