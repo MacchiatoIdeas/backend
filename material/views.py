@@ -4,6 +4,7 @@ from material.serializers import *
 from users.permissions import *
 from .models import *
 
+from primitivizer import primitivize_string
 
 class SubjectViewSet(viewsets.ModelViewSet):
 	queryset = Subject.objects.all()
@@ -53,6 +54,17 @@ class ContentViewSet(viewsets.ModelViewSet):
 		if self.action in ('retrieve',):
 			return ContentRetrieveSerializer
 		return super().get_serializer_class()
+
+	def get_queryset(self):
+		search = self.request.GET.get('s', '')
+		if search=='':
+			query = Content.objects.all()
+		else:
+			words = primitivize_string(search).split(" ")
+			query = Content.objects.all()
+			for w in words:
+				query = query.filter(primitive__icontains=w)
+		return query
 
 
 class CommentViewSet(viewsets.ModelViewSet):
