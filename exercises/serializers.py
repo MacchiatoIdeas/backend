@@ -20,7 +20,7 @@ class AutomatedExerciseSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = AutomatedExercise
-		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer','update')
+		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer')
 
 class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
 	user = GenericUserSerializer(read_only=True)

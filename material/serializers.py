@@ -143,6 +143,14 @@ class GuideItemSerializer(serializers.ModelSerializer):
 			return None
 
 class GuideItemInputSerializer(serializers.ModelSerializer):
+
+	def validate(self, data):
+		both = data['exercise'] and data['content']
+		neither = not data['exercise'] and not data['content']
+		if both or neither:
+			raise serializers.ValidationError('Either exercise or content must be set')
+		return data
+
 	class Meta:
 		model = GuideItem
 		fields = ('guide','content','exercise','order')
