@@ -6,6 +6,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 import json
 import jsonschema
 
+from primitivizer import primitivize_string
+
 MAX_ANSWER_LENGTH = 255
 
 exercise_schema = {
@@ -197,6 +199,13 @@ class AutomatedExercise(models.Model):
 	# If the exercise is an old version of another one
 	update = models.ForeignKey("AutomatedExercise", null=True, blank= True,
 		on_delete=models.SET_NULL)
+
+	# Primitivized version for searching
+	primitive = models.TextField(blank=True)
+
+	def make_primitive(self):
+		return primitivize_string(" ".join([
+			str(self.author),self.briefing]))
 
 
 class AutomatedExerciseAnswer(models.Model):
