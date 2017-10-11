@@ -4,6 +4,8 @@ from material.serializers import *
 from users.permissions import *
 from .models import *
 
+from django.db.models import Q
+
 from primitivizer import primitivize_string
 
 class SubjectViewSet(viewsets.ModelViewSet):
@@ -80,15 +82,39 @@ class FeedbackCommentViewSet(viewsets.ModelViewSet):
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
 
+class GuideItemViewSet(viewsets.ModelViewSet):
+	queryset = GuideItem.objects.all()
+	serializer_class = GuideItemInputSerializer
+
+	#TODO: Check ownership of the guide and another permissions!
 
 class GuideViewSet(viewsets.ModelViewSet):
 	queryset = Guide.objects.all()
 	serializer_class = GuideSerializer
 
+	def perform_update(self, serializer):
+		instance = serializer.save(user=self.request.user)
+		instance.primitive = instance.make_primitive()
+		instance.save()
+
 	def perform_create(self, serializer):
-		serializer.save(user=self.request.user)
+		self.perform_update(serializer)
 
 	def get_serializer_class(self):
 		if self.action in ('list',):
 			return GuideListSerializer
-		return super().get_serializer_class()
+		elif self.action in ('retrieve',):
+			return super().get_serializer_class()
+		return GuideInputSerializer
+
+	def get_queryset(self):
+		search = self.request.GET.get('s', '')
+		query = Guide.objects.all()
+		if search!='':
+			words = primitivize_string(search).split(" ")
+			for w in words:
+				query = query.filter(
+					Q(primitive__contains=w)|
+					Q(items__exercise__primitive__contains=w)|
+					Q(items__content__primitive__contains=w))
+		return query

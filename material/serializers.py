@@ -142,12 +142,23 @@ class GuideItemSerializer(serializers.ModelSerializer):
 		else:
 			return None
 
+class GuideItemInputSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = GuideItem
+		fields = ('guide','content','exercise','order')
 
 class GuideSerializer(serializers.ModelSerializer):
 	user = GenericUserSerializer(read_only=True)
-	items = GuideItemSerializer(source='guideitem_set', many=True, read_only=True)
+	items = GuideItemSerializer(many=True, read_only=True)
 	subject = SubjectSerializer(read_only=True)
 
 	class Meta:
 		model = Guide
 		fields = ('id', 'user', 'title', 'brief', 'subject', 'items')
+
+class GuideInputSerializer(serializers.ModelSerializer):
+	user = GenericUserSerializer(read_only=True)
+
+	class Meta:
+		model = Guide
+		fields = ('id', 'user', 'title', 'brief', 'subject')

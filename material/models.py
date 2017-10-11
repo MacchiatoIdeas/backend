@@ -156,6 +156,12 @@ class Guide(models.Model):
     course = models.ForeignKey(Course, null=True, blank=True,
             on_delete=models.CASCADE)
 
+    # Primitivized version for searching
+    primitive = models.TextField(blank=True)
+
+    def make_primitive(self):
+        return primitivize_string(" ".join([
+            str(self.user),self.title,self.brief]))
 
 
 class GuideItem(models.Model):
