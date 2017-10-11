@@ -57,7 +57,7 @@ class ContentViewSet(viewsets.ModelViewSet):
 
 	def get_queryset(self):
 		search = self.request.GET.get('s', '')
-		query = AutomatedExercise.objects.all()
+		query = Content.objects.all()
 		if search!='':
 			words = primitivize_string(search).split(" ")
 			for w in words:
