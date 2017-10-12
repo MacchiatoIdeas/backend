@@ -23,9 +23,9 @@ class CourseLinkSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = CourseLink
-		fields = ('course','guide','answers')
+		fields = ('id','course','guide','answers')
 
 class CourseLinkInputSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = CourseLink
-		fields = ('course','guide')
+		fields = ('id','course','guide')

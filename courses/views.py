@@ -22,7 +22,7 @@ class CourseViewSet(ModelViewSet):
 
 class CourseLinkViewSet(ModelViewSet):
 	permission_classes = [AuthenticatedTeacher]
-	serializer_class = CourseLinkInputSerializer
+	serializer_class = CourseLinkSerializer
 	queryset = CourseLink.objects.all()
 
 	def get_queryset(self):
@@ -34,6 +34,6 @@ class CourseLinkViewSet(ModelViewSet):
 				course__participants=self.request.user)
 
 	def get_serializer_class(self):
-		if self.action in ('retrieve',):
-			return CourseLinkSerializer
+		if self.action in ('create',):
+			return CourseLinkInputSerializer
 		return super().get_serializer_class()
