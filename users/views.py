@@ -1,10 +1,11 @@
 from django.contrib.auth.models import User, Group
+from rest_framework import mixins
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
-from .serializers import GenericUserSerializer, GroupSerializer, CourseSerializer
+from .serializers import *
 from .permissions import AuthenticatedTeacher,IsMemberOfCourse
-from .models import Course
+from .models import *
 
 
 class UserViewSet(ModelViewSet):
@@ -32,3 +33,16 @@ class CourseViewSet(ModelViewSet):
 
 	def perform_create(self, serializer):
 		serializer.save(teacher=self.request.user.teacher)
+
+class CourseLinkViewSet(ModelViewSet):
+	permission_classes = [AuthenticatedTeacher]
+	serializer_class = CourseLinkInputSerializer
+	queryset = CourseLink.objects.all()
+
+	def get_queryset(self):
+		if (hasattr(self.request.user,"teacher")):
+			return CourseLink.objects.filter(
+				course__teacher=self.request.user.teacher)
+		else:
+			return CourseLink.objects.filter(
+				course__participants=self.request.user)

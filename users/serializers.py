@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
-from .models import Teacher,Course
+from .models import Teacher,Course,CourseLink
 
 
 class GenericUserSerializer(serializers.ModelSerializer):
@@ -29,4 +29,11 @@ class CourseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ('teacher','participants')
+        fields = ('name','teacher','participants')
+
+class CourseLinkInputSerializer(serializers.ModelSerializer):
+    course = CourseSerializer()
+
+    class Meta:
+        model = CourseLink
+        fields = ('course','guide')

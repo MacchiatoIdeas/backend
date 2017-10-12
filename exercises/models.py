@@ -239,3 +239,10 @@ class AutomatedExerciseAnswer(models.Model):
 			for i in range(ml):
 				score += float(ransw["choices"][i] == answ["choices"][i])
 			return score / len(ransw["choices"])
+
+	# TODO: Delete all existings entries once a teacher creates a new
+	# related CourseLink, check what happens when there are two,
+	# Use time semantics OR add nullable courselink FK.
+
+	class Meta:
+		unique_together = ('user','exercise')

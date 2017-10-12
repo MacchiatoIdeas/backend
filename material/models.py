@@ -188,10 +188,3 @@ class GuideItem(models.Model):
 
     def __str__(self):
         return "guide: {0}, order: {1}".format(self.guide.title, self.order)
-
-    def save(self, *args, **kwargs):
-        both = self.exercise and self.content
-        neither = not self.exercise and not self.content
-        if both or neither:
-            raise ValueError('Either exercise or content must be set')
-            super(GuideItem, self).save(*args, **kwargs)
