@@ -1,6 +1,15 @@
 from users.serializers import *
 from .models import *
 
+class ExerciseCommentSerializer(serializers.ModelSerializer):
+	user = GenericUserSerializer(read_only=True)
+	#exercise = AutomatedExerciseSerializer(read_only=True)
+	#exercise_id = serializers.IntegerField(write_only=True)
+
+	class Meta:
+		model = ExerciseComment
+		fields = '__all__'
+
 class AutomatedExerciseListSerializer(serializers.ModelSerializer):
 	author = TeacherSerializer(read_only=True)
 
@@ -11,6 +20,7 @@ class AutomatedExerciseListSerializer(serializers.ModelSerializer):
 
 class AutomatedExerciseSerializer(serializers.ModelSerializer):
 	author = TeacherSerializer(read_only=True)
+	comments = ExerciseCommentSerializer(many=True, read_only=True)
 
 	def validate(self, data):
 		if not check_right_answer_right(data['content'], data['right_answer']):
@@ -18,8 +28,9 @@ class AutomatedExerciseSerializer(serializers.ModelSerializer):
 		return data
 
 	class Meta:
+		many = True
 		model = AutomatedExercise
-		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer')
+		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer', 'comments')
 
 class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
 	user = GenericUserSerializer(read_only=True)
@@ -34,13 +45,3 @@ class AutomatedExerciseSelectSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = AutomatedExercise
 		fields = ('id')
-
-
-class ExerciseCommentSerializer(serializers.ModelSerializer):
-	user = GenericUserSerializer(read_only=True)
-	#exercise = AutomatedExerciseSerializer(read_only=True)
-	#exercise_id = serializers.IntegerField(write_only=True)
-
-	class Meta:
-		model = ExerciseComment
-		fields = '__all__'

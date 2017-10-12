@@ -2,6 +2,7 @@ from django.db import models
 
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
+import datetime
 
 import json
 import jsonschema
@@ -259,6 +260,8 @@ class ExerciseComment(models.Model):
 
 	# text of this comment
 	text = models.TextField()
+
+	date = models.DateTimeField(default=datetime.datetime.now)
 
 	def __str__(self):
 		return self.text
