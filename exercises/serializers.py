@@ -2,7 +2,7 @@ from users.serializers import *
 from .models import *
 
 class ExerciseCommentSerializer(serializers.ModelSerializer):
-	user = GenericUserSerializer(read_only=True)
+	user = SimpleUserSerializer(read_only=True)
 	#exercise = AutomatedExerciseSerializer(read_only=True)
 	#exercise_id = serializers.IntegerField(write_only=True)
 
@@ -33,7 +33,7 @@ class AutomatedExerciseSerializer(serializers.ModelSerializer):
 		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer', 'comments')
 
 class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
-	user = GenericUserSerializer(read_only=True)
+	user = SimpleUserSerializer(read_only=True)
 	score = serializers.ReadOnlyField(source="get_score")
 
 	class Meta:

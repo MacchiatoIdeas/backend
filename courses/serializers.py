@@ -1,8 +1,11 @@
 from rest_framework import serializers
 
 from .models import *
+from exercises.models import AutomatedExerciseAnswer
 
 from users.serializers import TeacherSerializer
+from material.serializers import GuideSerializer
+from exercises.serializers import AutomatedExerciseAnswerSerializer
 
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -12,9 +15,17 @@ class CourseSerializer(serializers.ModelSerializer):
 		model = Course
 		fields = ('name','teacher', 'participants')
 
-class CourseLinkInputSerializer(serializers.ModelSerializer):
-	course = CourseSerializer()
 
+class CourseLinkSerializer(serializers.ModelSerializer):
+	course = CourseSerializer()
+	guide = GuideSerializer()
+	answers = AutomatedExerciseAnswerSerializer(source='get_answers',many=True)
+
+	class Meta:
+		model = CourseLink
+		fields = ('course','guide','answers')
+
+class CourseLinkInputSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = CourseLink
 		fields = ('course','guide')

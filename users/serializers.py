@@ -2,9 +2,8 @@ from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
 from .models import Teacher
-from courses.models import Course,CourseLink
-from material.models import Guide, GuideItem, Content, AutomatedExercise, Subject
-from exercises.models import check_right_answer_right
+from material.models import Guide, GuideItem, Content, Subject
+from exercises.models import check_right_answer_right, AutomatedExercise
 
 
 class UserAutomatedExerciseSerializer(serializers.ModelSerializer):
@@ -63,6 +62,11 @@ class UserGuidesSerializer(serializers.ModelSerializer):
 		model = Guide
 		fields = ('id', 'user', 'title', 'brief', 'subject', 'items')
 
+
+class SimpleUserSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = User
+		fields = ('id', 'username', 'first_name', 'last_name', 'email')
 
 class GenericUserSerializer(serializers.ModelSerializer):
 	guides = UserGuidesSerializer(read_only=True, many=True)

@@ -1,7 +1,5 @@
 from django.db import models
 from os.path import splitext
-from exercises.models import AutomatedExercise
-from courses.models import Course
 from django.utils import timezone
 
 from primitivizer import primitivize_string
@@ -161,7 +159,7 @@ class Guide(models.Model):
         return self.title
 
     # If it belongs to a course or it is public:
-    course = models.ForeignKey(Course, null=True, blank=True,
+    course = models.ForeignKey("courses.Course", null=True, blank=True,
             on_delete=models.CASCADE)
 
     # Primitivized version for searching
@@ -185,7 +183,8 @@ class GuideItem(models.Model):
     content = models.ForeignKey(Content, blank=True, null=True)
 
     # Or exercise
-    exercise = models.ForeignKey(AutomatedExercise, blank=True, null=True)
+    exercise = models.ForeignKey("exercises.AutomatedExercise",
+        blank=True, null=True)
 
     # Order in guide
     order = models.IntegerField()

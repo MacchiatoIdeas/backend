@@ -32,3 +32,8 @@ class CourseLinkViewSet(ModelViewSet):
 		else:
 			return CourseLink.objects.filter(
 				course__participants=self.request.user)
+
+	def get_serializer_class(self):
+		if self.action in ('retrieve',):
+			return CourseLinkSerializer
+		return super().get_serializer_class()
