@@ -144,7 +144,9 @@ class Guide(models.Model):
     """
 
     # user who wrote the Guide
-    user = models.ForeignKey("auth.User", on_delete=models.CASCADE)
+    user = models.ForeignKey("auth.User",
+                             related_name='guides',
+                             on_delete=models.CASCADE)
 
     # subject of the guide
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
