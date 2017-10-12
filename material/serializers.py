@@ -97,10 +97,11 @@ class ContentSerializer(serializers.ModelSerializer):
 class ContentRetrieveSerializer(serializers.ModelSerializer):
 	author = TeacherSerializer(read_only=True)
 	unit = UnitWithSubjectRetrieveSerializer()
+	comments = CommentSerializer(many=True, read_only=True)
 
 	class Meta:
 		model = Content
-		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author')
+		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author', 'comments')
 
 
 class FeedbackCommentSerializer(serializers.ModelSerializer):
