@@ -9,19 +9,19 @@ from .models import *
 
 
 class UserViewSet(ModelViewSet):
-	permission_classes = [IsAuthenticated, TokenHasReadWriteScope]
+	permission_classes = [IsAuthenticated],# TokenHasReadWriteScope]
 	queryset = User.objects.all()
 	serializer_class = GenericUserSerializer
 
 
 class GroupViewSet(ModelViewSet):
-	permission_classes = [IsAuthenticated, TokenHasScope]
+	permission_classes = [IsAuthenticated]#, TokenHasScope]
 	required_scopes = ['groups']
 	queryset = Group.objects.all()
 	serializer_class = GroupSerializer
 
 class CourseViewSet(ModelViewSet):
-	permission_classes = [AuthenticatedTeacher,IsMemberOfCourse]
+	permission_classes = [AuthenticatedTeacher]
 	serializer_class = CourseSerializer
 	queryset = Course.objects.all()
 
@@ -29,7 +29,7 @@ class CourseViewSet(ModelViewSet):
 		if hasattr(self.request.user,'teacher'):
 			return Course.objects.filter(teacher=self.request.user.teacher)
 		else:
-			return None
+			return Course.objects.filter(participants=self.request.user)
 
 	def perform_create(self, serializer):
 		serializer.save(teacher=self.request.user.teacher)

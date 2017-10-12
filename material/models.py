@@ -2,9 +2,9 @@ from django.db import models
 from os.path import splitext
 from exercises.models import AutomatedExercise
 from users.models import Course
+from django.utils import timezone
 
 from primitivizer import primitivize_string
-
 
 def generate_thumbnail_path(instance, filename):
     return 'images/field_thumbnail/{0}.{1}'.format(instance.name,
@@ -106,6 +106,9 @@ class Comment(models.Model):
     # text of this comment.
     text = models.TextField()
 
+    # date of this comment.
+    date = models.DateTimeField(default=timezone.now)
+
     def __str__(self):
         return self.text
 
@@ -128,6 +131,9 @@ class FeedbackComment(models.Model):
     # text of this comment.
     text = models.TextField()
 
+    # date of this comment.
+    date = models.DateTimeField(default=timezone.now)
+
     def __str__(self):
         return self.text
 
@@ -138,7 +144,9 @@ class Guide(models.Model):
     """
 
     # user who wrote the Guide
-    user = models.ForeignKey("auth.User", on_delete=models.CASCADE)
+    user = models.ForeignKey("auth.User",
+                             related_name='guides',
+                             on_delete=models.CASCADE)
 
     # subject of the guide
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)

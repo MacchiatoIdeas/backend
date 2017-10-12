@@ -33,3 +33,11 @@ class AutomatedExerciseAnswerViewSet(viewsets.ModelViewSet):
 
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
+
+
+class ExerciseCommentViewSet(viewsets.ModelViewSet):
+	queryset = ExerciseComment.objects.all()
+	serializer_class = ExerciseCommentSerializer
+
+	def perform_create(self, serializer):
+		serializer.save(user=self.request.user)

@@ -74,23 +74,6 @@ class SubjectRetrieveSerializer(serializers.ModelSerializer):
 		fields = ('id', 'name', 'units', 'color', 'thumbnail', 'guides')
 
 
-class ContentSerializer(serializers.ModelSerializer):
-	author = TeacherSerializer(read_only=True)
-
-	class Meta:
-		model = Content
-		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author')
-
-
-class ContentRetrieveSerializer(serializers.ModelSerializer):
-	author = TeacherSerializer(read_only=True)
-	unit = UnitWithSubjectRetrieveSerializer()
-
-	class Meta:
-		model = Content
-		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author')
-
-
 class CommentSerializer(serializers.ModelSerializer):
 	user = GenericUserSerializer(read_only=True)
 
@@ -100,6 +83,25 @@ class CommentSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Comment
 		fields = '__all__'
+
+
+class ContentSerializer(serializers.ModelSerializer):
+	author = TeacherSerializer(read_only=True)
+	comments = CommentSerializer(many=True, read_only=True)
+
+	class Meta:
+		model = Content
+		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author', 'comments')
+
+
+class ContentRetrieveSerializer(serializers.ModelSerializer):
+	author = TeacherSerializer(read_only=True)
+	unit = UnitWithSubjectRetrieveSerializer()
+	comments = CommentSerializer(many=True, read_only=True)
+
+	class Meta:
+		model = Content
+		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author', 'comments')
 
 
 class FeedbackCommentSerializer(serializers.ModelSerializer):
