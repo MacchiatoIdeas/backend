@@ -2,7 +2,7 @@ from django.db import models
 from os.path import splitext
 from exercises.models import AutomatedExercise
 from users.models import Course
-import datetime
+from django.utils import timezone
 
 from primitivizer import primitivize_string
 
@@ -107,7 +107,7 @@ class Comment(models.Model):
     text = models.TextField()
 
     # date of this comment.
-    date = models.DateTimeField(default=datetime.datetime.now)
+    date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.text
@@ -132,7 +132,7 @@ class FeedbackComment(models.Model):
     text = models.TextField()
 
     # date of this comment.
-    date = models.DateTimeField(default=datetime.datetime.now)
+    date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.text
