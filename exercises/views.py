@@ -31,6 +31,13 @@ class AutomatedExerciseAnswerViewSet(viewsets.ModelViewSet):
 	queryset = AutomatedExerciseAnswer.objects.all()
 	serializer_class = AutomatedExerciseAnswerSerializer
 
+	permission_classes = (AuthenticatedTeacherEdits,)
+
+	def get_serializer_class(self):
+		if self.action in ('create',):
+			return AutomatedExerciseAnswerInputSerializer
+		return super().get_serializer_class()
+
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
 

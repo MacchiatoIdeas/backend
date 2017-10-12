@@ -19,6 +19,18 @@ class AuthenticatedUserType(permissions.BasePermission):
 		# User must be type_user
 		return hasattr(request.user, self._type_attr)
 
+class AuthenticatedTeacherEdits(AuthenticatedUserType):
+	def __init__(self):
+		super(AuthenticatedTeacherEdits, self).__init__('teacher')
+
+	def has_permission(self, request, view):
+		# Anyone authenticated can create but just a teacher can edit.
+		if request.user.is_anonymous():
+			return False
+		if request.method in ('PUT',):
+			return hasattr(request.user, self._type_attr)
+		return True
+
 
 class AuthenticatedTeacher(AuthenticatedUserType):
 	def __init__(self):

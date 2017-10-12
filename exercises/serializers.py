@@ -1,3 +1,5 @@
+from rest_framework import serializers
+
 from users.serializers import *
 from .models import *
 
@@ -32,13 +34,20 @@ class AutomatedExerciseSerializer(serializers.ModelSerializer):
 		model = AutomatedExercise
 		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer', 'comments')
 
+class AutomatedExerciseAnswerInputSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = AutomatedExerciseAnswer
+		fields = ('id','exercise','answer')
+
+
 class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
 	user = SimpleUserSerializer(read_only=True)
 	score = serializers.ReadOnlyField(source="get_score")
+	exercise = AutomatedExerciseListSerializer(read_only=True)
 
 	class Meta:
 		model = AutomatedExerciseAnswer
-		fields = ('user','exercise','answer','score')
+		fields = ('id','user','exercise','answer','score','tscore')
 
 
 class AutomatedExerciseSelectSerializer(serializers.ModelSerializer):

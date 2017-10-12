@@ -210,9 +210,11 @@ class AutomatedExerciseAnswer(models.Model):
 	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 	# | The answered exercise:
 	exercise = models.ForeignKey(AutomatedExercise, on_delete=models.CASCADE)
-	#  | The given answer:
+	# | The given answer:
 	answer = models.CharField(validators=[validate_answer],
 	                          max_length=MAX_ANSWER_LENGTH)
+	# | Score gave by a teacher:
+	tscore = models.FloatField(blank=True,null=True)
 
 	def get_score(self):
 		# TODO: Think if two matchs pointing to the same index give score.
@@ -246,8 +248,8 @@ class AutomatedExerciseAnswer(models.Model):
 	# related CourseLink, check what happens when there are two,
 	# Use time semantics OR add nullable courselink FK.
 
-	class Meta:
-		unique_together = ('user','exercise')
+	# class Meta:
+	# 	unique_together = ('user','exercise')
 
 
 class ExerciseComment(models.Model):
