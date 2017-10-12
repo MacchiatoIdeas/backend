@@ -1,7 +1,6 @@
 from users.serializers import *
 from .models import *
 
-
 class AutomatedExerciseListSerializer(serializers.ModelSerializer):
 	author = TeacherSerializer(read_only=True)
 
