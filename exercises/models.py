@@ -155,18 +155,18 @@ def check_right_answer_right(content, right_answer):
 			return False
 		# Check if one match is invalid:
 		are_bad = [x < 0 or x >= len(exerc['sideB'])
-				   for x in ransw["matchs"]]
+		           for x in ransw["matchs"]]
 		if any(are_bad):
 			return False
 		# Check if there are an incorrect number of matchs:
 		if len(ransw["matchs"]) != len(exerc["sideA"]):
 			return False
 	elif ransw["schema"] == "completion":
-		slots = len(exerc["text"].split("??"))-1
+		slots = len(exerc["text"].split("??")) - 1
 		if slots != len(ransw["words"]):
 			return False
 	elif ransw["schema"] == "trueorfalse":
-		if len(exerc["sentences"])!=len(ransw["choices"]):
+		if len(exerc["sentences"]) != len(ransw["choices"]):
 			return False
 	return True
 
@@ -175,7 +175,7 @@ class AutomatedExercise(models.Model):
 	"""
 	An exercise that can come in many formats and can be automatically evaluated.
 	"""
-	difficulty = models.IntegerField(default=1,validators=[MinValueValidator(1),MaxValueValidator(4)])
+	difficulty = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(4)])
 	# | Author owner of this exercise:
 	author = models.ForeignKey("users.Teacher", related_name='exercises', on_delete=models.CASCADE)
 	# | Unit of the exercise:
@@ -187,7 +187,7 @@ class AutomatedExercise(models.Model):
 	content = models.TextField(validators=[validate_exercise])
 	# | Exercise's right answer:
 	right_answer = models.CharField(validators=[validate_answer],
-									max_length=MAX_ANSWER_LENGTH)
+	                                max_length=MAX_ANSWER_LENGTH)
 
 	def __str__(self):
 		return "id: {0}, schema: {1}".format(self.id, self.schema())
@@ -201,7 +201,7 @@ class AutomatedExercise(models.Model):
 
 	def make_primitive(self):
 		return primitivize_string(" ".join([
-			str(self.author),self.briefing]))
+			str(self.author), self.briefing]))
 
 
 class AutomatedExerciseAnswer(models.Model):
@@ -211,7 +211,8 @@ class AutomatedExerciseAnswer(models.Model):
 	exercise = models.ForeignKey(AutomatedExercise, on_delete=models.CASCADE)
 	#  | The given answer:
 	answer = models.CharField(validators=[validate_answer],
-							  max_length=MAX_ANSWER_LENGTH)
+	                          max_length=MAX_ANSWER_LENGTH)
+
 	def get_score(self):
 		# TODO: Think if two matchs pointing to the same index give score.
 		answ = json.loads(self.answer)
@@ -239,3 +240,25 @@ class AutomatedExerciseAnswer(models.Model):
 			for i in range(ml):
 				score += float(ransw["choices"][i] == answ["choices"][i])
 			return score / len(ransw["choices"])
+
+
+class ExerciseComment(models.Model):
+	"""
+    Comment on a exercise.
+    """
+
+	# user who wrote the comment
+	user = models.ForeignKey('auth.User',
+	                         related_name='exercise_comments',
+	                         on_delete=models.CASCADE)
+
+	# exercise related
+	exercise = models.ForeignKey(AutomatedExercise,
+	                             related_name='comments',
+	                             on_delete=models.CASCADE)
+
+	# text of this comment
+	text = models.TextField()
+
+	def __str__(self):
+		return self.text

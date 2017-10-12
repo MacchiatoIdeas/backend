@@ -5,7 +5,6 @@ from users.models import Course
 
 from primitivizer import primitivize_string
 
-
 def generate_thumbnail_path(instance, filename):
     return 'images/field_thumbnail/{0}.{1}'.format(instance.name,
                                                    splitext(filename)[1])

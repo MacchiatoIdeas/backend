@@ -29,3 +29,19 @@ class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = AutomatedExerciseAnswer
 		fields = ('user','exercise','answer','score')
+
+
+class AutomatedExerciseSelectSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = AutomatedExercise
+		fields = ('id')
+
+
+class ExerciseCommentSerializer(serializers.ModelSerializer):
+	user = GenericUserSerializer(read_only=True)
+	#exercise = AutomatedExerciseSerializer(read_only=True)
+	#exercise_id = serializers.IntegerField(write_only=True)
+
+	class Meta:
+		model = ExerciseComment
+		fields = '__all__'
