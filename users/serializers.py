@@ -6,7 +6,7 @@ from material.models import Guide, GuideItem, Content, AutomatedExercise, Subjec
 from exercises.models import check_right_answer_right
 
 
-class GuideAutomatedExerciseSerializer(serializers.ModelSerializer):
+class UserAutomatedExerciseSerializer(serializers.ModelSerializer):
 	def validate(self, data):
 		if not check_right_answer_right(data['content'], data['right_answer']):
 			raise serializers.ValidationError("right_answer invalid with the content!")
@@ -41,9 +41,9 @@ class UserGuideItemSerializer(serializers.ModelSerializer):
 
 	def get_item(self, gitem):
 		if gitem.content is not None:
-			return UserGuideItemSerializer(instance=gitem.content).data
+			return UserContentGuideSerializer(instance=gitem.content).data
 		elif gitem.exercise is not None:
-			return GuideAutomatedExerciseSerializer(instance=gitem.exercise).data
+			return UserAutomatedExerciseSerializer(instance=gitem.exercise).data
 		else:
 			return None
 
@@ -68,7 +68,7 @@ class GenericUserSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = User
-		fields = ('id', 'username', 'first_name', 'last_name', 'email')
+		fields = ('id', 'username', 'first_name', 'last_name', 'email', 'guides')
 		read_only_fields = ('username', 'first_name', 'last_name', 'email')
 
 
