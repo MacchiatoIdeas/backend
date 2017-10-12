@@ -126,7 +126,7 @@ class GuideItemSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = GuideItem
-		fields = ('type', 'item')
+		fields = ('id','type', 'item')
 
 	def get_type(self, gitem):
 		if gitem.content is not None:
@@ -155,7 +155,7 @@ class GuideItemInputSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = GuideItem
-		fields = ('guide','content','exercise','order')
+		fields = ('id','guide','content','exercise','order')
 
 class GuideSerializer(serializers.ModelSerializer):
 	user = GenericUserSerializer(read_only=True)
