@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'users',
     'material',
     'exercises',
+    'courses',
     'corsheaders',
     'oauth2_provider',
 ]

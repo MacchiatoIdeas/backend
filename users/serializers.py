@@ -1,7 +1,8 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
-from .models import Teacher,Course,CourseLink
+from .models import Teacher
+from courses.models import Course,CourseLink
 from material.models import Guide, GuideItem, Content, AutomatedExercise, Subject
 from exercises.models import check_right_answer_right
 
@@ -84,18 +85,3 @@ class TeacherSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Teacher
 		fields = ('id', 'first_name', 'last_name')
-
-
-class CourseSerializer(serializers.ModelSerializer):
-	teacher = TeacherSerializer(read_only=True)
-
-	class Meta:
-		model = Course
-		fields = ('name','teacher', 'participants')
-
-class CourseLinkInputSerializer(serializers.ModelSerializer):
-	course = CourseSerializer()
-
-	class Meta:
-		model = CourseLink
-		fields = ('course','guide')

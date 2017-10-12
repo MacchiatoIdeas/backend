@@ -1,7 +1,7 @@
 from django.db import models
 from os.path import splitext
 from exercises.models import AutomatedExercise
-from users.models import Course
+from courses.models import Course
 from django.utils import timezone
 
 from primitivizer import primitivize_string
