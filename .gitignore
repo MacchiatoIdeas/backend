@@ -4,4 +4,5 @@ venv/
 *.sqlite
 *.sqlite3
 *.bak
+media
 
