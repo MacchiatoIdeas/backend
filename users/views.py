@@ -1,11 +1,15 @@
-from django.contrib.auth.models import User, Group
-from rest_framework import mixins
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
 from .serializers import *
-from .permissions import AuthenticatedTeacher,IsMemberOfCourse
-from .models import *
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+
+class GetMe(APIView):
+	def get(self, request):
+		return Response({'id': request.user.id})
 
 
 class UserViewSet(ModelViewSet):

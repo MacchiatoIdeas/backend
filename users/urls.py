@@ -6,5 +6,6 @@ router = DefaultRouter()
 router.register(r'', views.UserViewSet)
 
 urlpatterns = [
+    url(r'^me/', views.GetMe.as_view()),
     url(r'^', include(router.urls)),
 ]
