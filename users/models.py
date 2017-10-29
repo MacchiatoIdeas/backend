@@ -15,3 +15,10 @@ class AppuntaAdmin(models.Model):
     user = models.OneToOneField("auth.User",
                                 on_delete=models.CASCADE,
                                 related_name='appunta_admin')
+
+
+class AvatarLink(models.Model):
+    user = models.OneToOneField("auth.User",
+                                on_delete=models.CASCADE,
+                                related_name='avatar_link')
+    avatar = models.ImageField(null=True)
