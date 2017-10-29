@@ -169,5 +169,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticroot')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+FIXTURE_DIRS = [
+    os.path.join(BASE_DIR, "fixtures"),
+]
+
 # Allow all origins
 CORS_ORIGIN_ALLOW_ALL = True

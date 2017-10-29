@@ -1,0 +1,301 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$vpAu44inTNkl$V0HQrUZSPNegTWCPYrIYdKTlRnavhIKQHbTvu6baPvE=",
+      "username": "admin",
+      "first_name": "Alberto",
+      "last_name": "Zúñiga",
+      "email": "",
+      "is_superuser": "True",
+      "is_staff": "True",
+      "is_active": "True"
+    }
+  },
+
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$SGPnCh52sQob$sRM7TucY30tlHfw89yb5BbjfNgumxfRDxmoMgiSeaUg=",
+      "username": "jperez",
+      "first_name": "Juan",
+      "last_name": "Pérez",
+      "email": "",
+      "is_superuser": "False",
+      "is_staff": "False",
+      "is_active": "True"
+    }
+  },
+
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$CeWhAyJPABoT$II1n86iJoj2y2+gTS+dS23lljidoBe8MODO+cBC4DwQ=",
+      "username": "profesor",
+      "first_name": "Profesor",
+      "last_name": "",
+      "email": "",
+      "is_superuser": "False",
+      "is_staff": "False",
+      "is_active": "True"
+    }
+  },
+
+  {
+    "model": "users.appuntaadmin",
+    "pk": 1,
+    "fields": {
+      "user_id": 1
+    }
+  },
+
+  {
+    "model": "users.appuntaadmin",
+    "pk": 2,
+    "fields": {
+      "user_id": 2
+    }
+  },
+
+  {
+    "model": "users.teacher",
+    "pk": 1,
+    "fields": {
+      "user_id": 1
+    }
+  },
+
+  {
+    "model": "users.teacher",
+    "pk": 2,
+    "fields": {
+      "user_id": 2
+    }
+  },
+
+  {
+    "model": "users.teacher",
+    "pk": 2,
+    "fields": {
+      "user_id": 2
+    }
+  },
+
+  {
+    "model": "material.subject",
+    "pk": 1,
+    "fields": {
+      "name": "Matemáticas",
+      "color": "#0000ff",
+      "thumbnail": "http://static.macchiato.cl/images/mathematics.jpg"
+    }
+  },
+
+  {
+    "model": "material.subject",
+    "pk": 2,
+    "fields": {
+      "name": "Lenguaje",
+      "color": "#ff0000",
+      "thumbnail": "http://static.macchiato.cl/images/language.jpg"
+    }
+  },
+
+  {
+    "model": "material.unit",
+    "pk": 1,
+    "fields": {
+      "subject": 1,
+      "name": "Números",
+      "academic_level": 2
+    }
+  },
+
+  {
+    "model": "material.unit",
+    "pk": 2,
+    "fields": {
+      "subject": 1,
+      "name": "Geometría",
+      "academic_level": 2
+    }
+  },
+
+  {
+    "model": "material.content",
+    "pk": 1,
+    "fields": {
+      "unit": 1,
+      "subtitle": "Los números naturales",
+      "summary": "Con los números naturales contamos los elementos de un conjunto. O bien expresamos la posición u orden que ocupa un elemento en un conjunto.",
+      "text": "Con los números naturales contamos los elementos de un conjunto (número cardinal). O bien expresamos la posición u orden que ocupa un elemento en un conjunto (ordinal).\r",
+      "html_text": "Con los números naturales contamos los elementos de un conjunto (número cardinal). O bien expresamos la posición u orden que ocupa un elemento en un conjunto (ordinal).\r\n\r\nEl conjunto de los números naturales está formado por:\r\n\r\nN = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9,...}\r\n\r\nRecta\r\n\r\nLa suma y el producto de dos números naturales es otro número natural.\r\n\r\nLa diferencia de dos números naturales no siempre es un número natural, sólo ocurre cuando el minuendo es mayor que sustraendo.\r\n\r\nEjemplos: \r\n5 − 3 Pertenece Conjunto de los números naturales\r\n\r\n3 − 5 No pertenece Conjunto de los números naturales\r\n\r\nEl cociente de dos números naturales no siempre es un número natural, sólo ocurre cuando la división es exacta.\r\n\r\nEjemplos: \r\n6 : 2 Pertenece Conjunto de los números naturales\r\n\r\n2 : 6 No pertenece Conjunto de los números naturales\r\n\r\nPodemos utilizar potencias, ya que es la forma abreviada de escribir un producto formado por varios factores iguales.\r\n\r\nLa raíz de un número natural no siempre es un número natural, sólo ocurre cuando la raíz es exacta.",
+      "author": 1,
+      "primitive": "abrebiada alberto barioz bien dibizion diferenzia elemento elementoz exacta exprezamoz ezcribir ezta factorez forma formado igualez kardinal konjunto konjunto kontamoz koziente kuando mayor minuendo natural naturalez nejemploz npodemoz nrecta numero numeroz okupa okure orden ordinal otro perteneze perteneze potenziaz pozizion producto raiz utilizar ziempre zolo zuma zuniga zuztraendo"
+    }
+  },
+
+  {
+    "model": "material.content",
+    "pk": 2,
+    "fields": {
+      "unit": 2,
+      "subtitle": "Teorema de Pitágoras",
+      "summary": "En un triángulo rectángulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los otros dos lados",
+      "text": "Teorema de Pitágoras\r\nHace años, un hombre llamado Pitágoras descubrió un hecho asombroso sobre triángulos:\r\n\r\nSi el triángulo tiene un ángulo recto (90°)...\r\n\r\\",
+      "html_text": "Teorema de Pitágoras\r\nHace años, un hombre llamado Pitágoras descubrió un hecho asombroso sobre triángulos:\r\n\r\nSi el triángulo tiene un ángulo recto (90°)...\r\n\r\n... y pones un cuadrado sobre cada uno de sus lados, entonces...\r\n\r\n... ¡el cuadrado más grande tiene exactamente la misma área que los otros dos cuadrados juntos!\r\n \r\nEl lado más largo del triángulo se llama \\\"hipotenusa\\\", así que la definición formal es:\r\n\r\nEn un triángulo rectángulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los otros dos lados (llamamos \\\"triángulo rectángulo\\\" a un triángulo con un ángulo recto)\r\n\r\n\\t\r\nEntonces, el cuadrado de a (a²) más el cuadrado de b (b²) es igual al cuadrado de c (c²):\r\n\r\na2 + b2 = c2\r\n\r\n¿Seguro... ?\r\nVeamos si funciona con un ejemplo. Un triángulo de lados \\\"3,4,5\\\" tiene un ángulo recto, así que la fórmula debería funcionar.\r\n\r\nTeorema de Pitágoras\\t\r\nVeamos si las áreas son la misma:\r\n32 + 42 = 52\r\n\r\nCalculando obtenemos:\r\n9 + 16 = 25\r\n\r\n¡sí, funciona!\r\n¿Por qué es útil esto?\r\nSi sabemos las longitudes de dos lados de un triángulo con un ángulo recto, el Teorema de Pitágoras nos ayuda a encontrar la longitud del tercer lado. (¡Pero recuerda que sólo funciona en triángulos rectángulos!)",
+      "author": 1,
+      "primitive": "alberto angulo anoz area areaz ayuda azombrozo deberia definizion dezkubrio eco ejemplo enkontrar entonzez exactamente ezto formal formula funziona funzionar grande igual ipotenuza juntoz kada kuadrado kuadradoz lado ladoz largo lonjitud lonjitudez mizma naze nbeamoz nentonzez nkalkulando nteorema obtenemoz ombre otroz pero pitagoraz ponez rectangulo rectanguloz recto rekuerda teorema terzer tiene triangulo trianguloz util yama yamado yamamoz zabemoz zeguro zobre zolo zuma zuniga"
+    }
+  },
+
+  {
+    "model": "material.content",
+    "pk": 3,
+    "fields": {
+      "unit": 2,
+      "subtitle": "Teorema de Pitágoras",
+      "summary": "En un triángulo rectángulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los otros dos lados",
+      "text": "Teorema de Pitágoras\r\nHace años, un hombre llamado Pitágoras descubrió un hecho asombroso sobre triángulos:\r\n\r\nSi el triángulo tiene un ángulo recto (90°)...\r\n\r\\",
+      "html_text": "Teorema de Pitágoras\r\nHace años, un hombre llamado Pitágoras descubrió un hecho asombroso sobre triángulos:\r\n\r\nSi el triángulo tiene un ángulo recto (90°)...\r\n\r\n... y pones un cuadrado sobre cada uno de sus lados, entonces...\r\n\r\n... ¡el cuadrado más grande tiene exactamente la misma área que los otros dos cuadrados juntos!\r\n \r\nEl lado más largo del triángulo se llama \\\"hipotenusa\\\", así que la definición formal es:\r\n\r\nEn un triángulo rectángulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los otros dos lados (llamamos \\\"triángulo rectángulo\\\" a un triángulo con un ángulo recto)\r\n\r\n\\t\r\nEntonces, el cuadrado de a (a²) más el cuadrado de b (b²) es igual al cuadrado de c (c²):\r\n\r\na2 + b2 = c2\r\n\r\n¿Seguro... ?\r\nVeamos si funciona con un ejemplo. Un triángulo de lados \\\"3,4,5\\\" tiene un ángulo recto, así que la fórmula debería funcionar.\r\n\r\nTeorema de Pitágoras\\t\r\nVeamos si las áreas son la misma:\r\n32 + 42 = 52\r\n\r\nCalculando obtenemos:\r\n9 + 16 = 25\r\n\r\n¡sí, funciona!\r\n¿Por qué es útil esto?\r\nSi sabemos las longitudes de dos lados de un triángulo con un ángulo recto, el Teorema de Pitágoras nos ayuda a encontrar la longitud del tercer lado. (¡Pero recuerda que sólo funciona en triángulos rectángulos!)",
+      "author": 1,
+      "primitive": "alberto angulo anoz area areaz ayuda azombrozo deberia definizion dezkubrio eco ejemplo enkontrar entonzez exactamente ezto formal formula funziona funzionar grande igual ipotenuza juntoz kada kuadrado kuadradoz lado ladoz largo lonjitud lonjitudez mizma naze nbeamoz nentonzez nkalkulando nteorema obtenemoz ombre otroz pero pitagoraz ponez rectangulo rectanguloz recto rekuerda teorema terzer tiene triangulo trianguloz util yama yamado yamamoz zabemoz zeguro zobre zolo zuma zuniga"
+    }
+  },
+
+  {
+    "model": "exercises.automatedexercise",
+    "pk": 1,
+    "fields": {
+      "difficulty": 2,
+      "author": 1,
+      "unit": 1,
+      "briefing": "Este ejercicio divide a estudiantes chilenos:\r\n6/2(1+2)\r\n¿Cuánto vale?",
+      "content": "{\"schema\":\"alternatives\",\"alts\":[\"1\",\"1.5\",\"9\",\"4\"]}",
+      "right_answer": "{\"schema\":\"alternatives\",\"answer\":2}",
+      "primitive": "alberto bale dibide ejerzizio ezte eztudiantez kuanto zilenoz zuniga"
+    }
+  },
+
+  {
+    "model": "exercises.automatedexercise",
+    "pk": 2,
+    "fields": {
+      "difficulty": 2,
+      "author": 1,
+      "unit": 2,
+      "briefing": "Une las fórmulas con las figuras geométricas que representan:",
+      "content": "{\"schema\":\"matching\",\"sideA\":[\"y = x^2\",\"y = x\",\"y = 1/x\"],\"sideB\":[\"Recta\",\"Círculo\",\"Parábola\",\"Hipérbola\",\"Cono\"]}",
+      "right_answer": "{\"schema\":\"matching\",\"matchs\":[2,0,3]}",
+      "primitive": "alberto figuraz formulaz jeometrikaz reprezentan zuniga"
+    }
+  },
+
+  {
+    "model": "exercises.automatedexercise",
+    "pk": 3,
+    "fields": {
+      "difficulty": 1,
+      "author": 1,
+      "unit": 2,
+      "briefing": "Si los lados de un cateto son 3 y 4 ¿Cuál es la hipotenusa?",
+      "content": "{\"schema\":\"alternatives\",\"alts\":[\"5^2\",\"5\",\"3.4\"]}",
+      "right_answer": "{\"schema\":\"alternatives\",\"answer\":0}",
+      "primitive": "alberto ipotenuza kateto kual ladoz zuniga"
+    }
+  },
+
+  {
+    "model": "material.guideitem",
+    "pk": 2,
+    "fields": {
+      "guide": 1,
+      "content": null,
+      "exercise": 1,
+      "order": 80
+    }
+  },
+
+  {
+    "model": "material.guideitem",
+    "pk": 3,
+    "fields": {
+      "guide": 2,
+      "content": null,
+      "exercise": 2,
+      "order": 46
+    }
+  },
+
+  {
+    "model": "material.guideitem",
+    "pk": 4,
+    "fields": {
+      "guide": 4,
+      "content": null,
+      "exercise": 1,
+      "order": 57
+    }
+  },
+
+  {
+    "model": "material.guide",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "title": "Guía de Ecuaciones",
+      "brief": "Guía de ecuaciones de todo tipo",
+      "subject": 1,
+      "primitive": "admin ekuazionez ekuazionez guia tipo todo"
+    }
+  },
+
+  {
+    "model": "material.guide",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "title": "Mi primera guía",
+      "brief": "Descripción de mi primera guía",
+      "subject": 1,
+      "primitive": "admin dezcripzion guia primera"
+    }
+  },
+
+  {
+    "model": "material.guide",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "title": "Titulo",
+      "brief": "Descripcion",
+      "subject": 1,
+      "primitive": "admin dezcripzion titulo"
+    }
+  },
+
+  {
+    "model": "material.comment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "text": "Muchas gracias! Una definición precisa y clara",
+      "date": "2017-10-12T07:25:19.335905Z",
+      "content": 1
+    }
+  },
+
+  {
+    "model": "exercises.exercisecomment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "text": "Hola",
+      "date": "2017-10-12T14:02:56.614169Z",
+      "exercise": 1
+    }
+  }
+]
