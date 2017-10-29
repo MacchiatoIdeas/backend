@@ -9,7 +9,7 @@ router.register(r'subjects', views.SubjectViewSet)
 router.register(r'units', views.UnitViewSet)
 router.register(r'comments', views.CommentViewSet)
 router.register(r'feedback-comments', views.FeedbackCommentViewSet)
-router.register(r'guides', views.GuideViewSet)
+router.register(r'guide', views.GuideViewSet)
 router.register(r'guideitems', views.GuideItemViewSet)
 
 

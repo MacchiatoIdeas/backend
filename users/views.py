@@ -7,9 +7,12 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 
+from django.core import serializers
+
 class GetMe(APIView):
 	def get(self, request):
-		return Response({'id': request.user.id})
+		serializer = GenericUserSerializer(request.user)
+		return Response(serializer.data)
 
 
 class UserViewSet(ModelViewSet):
