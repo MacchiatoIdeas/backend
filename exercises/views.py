@@ -1,14 +1,17 @@
+import random
+
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from django.shortcuts import get_object_or_404
 
-from material.models import Subject
+from material.models import Subject,Unit
 from exercises.models import AutomatedExercise,AutomatedExerciseAnswer
 
 from users.permissions import *
 from .serializers import *
+
 
 import datetime
 
@@ -24,13 +27,15 @@ def autoexercise_recommended(request,subject):
 	n_answs = answs.count()
 	#
 	subj = get_object_or_404(Subject,name=subject)
-	conts = subj.contents.all()
+	units = Unit.objects.filter(subject=subj)
 	#
-	contscores = []
-	for cont in conts:
+	unitscores = []
+	for uni in units:
 		#
-		contansws = answs.filter(exercise__content=cont)
-		for answ in contansws.all():
+		deltats = []
+		scores = []
+		unitansws = answs.filter(exercise__unit=uni)
+		for answ in unitansws.all():
 			deltats.append((datetime.datetime.now()-answ.moment).seconds)
 			scores.append(answ.get_score() if answ.tscore is None else answ.tscore)
 		deltats = np.array([2592000.0*5]+deltats)
@@ -41,10 +46,26 @@ def autoexercise_recommended(request,subject):
 		# Get the mean time proximity
 		proximal = np.mean(np.exp(-deltats/2592000.0))
 		#
-		contscores.append(proximal*(0.35+0.65*error))
+		unitscores.append(proximal*(0.35+0.65*error))
 	# Start choosing exercises randomly:
-	print(zip(conts,contscores))
-
+	returned = []
+	exercises = [c.exercises for c in units]
+	number = int(request.GET.get("n","20"))
+	while len(exercises)>0 and len(returned)<number:
+		ko = np.sum(unitscores)*np.random.random()
+		for indx in range(len(exercises)):
+			ko -= unitscores[indx]
+			if ko<=0: break
+		if exercises[indx].count() == 0:
+			del exercises[indx]
+			del unitscores[indx]
+			continue
+		random_pk = random.choice([exe.pk for exe in exercises[indx].all()])
+		exercise = exercises[indx].get(pk=random_pk)
+		exercises[indx] = exercises[indx].exclude(pk=random_pk)
+		returned.append(exercise)
+	serializer = AutomatedExerciseListSerializer(returned,many=True)
+	return Response(serializer.data)
 	# serializer = SnippetSerializer(snippets, many=True)
     # return Response(serializer.data)
 
