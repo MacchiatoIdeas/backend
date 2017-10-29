@@ -7,8 +7,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 
-from django.core import serializers
-
 class GetMe(APIView):
 	def get(self, request):
 		serializer = GenericUserSerializer(request.user)

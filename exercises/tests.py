@@ -2,7 +2,7 @@ from django.test import TestCase
 
 from .models import *
 from django.contrib.auth.models import User
-from users.models import Teacher
+from users.models import AppuntaTeacher
 
 # Program testing can be used to show the presence of bugs, but never to show their absence! - Edsger Dijkstra <(^_^)>
 
@@ -13,7 +13,7 @@ class QuestionModelTests(TestCase):
         self.user.password = "strong_password"
         self.user.email = "example@mail.com"
         self.user.save()
-        self.teacher = Teacher()
+        self.teacher = AppuntaTeacher
         self.teacher.user = self.user
         self.teacher.save()
 

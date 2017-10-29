@@ -178,7 +178,7 @@ class AutomatedExercise(models.Model):
 	"""
 	difficulty = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(4)])
 	# | Author owner of this exercise:
-	author = models.ForeignKey("users.Teacher", related_name='exercises', on_delete=models.CASCADE)
+	author = models.ForeignKey("users.AppuntaTeacher", related_name='exercises', on_delete=models.CASCADE)
 	# | Unit of the exercise:
 	unit = models.ForeignKey("material.Unit", related_name='exercises', on_delete=models.CASCADE)
 

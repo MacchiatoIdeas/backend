@@ -2,5 +2,5 @@ from django.contrib import admin
 from .models import *
 
 
-admin.site.register(Teacher)
-admin.site.register(AppuntaAdmin)
+admin.site.register(AppuntaTeacher)
+admin.site.register(AppuntaStudent)

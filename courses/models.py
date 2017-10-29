@@ -1,12 +1,12 @@
 from django.db import models
 
-from users.models import Teacher
+from users.models import AppuntaTeacher
 from exercises.models import AutomatedExerciseAnswer
 
 class Course(models.Model):
 	name = models.TextField(max_length=128)
-	teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-	participants = models.ManyToManyField("auth.User")
+	teacher = models.ForeignKey(AppuntaTeacher, on_delete=models.CASCADE)
+	participants = models.ManyToManyField("users.AppuntaStudent")
 
 	def __str(self):
 		return self.name

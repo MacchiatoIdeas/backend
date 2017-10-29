@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
-from .models import Teacher
+from .models import AppuntaTeacher
 from material.models import Guide, GuideItem, Content, Subject
 from exercises.models import check_right_answer_right, AutomatedExercise
 
@@ -24,5 +24,5 @@ class TeacherSerializer(serializers.ModelSerializer):
 	last_name = serializers.ReadOnlyField(source='user.last_name')
 
 	class Meta:
-		model = Teacher
+		model = AppuntaTeacher
 		fields = ('id', 'first_name', 'last_name')
