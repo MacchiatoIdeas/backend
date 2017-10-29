@@ -207,7 +207,7 @@ class AutomatedExercise(models.Model):
 
 class AutomatedExerciseAnswer(models.Model):
 	# | The user that answered:
-	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	user = models.ForeignKey('auth.User', on_delete=models.CASCADE,related_name='answers')
 	# | The answered exercise:
 	exercise = models.ForeignKey(AutomatedExercise, on_delete=models.CASCADE)
 	# | The given answer:
@@ -215,6 +215,8 @@ class AutomatedExerciseAnswer(models.Model):
 	                          max_length=MAX_ANSWER_LENGTH)
 	# | Score gave by a teacher:
 	tscore = models.FloatField(blank=True,null=True)
+	# | When the exercise was answered
+	moment = models.DateTimeField(auto_now_add=True)
 
 	def get_score(self):
 		# TODO: Think if two matchs pointing to the same index give score.
