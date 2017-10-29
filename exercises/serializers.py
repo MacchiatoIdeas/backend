@@ -4,7 +4,7 @@ from users.serializers import *
 from .models import *
 
 class ExerciseCommentSerializer(serializers.ModelSerializer):
-	user = SimpleUserSerializer(read_only=True)
+	user = GenericUserSerializer(read_only=True)
 	#exercise = AutomatedExerciseSerializer(read_only=True)
 	#exercise_id = serializers.IntegerField(write_only=True)
 
@@ -41,7 +41,7 @@ class AutomatedExerciseAnswerInputSerializer(serializers.ModelSerializer):
 
 
 class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
-	user = SimpleUserSerializer(read_only=True)
+	user = GenericUserSerializer(read_only=True)
 	score = serializers.ReadOnlyField(source="get_score")
 	exercise = AutomatedExerciseListSerializer(read_only=True)
 

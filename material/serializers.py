@@ -16,7 +16,7 @@ class ContentListSerializer(serializers.ModelSerializer):
 
 
 class GuideListSerializer(serializers.ModelSerializer):
-	user = SimpleUserSerializer(read_only=True)
+	user = GenericUserSerializer(read_only=True)
 
 	class Meta:
 		model = Guide
@@ -75,7 +75,7 @@ class SubjectRetrieveSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
-	user = SimpleUserSerializer(read_only=True)
+	user = GenericUserSerializer(read_only=True)
 
 	# TODO: Should the content be retrieved?
 	# content = ContentSerializer()
@@ -105,7 +105,7 @@ class ContentRetrieveSerializer(serializers.ModelSerializer):
 
 
 class FeedbackCommentSerializer(serializers.ModelSerializer):
-	user = SimpleUserSerializer(read_only=True)
+	user = GenericUserSerializer(read_only=True)
 
 	class Meta:
 		model = FeedbackComment
@@ -158,7 +158,7 @@ class GuideItemInputSerializer(serializers.ModelSerializer):
 		fields = ('id','guide','content','exercise','order')
 
 class GuideSerializer(serializers.ModelSerializer):
-	user = SimpleUserSerializer(read_only=True)
+	user = GenericUserSerializer(read_only=True)
 	items = GuideItemSerializer(many=True, read_only=True)
 	subject = SubjectSerializer(read_only=True)
 
@@ -167,7 +167,7 @@ class GuideSerializer(serializers.ModelSerializer):
 		fields = ('id', 'user', 'title', 'brief', 'subject', 'items')
 
 class GuideInputSerializer(serializers.ModelSerializer):
-	user = SimpleUserSerializer(read_only=True)
+	user = GenericUserSerializer(read_only=True)
 
 	class Meta:
 		model = Guide

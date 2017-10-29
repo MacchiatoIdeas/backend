@@ -120,6 +120,9 @@ class GuideViewSet(viewsets.ModelViewSet):
 
 		byuser = self.request.query_params.get('byuser', None)
 		if byuser is not None:
-			query = query.filter(user_id__exact=byuser)
+			if byuser == 'me':
+				query = query.filter(user=self.request.user)
+			else:
+				query = query.filter(user_id__exact=byuser)
 
 		return query
