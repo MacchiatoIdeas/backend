@@ -32,7 +32,7 @@ class AutomatedExerciseSerializer(serializers.ModelSerializer):
 	class Meta:
 		many = True
 		model = AutomatedExercise
-		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer', 'comments')
+		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer', 'comments','text')
 
 class AutomatedExerciseAnswerInputSerializer(serializers.ModelSerializer):
 	class Meta:

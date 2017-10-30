@@ -9,6 +9,8 @@ import jsonschema
 
 from primitivizer import primitivize_string
 
+from material.models import validate_entries
+
 MAX_ANSWER_LENGTH = 255
 
 exercise_schema = {
@@ -184,6 +186,10 @@ class AutomatedExercise(models.Model):
 
 	# | Briefing of the exercise:
 	briefing = models.TextField(blank=True, default="")
+
+	# | Text of the exercise:
+	text = models.TextField(validators=[validate_exercise])
+
 	# | Content of the exercise:
 	content = models.TextField(validators=[validate_exercise])
 	# | Exercise's right answer:
