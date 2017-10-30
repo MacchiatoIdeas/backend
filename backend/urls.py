@@ -2,10 +2,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 
-from users import views as uviews
-from exercises import views as eviews
-
-# Set routes
+from django.conf.urls.static import static
+from django.conf import settings
 
 #TODO: delete not useful router?
 router = DefaultRouter()
@@ -19,7 +17,8 @@ urlpatterns = [
     url(r'^gallery/', include('gallery.urls', namespace='gallery')),
     url(r'^', include(router.urls)),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-]
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Add authentication for the Browsable API
 urlpatterns += [

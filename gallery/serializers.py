@@ -5,3 +5,4 @@ class GallerySerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Gallery
 		fields = ('id', 'image')
+
