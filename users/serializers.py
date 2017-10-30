@@ -19,57 +19,94 @@ class GroupSerializer(serializers.ModelSerializer):
 class TeacherSerializer(serializers.ModelSerializer):
 	first_name = serializers.ReadOnlyField(source='user.first_name')
 	last_name = serializers.ReadOnlyField(source='user.last_name')
+	email = serializers.ReadOnlyField(source='user.email')
 
 	class Meta:
 		model = AppuntaTeacher
-		fields = ('id', 'first_name', 'last_name')
+		fields = ('id', 'first_name', 'last_name', 'email')
 
 
 class AppuntaTeacherSerializer(serializers.ModelSerializer):
-	first_name = serializers.ReadOnlyField(source='user.first_name')
-	last_name = serializers.ReadOnlyField(source='user.last_name')
+	user = GenericUserSerializer(read_only=True)
 	user_type = serializers.SerializerMethodField()
 
 	class Meta:
 		model = AppuntaTeacher
-		fields = ('id', 'first_name',
-		          'last_name', 'institution', 'rut', 'bio', 'user_type')
+		fields = ('id', 'user', 'institution', 'rut', 'bio', 'user_type')
 
 	def get_user_type(self, _):
 		return 'teacher'
 
 
 class AppuntaStudentSerializer(serializers.ModelSerializer):
-	first_name = serializers.ReadOnlyField(source='user.first_name')
-	last_name = serializers.ReadOnlyField(source='user.last_name')
+	user = GenericUserSerializer(read_only=True)
 	user_type = serializers.SerializerMethodField()
 
 	class Meta:
 		model = AppuntaStudent
-		fields = ('id', 'first_name', 'last_name', 'institution', 'user_type')
+		fields = ('id', 'user', 'institution', 'user_type')
 
 	def get_user_type(self, _):
 		return 'student'
 
 
+class GenericUserRegisterSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = User
+		fields = ('first_name', 'last_name', 'password', 'email')
+		write_only_fields = ('first_name', 'last_name', 'password', 'email')
+
+	def create(self, validated_data):
+		validated_data['username'] = validated_data.get('email', None)
+		return super(GenericUserRegisterSerializer, self).create(validated_data)
+
+
+def create_user(validated_data):
+	user_data = {k: validated_data[k] for k in ('first_name', 'last_name', 'email')}
+	user_data['username'] = validated_data['email']
+	user = User.objects.create(**user_data)
+	user.set_password(validated_data['password'])
+	user.save()
+	return user
+
+
 class AppuntaTeacherRegisterSerializer(serializers.ModelSerializer):
-	first_name = serializers.CharField(source='user.first_name')
-	last_name = serializers.CharField(source='user.last_name')
-	email = serializers.CharField(source='user.email')
-	password = serializers.CharField(source='user.password', write_only=True)
+	user = GenericUserSerializer(read_only=True)
+	first_name = serializers.CharField(write_only=True)
+	last_name = serializers.CharField(write_only=True)
+	password = serializers.CharField(write_only=True)
+	email = serializers.CharField(write_only=True)
 
 	class Meta:
 		model = AppuntaTeacher
-		fields = ('id', 'first_name', 'last_name', 'password', 'email',
+		fields = ('id', 'user', 'first_name', 'last_name', 'password', 'email',
 		          'institution', 'birth_date', 'rut', 'bio')
-		write_only_fields = ('password',)
+		write_only_fields = ('institution', 'birth_date', 'rut', 'bio')
+		read_only_fields = ('id', 'user')
 
 	def create(self, validated_data):
-		if validated_data.get('password', None) == None:
-			raise AttributeError('Password cannot be null')
-
-		user = User.objects.create(**validated_data)
-		user.set_password(validated_data['password'])
-
-		teacher = AppuntaTeacher.objects.create(**validated_data, user=user)
+		user = create_user(validated_data)
+		teacher_data = {k: validated_data[k] for k in ('institution', 'birth_date', 'rut', 'bio')}
+		teacher = AppuntaTeacher.objects.create(**teacher_data, user=user)
 		return teacher
+
+
+class AppuntaStudentRegisterSerializer(serializers.ModelSerializer):
+	user = GenericUserSerializer(read_only=True)
+	first_name = serializers.CharField(write_only=True)
+	last_name = serializers.CharField(write_only=True)
+	password = serializers.CharField(write_only=True)
+	email = serializers.CharField(write_only=True)
+
+	class Meta:
+		model = AppuntaStudent
+		fields = ('id', 'user', 'first_name', 'last_name', 'password', 'email',
+		          'institution', 'birth_date')
+		write_only_fields = ('institution', 'birth_date')
+		read_only_fields = ('id', 'user')
+
+	def create(self, validated_data):
+		user = create_user(validated_data)
+		student_data = {k: validated_data[k] for k in ('institution', 'birth_date')}
+		student = AppuntaStudent.objects.create(**student_data, user=user)
+		return student
