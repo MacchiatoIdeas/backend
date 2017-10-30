@@ -105,6 +105,8 @@ class Content(models.Model):
     A Subject Matter is a submission of a teacher to a certain Unit.
     """
 
+    moment = models.DateTimeField(auto_now_add=True)
+
     # unit which will contain this subject matter.
     unit = models.ForeignKey(Unit, related_name='contents',
                              on_delete=models.CASCADE)
@@ -124,14 +126,18 @@ class Content(models.Model):
     def __str__(self):
         return str(self.unit)
 
-    def abstract(self):
+    def parse_text(self):
         parsed = parse_json(self.text, entries_schema)
         texts = ""
         for i in range(len(parsed)):
             if parsed[i]["schema"]=="text":
                 texts = texts+" "*(len(texts)>0)+parsed[i]["text"]
+        return texts
+
+    def abstract(self):
+        texts = self.parse_text()
         # FIXME: use a real approach.
-        return self.texts[0:170]
+        return texts[0:170]
 
     def serialize(self):
         pass
@@ -140,8 +146,9 @@ class Content(models.Model):
     primitive = models.TextField(blank=True)
 
     def make_primitive(self):
+        texts = self.parse_text()
         return primitivize_string(" ".join([
-            str(self.author),self.subtitle,self.summary,self.text]))
+            str(self.author),self.subtitle,self.summary,texts]))
 
 
 class Comment(models.Model):
@@ -196,6 +203,9 @@ class Guide(models.Model):
     """
     Ordered collection of content and material
     """
+
+    moment = models.DateTimeField(auto_now_add=True)
+
     # Flag to indicate if the guide is private or not.
     private = models.IntegerField(default=0)
 

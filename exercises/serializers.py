@@ -17,7 +17,7 @@ class AutomatedExerciseListSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = AutomatedExercise
-		fields = ('id', 'difficulty', 'author', 'briefing', 'schema')
+		fields = ('id', 'difficulty', 'author', 'briefing', 'schema', 'moment')
 
 
 class AutomatedExerciseSerializer(serializers.ModelSerializer):
@@ -32,7 +32,7 @@ class AutomatedExerciseSerializer(serializers.ModelSerializer):
 	class Meta:
 		many = True
 		model = AutomatedExercise
-		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer', 'comments','text')
+		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer', 'comments','text','moment')
 
 class AutomatedExerciseAnswerInputSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -47,7 +47,7 @@ class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = AutomatedExerciseAnswer
-		fields = ('id','user','exercise','answer','score','tscore')
+		fields = ('id','user','exercise','answer','score','tscore','moment')
 
 
 class AutomatedExerciseSelectSerializer(serializers.ModelSerializer):

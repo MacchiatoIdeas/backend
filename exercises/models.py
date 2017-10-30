@@ -170,6 +170,8 @@ class AutomatedExercise(models.Model):
 	# | Unit of the exercise:
 	unit = models.ForeignKey("material.Unit", related_name='exercises', on_delete=models.CASCADE)
 
+	moment = models.DateTimeField(auto_now_add=True)
+
 	# | Briefing of the exercise:
 	briefing = models.TextField(blank=True, default="")
 
