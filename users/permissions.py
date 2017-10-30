@@ -42,6 +42,17 @@ class AuthenticatedAppuntaAdmin(AuthenticatedUserType):
 		super(AuthenticatedAppuntaAdmin, self).__init__('appunta_admin')
 
 
+class AuthenticatedAppuntaUser(permissions.BasePermission):
+	def has_permission(self, request, view):
+		if request.method in permissions.SAFE_METHODS:
+			return True
+
+		if request.user.is_anonymous():
+			return False
+
+		return hasattr(request.user, 'teacher') or hasattr(request.user, 'student')
+
+
 class IsMemberOfCourse(permissions.BasePermission):
     # Only allow users related to the course.
     """
