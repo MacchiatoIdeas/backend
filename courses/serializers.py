@@ -4,7 +4,7 @@ from .models import *
 from exercises.models import AutomatedExerciseAnswer
 
 from users.serializers import TeacherSerializer
-from material.serializers import GuideSerializer
+from material.serializers import GuideSerializer,GuideListSerializer
 from exercises.serializers import AutomatedExerciseAnswerSerializer
 
 
@@ -15,6 +15,12 @@ class CourseSerializer(serializers.ModelSerializer):
 		model = Course
 		fields = ('name','teacher', 'participants')
 
+class CourseLinkOnCourseSerializer(serializers.ModelSerializer):
+	guides = GuideListSerializer(many=True)
+
+	class Meta:
+		model = CourseLink
+		fields = ('id','guide')
 
 class CourseLinkSerializer(serializers.ModelSerializer):
 	course = CourseSerializer()

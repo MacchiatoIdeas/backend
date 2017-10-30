@@ -66,12 +66,6 @@ def autoexercise_recommended(request,subject):
 		returned.append(exercise)
 	serializer = AutomatedExerciseListSerializer(returned,many=True)
 	return Response(serializer.data)
-	# serializer = SnippetSerializer(snippets, many=True)
-    # return Response(serializer.data)
-
-	#exercises = AutomatedExercise.objects.filter(content__subject=subj)
-	#answs = request.user.answers.count()
-
 
 
 

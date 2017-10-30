@@ -164,11 +164,11 @@ class GuideSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Guide
-		fields = ('id', 'user', 'title', 'brief', 'subject', 'items')
+		fields = ('id', 'user', 'title', 'brief', 'subject', 'items', 'private')
 
 class GuideInputSerializer(serializers.ModelSerializer):
 	user = GenericUserSerializer(read_only=True)
 
 	class Meta:
 		model = Guide
-		fields = ('id', 'user', 'title', 'brief', 'subject')
+		fields = ('id', 'user', 'title', 'brief', 'subject', 'private')

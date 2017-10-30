@@ -140,6 +140,8 @@ class Guide(models.Model):
     """
     Ordered collection of content and material
     """
+    # Flag to indicate if the guide is private or not.
+    private = models.IntegerField(default=0)
 
     # user who wrote the Guide
     user = models.ForeignKey("auth.User",
@@ -157,10 +159,6 @@ class Guide(models.Model):
 
     def __str__(self):
         return self.title
-
-    # If it belongs to a course or it is public:
-    course = models.ForeignKey("courses.Course", null=True, blank=True,
-            on_delete=models.CASCADE)
 
     # Primitivized version for searching
     primitive = models.TextField(blank=True)
