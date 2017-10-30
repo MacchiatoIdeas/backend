@@ -4,6 +4,42 @@ from django.utils import timezone
 
 from primitivizer import primitivize_string
 
+entries_schema = {
+    "type": "array",
+    "items": {
+    	"type": "object",
+    	"oneOf": [
+    		{
+    			"properties": {
+    				"schema": {"type": "string", "pattern": "text"},
+    				"text": {"type": "string"},
+    			},
+    			"required": ["schema", "answer"],
+    			"additionalProperties": False,
+    		}, {
+    			"properties": {
+    				"schema": {"type": "string", "pattern": "geogebra"},
+                    "image": {"type": "string"},
+                    "editable": {"type": "string"},
+    			},
+    			"required": ["schema", "matchs"],
+    			"additionalProperties": False,
+    		}, {
+    			"properties": {
+    				"schema": {"type": "string", "pattern": "image"},
+                    "url": {"type": "string"},
+    			},
+    			"required": ["schema", "words"],
+    			"additionalProperties": False,
+    		},
+    	],
+    },
+}
+
+def validate_entries(content):
+	parsed = parse_json(content, entries_schema)
+
+
 def generate_thumbnail_path(instance, filename):
     return 'images/field_thumbnail/{0}.{1}'.format(instance.name,
                                                    splitext(filename)[1])
@@ -66,17 +102,19 @@ class Content(models.Model):
     summary = models.CharField(max_length=150)
 
     # text of this content.
-    text = models.TextField()
-
-    # editable html text of this content.
-    html_text = models.TextField()
+    text = models.TextField(validators=[validate_entries])
 
     def __str__(self):
         return str(self.unit)
 
     def abstract(self):
+        parsed = parse_json(self.text, entries_schema)
+        texts = ""
+        for i in range(len(parsed)):
+            if parsed[i]["schema"]=="text":
+                texts = texts+" "*(len(texts)>0)+parsed[i]["text"]
         # FIXME: use a real approach.
-        return self.text[0:170]
+        return self.texts[0:170]
 
     def serialize(self):
         pass
@@ -117,7 +155,8 @@ class FeedbackComment(models.Model):
     """
 
     # user who wrote the comment.
-    user = models.ForeignKey("auth.User", related_name='feedback_comments', on_delete=models.CASCADE)
+    user = models.ForeignKey("auth.User", related_name='feedback_comments',
+        on_delete=models.CASCADE)
 
     # content related.
     content = models.ForeignKey(Content, related_name='feedback_comments',
