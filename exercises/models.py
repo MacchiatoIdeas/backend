@@ -9,7 +9,7 @@ import jsonschema
 
 from primitivizer import primitivize_string
 
-from material.models import validate_entries
+from material.models import parse_json,validate_entries
 
 MAX_ANSWER_LENGTH = 255
 
@@ -115,20 +115,6 @@ answer_schema = {
 # VALIDATORS:
 ################################################################
 
-def parse_json(content, schema):
-	# Try to parse JSON:
-	try:
-		parsed = json.loads(content)
-	except Exception as ex:
-		raise ValidationError("Invalid JSON!")
-	# Validate the JSON according to the schema:
-	try:
-		jsonschema.validate(parsed, schema)
-	except Exception as ex:
-		raise ValidationError(str(ex))
-	return parsed
-
-
 def validate_exercise(content):
 	parsed = parse_json(content, exercise_schema)
 
@@ -188,7 +174,7 @@ class AutomatedExercise(models.Model):
 	briefing = models.TextField(blank=True, default="")
 
 	# | Text of the exercise:
-	text = models.TextField(validators=[validate_exercise])
+	text = models.TextField(validators=[validate_entries])
 
 	# | Content of the exercise:
 	content = models.TextField(validators=[validate_exercise])

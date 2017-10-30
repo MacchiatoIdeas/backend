@@ -2,7 +2,24 @@ from django.db import models
 from os.path import splitext
 from django.utils import timezone
 
+from django.core.exceptions import ValidationError
 from primitivizer import primitivize_string
+
+import json
+import jsonschema
+
+def parse_json(content, schema):
+	# Try to parse JSON:
+	try:
+		parsed = json.loads(content)
+	except Exception as ex:
+		raise ValidationError("Invalid JSON!")
+	# Validate the JSON according to the schema:
+	try:
+		jsonschema.validate(parsed, schema)
+	except Exception as ex:
+		raise ValidationError(str(ex))
+	return parsed
 
 entries_schema = {
     "type": "array",
@@ -14,7 +31,7 @@ entries_schema = {
     				"schema": {"type": "string", "pattern": "text"},
     				"text": {"type": "string"},
     			},
-    			"required": ["schema", "answer"],
+    			"required": ["schema", "text"],
     			"additionalProperties": False,
     		}, {
     			"properties": {
@@ -22,14 +39,14 @@ entries_schema = {
                     "image": {"type": "string"},
                     "editable": {"type": "string"},
     			},
-    			"required": ["schema", "matchs"],
+    			"required": ["schema", "image", "editable"],
     			"additionalProperties": False,
     		}, {
     			"properties": {
     				"schema": {"type": "string", "pattern": "image"},
                     "url": {"type": "string"},
     			},
-    			"required": ["schema", "words"],
+    			"required": ["schema", "url"],
     			"additionalProperties": False,
     		},
     	],
