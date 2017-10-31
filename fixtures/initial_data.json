@@ -105,7 +105,7 @@
     "fields": {
         "id": 1,
         "unit": 1,
-        "subtitle": "Sucesores",
+        "title": "Sucesores",
         "summary": "Introducción a los sucesores de un número.",
         "text": "[{\"schema\":\"text\",\"text\":\"Los sucesores de un número son los número que vienen después en la recta numérica.\"}]",
         "author": 1,
