@@ -115,7 +115,7 @@ class Content(models.Model):
     author = models.ForeignKey("users.AppuntaTeacher", related_name='contents', on_delete=models.CASCADE)
 
     # keep it atomic
-    subtitle = models.CharField(max_length=150)
+    title = models.CharField(max_length=150)
 
     # summary of content
     summary = models.CharField(max_length=150)

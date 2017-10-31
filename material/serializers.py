@@ -12,7 +12,7 @@ class ContentListSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Content
-		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'author','moment')
+		fields = ('id', 'unit', 'title', 'summary', 'text', 'author','moment')
 
 
 class GuideListSerializer(serializers.ModelSerializer):
@@ -91,7 +91,7 @@ class ContentSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Content
-		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'author', 'comments','moment')
+		fields = ('id', 'unit','title', 'summary', 'text', 'author', 'comments','moment')
 
 
 class ContentRetrieveSerializer(serializers.ModelSerializer):
@@ -101,7 +101,7 @@ class ContentRetrieveSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Content
-		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'author', 'comments','moment')
+		fields = ('id', 'unit', 'title', 'summary', 'text', 'author', 'comments','moment')
 
 
 class FeedbackCommentSerializer(serializers.ModelSerializer):
@@ -117,7 +117,7 @@ class ContentGuideSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Content
-		fields = ('id', 'unit', 'subtitle', 'summary', 'text', 'html_text', 'author', 'moment')
+		fields = ('id', 'unit', 'title', 'summary', 'text', 'html_text', 'author', 'moment')
 
 
 class GuideItemSerializer(serializers.ModelSerializer):
