@@ -48,6 +48,13 @@ entries_schema = {
     			},
     			"required": ["schema", "url"],
     			"additionalProperties": False,
+    		}, {
+    			"properties": {
+    				"schema": {"type": "string", "pattern": "title"},
+                    "title": {"type": "string"},
+    			},
+    			"required": ["schema", "title"],
+    			"additionalProperties": False,
     		},
     	],
     },
