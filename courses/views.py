@@ -4,10 +4,12 @@ from rest_framework.viewsets import ModelViewSet
 
 from users.permissions import AuthenticatedTeacher
 
+from rest_framework import permissions
+
 from .serializers import *
 
 class CourseViewSet(ModelViewSet):
-	permission_classes = [AuthenticatedTeacher]
+	permission_classes = [AuthenticatedTeacher,permissions.IsAuthenticated]
 	serializer_class = CourseSerializer
 	queryset = Course.objects.all()
 
