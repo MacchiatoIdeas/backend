@@ -117,7 +117,7 @@ class ContentGuideSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Content
-		fields = ('id', 'unit', 'title', 'summary', 'text', 'html_text', 'author', 'moment')
+		fields = ('id', 'unit', 'title', 'summary', 'text', 'author', 'moment')
 
 
 class GuideItemSerializer(serializers.ModelSerializer):
