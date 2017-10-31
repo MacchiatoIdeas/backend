@@ -148,7 +148,7 @@ class Content(models.Model):
     def make_primitive(self):
         texts = self.parse_text()
         return primitivize_string(" ".join([
-            str(self.author),self.subtitle,self.summary,texts]))
+            str(self.author),self.title,self.summary,texts]))
 
 
 class Comment(models.Model):
