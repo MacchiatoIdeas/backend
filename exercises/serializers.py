@@ -28,10 +28,16 @@ class ExerciseCommentSerializer(serializers.ModelSerializer):
 
 class AutomatedExerciseListSerializer(serializers.ModelSerializer):
 	author = TeacherSerializer(read_only=True)
+	comment_count = serializers.SerializerMethodField()
 
 	class Meta:
 		model = AutomatedExercise
-		fields = ('id', 'difficulty', 'author', 'briefing', 'schema', 'moment')
+		fields = ('id', 'difficulty', 'author',
+		          'briefing', 'schema', 'moment',
+		          'comment_count')
+
+	def get_comment_count(self, ex):
+		return ExerciseComment.objects.filter(exercise=ex).count()
 
 
 class AutomatedExerciseSerializer(serializers.ModelSerializer):
