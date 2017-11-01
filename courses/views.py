@@ -5,6 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 from users.permissions import AuthenticatedTeacher
 
 from rest_framework import permissions
+from rest_framework import serializers
 
 from .serializers import *
 
@@ -21,8 +22,10 @@ class CourseViewSet(ModelViewSet):
 		else:
 			return Course.objects.filter(participants=self.request.user)
 
-	def perform_create(self, serializer):
-		serializer.save(teacher=self.request.user.teacher)
+	def get_serializer_class(self):
+		if self.action in ('create','update'):
+			return CourseInputSerializer
+		return super().get_serializer_class()
 
 class CourseLinkViewSet(ModelViewSet):
 	permission_classes = [AuthenticatedTeacher]
