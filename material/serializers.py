@@ -15,18 +15,19 @@ class ContentListSerializer(serializers.ModelSerializer):
 		fields = ('id', 'unit', 'title', 'summary', 'text', 'author','moment')
 
 
-class GuideListSerializer(serializers.ModelSerializer):
-	user = GenericUserSerializer(read_only=True)
-
-	class Meta:
-		model = Guide
-		fields = ('id', 'user', 'title', 'brief','moment')
-
-
 class SubjectSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Subject
 		fields = ('id', 'name', 'color', 'thumbnail')
+
+
+class GuideListSerializer(serializers.ModelSerializer):
+	user = GenericUserSerializer(read_only=True)
+	subject = SubjectSerializer(read_only=True)
+
+	class Meta:
+		model = Guide
+		fields = ('id', 'user', 'title', 'brief', 'moment', 'subject')
 
 
 class SubjectListSerializer(serializers.ModelSerializer):
