@@ -2,6 +2,20 @@ from rest_framework import serializers
 
 from users.serializers import *
 from .models import *
+from material.models import Subject,Unit
+
+
+# NOTE: <distemper>
+class SubjectSerializer2(serializers.ModelSerializer):
+	class Meta:
+		model = Subject
+		fields = ('id', 'name', 'color', 'thumbnail')
+class UnitWithSubjectRetrieveSerializer2(serializers.ModelSerializer):
+	subject = SubjectSerializer2(read_only=True)
+	class Meta:
+		model = Unit
+		fields = ('id', 'subject', 'name', 'academic_level')
+# </distemper>
 
 class ExerciseCommentSerializer(serializers.ModelSerializer):
 	user = GenericUserSerializer(read_only=True)
@@ -33,6 +47,9 @@ class AutomatedExerciseSerializer(serializers.ModelSerializer):
 		many = True
 		model = AutomatedExercise
 		fields = ('id', 'difficulty', 'author', 'unit', 'briefing', 'content', 'right_answer', 'comments','text','moment')
+
+class AutomatedExerciseRetrieveSerializer(AutomatedExerciseSerializer):
+	unit = UnitWithSubjectRetrieveSerializer2()
 
 class AutomatedExerciseAnswerInputSerializer(serializers.ModelSerializer):
 	class Meta:
