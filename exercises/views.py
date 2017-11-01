@@ -68,7 +68,6 @@ def autoexercise_recommended(request,subject):
 	return Response(serializer.data)
 
 
-
 class AutomatedExerciseViewSet(viewsets.ModelViewSet):
 	queryset = AutomatedExercise.objects.all()
 	serializer_class = AutomatedExerciseSerializer
@@ -91,6 +90,12 @@ class AutomatedExerciseViewSet(viewsets.ModelViewSet):
 			for w in words:
 				query = query.filter(primitive__contains=w)
 		return query
+
+	def get_serializer_class(self):
+		if self.action in ('retrieve',):
+			return AutomatedExerciseRetrieveSerializer
+		return super().get_serializer_class()
+
 
 class AutomatedExerciseAnswerViewSet(viewsets.ModelViewSet):
 	queryset = AutomatedExerciseAnswer.objects.all()
