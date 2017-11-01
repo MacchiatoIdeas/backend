@@ -126,7 +126,7 @@ class GuideItemSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = GuideItem
-		fields = ('id','type', 'item')
+		fields = ('id','type','item','order')
 
 	def get_type(self, gitem):
 		if gitem.content is not None:

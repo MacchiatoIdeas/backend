@@ -87,6 +87,14 @@ class GuideItemViewSet(viewsets.ModelViewSet):
 	serializer_class = GuideItemInputSerializer
 
 	#TODO: Check ownership of the guide and another permissions!
+	def perform_create(self, serializer):
+		if serializer.validated_data['order']<0:
+			gis = GuideItem.objects.filter(guide=serializer.validated_data['guide'])
+			if gis.count() == 0:
+				serializer.validated_data['order'] = 1
+			else:
+				serializer.validated_data['order'] = max([x.order for x in gis])+1
+		instance = serializer.save()
 
 class GuideViewSet(viewsets.ModelViewSet):
 	queryset = Guide.objects.all()
