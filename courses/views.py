@@ -25,7 +25,12 @@ class CourseViewSet(ModelViewSet):
 	def get_serializer_class(self):
 		if self.action in ('create','update'):
 			return CourseInputSerializer
-		return super().get_serializer_class()
+		if self.action in ('retrieve',):
+			return CourseWithGuidesSerializer
+		return super(CourseViewSet, self).get_serializer_class()
+
+	def perform_create(self, serializer):
+		serializer.save(teacher=self.request.user.teacher)
 
 class CourseLinkViewSet(ModelViewSet):
 	permission_classes = [AuthenticatedTeacher]
