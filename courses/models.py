@@ -8,8 +8,9 @@ class Course(models.Model):
 	teacher = models.ForeignKey(AppuntaTeacher, on_delete=models.CASCADE)
 	participants = models.ManyToManyField("users.AppuntaStudent")
 
-	def __str(self):
+	def __str__(self):
 		return self.name
+
 
 class CourseLink(models.Model):
 	course = models.ForeignKey(Course, on_delete=models.CASCADE,
@@ -17,7 +18,7 @@ class CourseLink(models.Model):
 	guide = models.ForeignKey("material.Guide", on_delete=models.CASCADE)
 
 	def get_answers(self):
-		querry = AutomatedExerciseAnswer.objects
-		querry = querry.filter(user__course=self.course)
-		querry = querry.filter(exercise__guideitem__guide=self.guide)
-		return querry.all()
+		# FIXME: replace patch when course's user is AppuntaStudent
+		return AutomatedExerciseAnswer.objects\
+			.filter(user__student__course=self.course)\
+			.filter(exercise__guideitem__guide=self.guide)

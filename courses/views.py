@@ -21,6 +21,11 @@ class CourseViewSet(ModelViewSet):
 		else:
 			return Course.objects.filter(participants=self.request.user)
 
+	def get_serializer_class(self):
+		if self.action in ('retrieve',):
+			return CourseWithGuidesSerializer
+		return super(CourseViewSet, self).get_serializer_class()
+
 	def perform_create(self, serializer):
 		serializer.save(teacher=self.request.user.teacher)
 
