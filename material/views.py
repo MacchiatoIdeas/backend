@@ -100,8 +100,9 @@ class GuideViewSet(viewsets.ModelViewSet):
 	queryset = Guide.objects.all()
 	serializer_class = GuideSerializer
 
+	#TODO: Only a teacher should have permission to update or create.
 	def perform_update(self, serializer):
-		instance = serializer.save(user=self.request.user)
+		instance = serializer.save(author=self.request.user.teacher)
 		instance.primitive = instance.make_primitive()
 		instance.save()
 
@@ -129,8 +130,8 @@ class GuideViewSet(viewsets.ModelViewSet):
 		byuser = self.request.query_params.get('byuser', None)
 		if byuser is not None:
 			if byuser == 'me':
-				query = query.filter(user=self.request.user)
+				query = query.filter(teacher=self.request.user.teacher)
 			else:
-				query = query.filter(user_id__exact=byuser)
+				query = query.filter(teacher_id__exact=byuser)
 
 		return query

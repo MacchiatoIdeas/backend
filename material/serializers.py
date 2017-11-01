@@ -22,12 +22,12 @@ class SubjectSerializer(serializers.ModelSerializer):
 
 
 class GuideListSerializer(serializers.ModelSerializer):
-	user = GenericUserSerializer(read_only=True)
+	author = TeacherSerializer(read_only=True)
 	subject = SubjectSerializer(read_only=True)
 
 	class Meta:
 		model = Guide
-		fields = ('id', 'user', 'title', 'brief', 'moment', 'subject')
+		fields = ('id', 'author', 'title', 'brief', 'moment', 'subject')
 
 
 class SubjectListSerializer(serializers.ModelSerializer):
@@ -159,17 +159,17 @@ class GuideItemInputSerializer(serializers.ModelSerializer):
 		fields = ('id','guide','content','exercise','order')
 
 class GuideSerializer(serializers.ModelSerializer):
-	user = GenericUserSerializer(read_only=True)
+	author = TeacherSerializer(read_only=True)
 	items = GuideItemSerializer(many=True, read_only=True)
 	subject = SubjectSerializer(read_only=True)
 
 	class Meta:
 		model = Guide
-		fields = ('id', 'user', 'title', 'brief', 'subject', 'items', 'private', 'moment')
+		fields = ('id', 'author', 'title', 'brief', 'subject', 'items', 'private', 'moment')
 
 class GuideInputSerializer(serializers.ModelSerializer):
-	user = GenericUserSerializer(read_only=True)
+	author = TeacherSerializer(read_only=True)
 
 	class Meta:
 		model = Guide
-		fields = ('id', 'user', 'title', 'brief', 'subject', 'private')
+		fields = ('id', 'author', 'title', 'brief', 'subject', 'private')

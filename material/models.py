@@ -216,10 +216,8 @@ class Guide(models.Model):
     # Flag to indicate if the guide is private or not.
     private = models.IntegerField(default=0)
 
-    # user who wrote the Guide
-    user = models.ForeignKey("auth.User",
-                             related_name='guides',
-                             on_delete=models.CASCADE)
+    # author! who wrote the Guide
+    author = models.ForeignKey("users.AppuntaTeacher", related_name='guides', on_delete=models.CASCADE)
 
     # subject of the guide
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
@@ -238,7 +236,7 @@ class Guide(models.Model):
 
     def make_primitive(self):
         return primitivize_string(" ".join([
-            str(self.user),self.title,self.brief]))
+            str(self.author),self.title,self.brief]))
 
 
 class GuideItem(models.Model):
