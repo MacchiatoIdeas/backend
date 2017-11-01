@@ -18,7 +18,6 @@ class CourseLink(models.Model):
 	guide = models.ForeignKey("material.Guide", on_delete=models.CASCADE)
 
 	def get_answers(self):
-		# FIXME: replace patch when course's user is AppuntaStudent
 		return AutomatedExerciseAnswer.objects\
-			.filter(user__student__course=self.course)\
+			.filter(student__course=self.course)\
 			.filter(exercise__guideitem__guide=self.guide)

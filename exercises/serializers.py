@@ -64,13 +64,13 @@ class AutomatedExerciseAnswerInputSerializer(serializers.ModelSerializer):
 
 
 class AutomatedExerciseAnswerSerializer(serializers.ModelSerializer):
-	user = GenericUserSerializer(read_only=True)
+	student = AppuntaStudentSerializer(read_only=True)
 	score = serializers.ReadOnlyField(source="get_score")
 	exercise = AutomatedExerciseListSerializer(read_only=True)
 
 	class Meta:
 		model = AutomatedExerciseAnswer
-		fields = ('id','user','exercise','answer','score','tscore','moment')
+		fields = ('id','student','exercise','answer','score','tscore','moment')
 
 
 class AutomatedExerciseSelectSerializer(serializers.ModelSerializer):

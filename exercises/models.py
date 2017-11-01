@@ -201,7 +201,7 @@ class AutomatedExercise(models.Model):
 
 class AutomatedExerciseAnswer(models.Model):
 	# | The user that answered:
-	user = models.ForeignKey('auth.User', on_delete=models.CASCADE,related_name='answers')
+	student = models.ForeignKey('users.AppuntaStudent', on_delete=models.CASCADE,related_name='answers')
 	# | The answered exercise:
 	exercise = models.ForeignKey(AutomatedExercise, on_delete=models.CASCADE)
 	# | The given answer:

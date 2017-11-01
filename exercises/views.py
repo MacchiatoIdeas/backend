@@ -23,7 +23,7 @@ def autoexercise_recommended(request,subject):
 	if request.user.is_anonymous():
 		answs = AutomatedExerciseAnswer.objects.none()
 	else:
-		answs = request.user.answers
+		answs = request.user.student.answers
 	n_answs = answs.count()
 	#
 	subj = get_object_or_404(Subject,name=subject)
@@ -109,7 +109,8 @@ class AutomatedExerciseAnswerViewSet(viewsets.ModelViewSet):
 		return super().get_serializer_class()
 
 	def perform_create(self, serializer):
-		serializer.save(user=self.request.user)
+		# TODO: Only allow an AppuntaStudent to create AutomatedExerciseAnswers
+		serializer.save(user=self.request.user.student)
 
 
 class ExerciseCommentViewSet(viewsets.ModelViewSet):

@@ -50,7 +50,7 @@ class EachLinkSerializer(serializers.ModelSerializer):
 
 	def get_answers(self, course_link):
 		query = AutomatedExerciseAnswer.objects\
-			.filter(user__student__course=course_link.course)\
+			.filter(student__course=course_link.course)\
 			.filter(exercise__guideitem__guide=course_link.guide)
 		return AutomatedExerciseAnswerSerializer(query, many=True).data
 
