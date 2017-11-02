@@ -259,7 +259,7 @@ class GuideItem(models.Model):
     order = models.IntegerField()
 
     class Meta:
-        unique_together = ('guide', 'order')
+        #unique_together = ('guide', 'order')
         ordering = ['order']
 
     def __str__(self):
