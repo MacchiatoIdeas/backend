@@ -1,0 +1,1962 @@
+[
+{
+  "model": "material.subject",
+  "pk": 1,
+  "fields": {
+    "name": "Matem\u00e1ticas",
+    "color": "#0000ff",
+    "thumbnail": "http://static.macchiato.cl/images/mathematics.jpg"
+  }
+},
+{
+  "model": "material.subject",
+  "pk": 2,
+  "fields": {
+    "name": "Lenguaje",
+    "color": "#ff0000",
+    "thumbnail": "http://static.macchiato.cl/images/language.jpg"
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 1,
+  "fields": {
+    "subject": 1,
+    "name": "Operatoria de n\u00fameros racionales",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 2,
+  "fields": {
+    "subject": 1,
+    "name": "Potencia de base racional y exponente entero",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 3,
+  "fields": {
+    "subject": 1,
+    "name": "Productos notables",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 4,
+  "fields": {
+    "subject": 1,
+    "name": "\u00c1rea de la superficie y volumen del cono",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 5,
+  "fields": {
+    "subject": 1,
+    "name": "Sistemas de ecuaciones lineales (2 x 2)",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 6,
+  "fields": {
+    "subject": 1,
+    "name": "Relaciones lineales en dos variables",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 7,
+  "fields": {
+    "subject": 1,
+    "name": "\u00c1rea y per\u00edmetro sectores y segmentos circulares",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 8,
+  "fields": {
+    "subject": 1,
+    "name": "Homotecia",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 9,
+  "fields": {
+    "subject": 1,
+    "name": "Teoremas de Thales",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 10,
+  "fields": {
+    "subject": 1,
+    "name": "Semejanza y sus propiedades",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 11,
+  "fields": {
+    "subject": 1,
+    "name": "Homotecia en el plano cartesiano",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 12,
+  "fields": {
+    "subject": 1,
+    "name": "Producto de un vector por un escalar",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 13,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuciones de dos caracter\u00edsticas distintas",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 14,
+  "fields": {
+    "subject": 1,
+    "name": "Separaci\u00f3n de la distribuci\u00f3n de dos poblaciones",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 15,
+  "fields": {
+    "subject": 1,
+    "name": "Reglas de las probabilidades",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 16,
+  "fields": {
+    "subject": 1,
+    "name": "Concepto de azar",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 17,
+  "fields": {
+    "subject": 1,
+    "name": "N\u00fameros irracionales y propiedades",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 18,
+  "fields": {
+    "subject": 1,
+    "name": "N\u00fameros reales y propiedades",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 19,
+  "fields": {
+    "subject": 1,
+    "name": "Operaciones aritm\u00e9ticas con n\u00fameros reales",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 20,
+  "fields": {
+    "subject": 1,
+    "name": "Potencias de exponente racional",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 21,
+  "fields": {
+    "subject": 1,
+    "name": "Propiedades de las potencias de exponente racional",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 22,
+  "fields": {
+    "subject": 1,
+    "name": "Ra\u00edces en\u00e9simas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 23,
+  "fields": {
+    "subject": 1,
+    "name": "Propiedades de las ra\u00edces en\u00e9simas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 24,
+  "fields": {
+    "subject": 1,
+    "name": "Logaritmos",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 25,
+  "fields": {
+    "subject": 1,
+    "name": "Propiedades de los logaritmos",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 26,
+  "fields": {
+    "subject": 1,
+    "name": "Semejanza de figuras planas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 27,
+  "fields": {
+    "subject": 1,
+    "name": "Criterios de semejanza de figuras planas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 28,
+  "fields": {
+    "subject": 1,
+    "name": "Trazos proporcionales",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 29,
+  "fields": {
+    "subject": 1,
+    "name": "Propiedades invariantes en modelos a escala",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 30,
+  "fields": {
+    "subject": 1,
+    "name": "Teorema de Pit\u00e1goras",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 31,
+  "fields": {
+    "subject": 1,
+    "name": "Teorema de Thales (Avanzado)",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 32,
+  "fields": {
+    "subject": 1,
+    "name": "Teorema de Euclides",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 33,
+  "fields": {
+    "subject": 1,
+    "name": "\u00c1ngulo del centro en la circunferencia",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 34,
+  "fields": {
+    "subject": 1,
+    "name": "\u00c1ngulo inscrito en una circunferencia",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 35,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n exponencial y representaci\u00f3n gr\u00e1fica",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 36,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n logar\u00edtmica y representaci\u00f3n gr\u00e1fica",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 37,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n ra\u00edz cuadrada y representaci\u00f3n gr\u00e1fica",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 38,
+  "fields": {
+    "subject": 1,
+    "name": "Sistemas de ecuaciones lineales con dos inc\u00f3gnitas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 39,
+  "fields": {
+    "subject": 1,
+    "name": "Resoluci\u00f3n sistema ecuaciones lineales con 2 inc.",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 40,
+  "fields": {
+    "subject": 1,
+    "name": "Gr\u00e1fica de un sistema de ecuaciones",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 41,
+  "fields": {
+    "subject": 1,
+    "name": "Expresiones algebraicas fraccionarias",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 42,
+  "fields": {
+    "subject": 1,
+    "name": "Operaciones expresiones algebraicas fraccionarias",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 43,
+  "fields": {
+    "subject": 1,
+    "name": "Medidas de dispersi\u00f3n: desviaci\u00f3n est\u00e1ndar",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 44,
+  "fields": {
+    "subject": 1,
+    "name": "Variables aleatorias",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 45,
+  "fields": {
+    "subject": 1,
+    "name": "Media muestral",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 46,
+  "fields": {
+    "subject": 1,
+    "name": "Ley de los grandes n\u00fameros",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 47,
+  "fields": {
+    "subject": 1,
+    "name": "Pruebas independientes",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 48,
+  "fields": {
+    "subject": 1,
+    "name": "Eventos independientes",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 49,
+  "fields": {
+    "subject": 1,
+    "name": "Eventos mutuamente excluyentes",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 50,
+  "fields": {
+    "subject": 1,
+    "name": "C\u00e1lculo probabilidades eventos ind. y mut. excl.",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 51,
+  "fields": {
+    "subject": 1,
+    "name": "N\u00fameros complejos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 52,
+  "fields": {
+    "subject": 1,
+    "name": "Operaciones aritm\u00e9ticas con n\u00fameros complejos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 53,
+  "fields": {
+    "subject": 1,
+    "name": "Conjugado de un n\u00famero complejo",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 54,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n cuadr\u00e1tica",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 55,
+  "fields": {
+    "subject": 1,
+    "name": "Ecuaci\u00f3n de segundo grado",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 56,
+  "fields": {
+    "subject": 1,
+    "name": "Geometr\u00eda cartesiana",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 57,
+  "fields": {
+    "subject": 1,
+    "name": "Homotecia (Avanzado)",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 58,
+  "fields": {
+    "subject": 1,
+    "name": "Vector",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 59,
+  "fields": {
+    "subject": 1,
+    "name": "Producto por un escalar",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 60,
+  "fields": {
+    "subject": 1,
+    "name": "Sistemas 2x2 de ecuaciones lineales",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 61,
+  "fields": {
+    "subject": 1,
+    "name": "Probabilidad condicional",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 62,
+  "fields": {
+    "subject": 1,
+    "name": "Variable aleatoria discreta",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 63,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n de probabilidad",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 64,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuciones de probabilidad",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 65,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuci\u00f3n binomial",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 66,
+  "fields": {
+    "subject": 1,
+    "name": "Valor esperado de una distribuci\u00f3n binominal",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 67,
+  "fields": {
+    "subject": 1,
+    "name": "Varianza de una distribuci\u00f3n binominal",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 68,
+  "fields": {
+    "subject": 1,
+    "name": "Desviaci\u00f3n est\u00e1ndar de una distribuci\u00f3n binominal",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 69,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n potencia",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 70,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n inversa de una funci\u00f3n",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 71,
+  "fields": {
+    "subject": 1,
+    "name": "Sistemas de inecuaciones lineales",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 72,
+  "fields": {
+    "subject": 1,
+    "name": "Puntos en el espacio",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 73,
+  "fields": {
+    "subject": 1,
+    "name": "Ecuaci\u00f3n vectorial de la recta en el espacio",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 74,
+  "fields": {
+    "subject": 1,
+    "name": "Ecuaci\u00f3n cartesiana de la recta en el espacio",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 75,
+  "fields": {
+    "subject": 1,
+    "name": "Ecuaci\u00f3n vectorial del plano en el espacio",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 76,
+  "fields": {
+    "subject": 1,
+    "name": "Generaci\u00f3n de cuerpos por traslaci\u00f3n de figuras 2D",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 77,
+  "fields": {
+    "subject": 1,
+    "name": "Generaci\u00f3n de cuerpos por rotaci\u00f3n de figuras 2D",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 78,
+  "fields": {
+    "subject": 1,
+    "name": "Variable aleatoria continua",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 79,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuci\u00f3n de probabilidad de una variable aleat",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 80,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n de densidad de probabilidad de una variabl",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 81,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuci\u00f3n normal",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 82,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n \u03a6 de distribuci\u00f3n acumulada",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 83,
+  "fields": {
+    "subject": 1,
+    "name": "Estimaci\u00f3n de medias poblacionales",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 84,
+  "fields": {
+    "subject": 1,
+    "name": "Construcci\u00f3n de intervalos de confianza",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 85,
+  "fields": {
+    "subject": 2,
+    "name": "Elementos del ge\u0301nero narrativo y ge\u0301nero li\u0301rico",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 86,
+  "fields": {
+    "subject": 2,
+    "name": "Caracteri\u0301sticas del Romanticismo",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 87,
+  "fields": {
+    "subject": 2,
+    "name": "Debate como intercambio de ideas",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 89,
+  "fields": {
+    "subject": 2,
+    "name": "Estructura del ge\u0301nero ensayo",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 90,
+  "fields": {
+    "subject": 2,
+    "name": "Escritura de un ensayo",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 91,
+  "fields": {
+    "subject": 2,
+    "name": "Recursos persuasivos en los textos argumentativos",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 92,
+  "fields": {
+    "subject": 2,
+    "name": "Caracteri\u0301sticas de la tragedia",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 93,
+  "fields": {
+    "subject": 2,
+    "name": "Representacio\u0301n teatral",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 94,
+  "fields": {
+    "subject": 2,
+    "name": "Relaciones intertextuales en obras literarias",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 95,
+  "fields": {
+    "subject": 2,
+    "name": "Recursos usados en publicidad y propaganda",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 96,
+  "fields": {
+    "subject": 2,
+    "name": "Uso de la argumentacio\u0301n",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 97,
+  "fields": {
+    "subject": 2,
+    "name": "Narrativa",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 98,
+  "fields": {
+    "subject": 2,
+    "name": "Drama",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 99,
+  "fields": {
+    "subject": 2,
+    "name": "Textos no literarios",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 100,
+  "fields": {
+    "subject": 2,
+    "name": "Poes\u00eda",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 101,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 102,
+  "fields": {
+    "subject": 2,
+    "name": "Textos expositivos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 103,
+  "fields": {
+    "subject": 2,
+    "name": "Intertextualidad",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 104,
+  "fields": {
+    "subject": 2,
+    "name": "Ge\u0301nero narrativo y li\u0301rico",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 105,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos avanzados",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 106,
+  "fields": {
+    "subject": 2,
+    "name": "Textos expositivos avanzados",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 107,
+  "fields": {
+    "subject": 2,
+    "name": "El ensayo",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 108,
+  "fields": {
+    "subject": 2,
+    "name": "Focalizacio\u0301n",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 109,
+  "fields": {
+    "subject": 2,
+    "name": "La cohesio\u0301n",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 110,
+  "fields": {
+    "subject": 2,
+    "name": "Personajes",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 111,
+  "fields": {
+    "subject": 2,
+    "name": "Conflicto drama\u0301tico",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 112,
+  "fields": {
+    "subject": 2,
+    "name": "Argumentacio\u0301n",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 113,
+  "fields": {
+    "subject": 2,
+    "name": "Lectura dramatizada",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 114,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos-expositivos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 115,
+  "fields": {
+    "subject": 2,
+    "name": "Ge\u0301nero drama\u0301tico",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 116,
+  "fields": {
+    "subject": 2,
+    "name": "Variable disto\u0301pica",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 117,
+  "fields": {
+    "subject": 2,
+    "name": "Focalizacio\u0301n de narradores",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 118,
+  "fields": {
+    "subject": 2,
+    "name": "Ensayos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 119,
+  "fields": {
+    "subject": 2,
+    "name": "Textos li\u0301ricos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 120,
+  "fields": {
+    "subject": 2,
+    "name": "Recursos literarios",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 121,
+  "fields": {
+    "subject": 2,
+    "name": "Discurso argumentativo",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 122,
+  "fields": {
+    "subject": 2,
+    "name": "Secuencia discursiva",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 123,
+  "fields": {
+    "subject": 2,
+    "name": "Telerrealidad",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 124,
+  "fields": {
+    "subject": 2,
+    "name": "Teatro del absurdo",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 125,
+  "fields": {
+    "subject": 2,
+    "name": "Intertextualidad avanzada",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 126,
+  "fields": {
+    "subject": 2,
+    "name": "Obra arti\u0301stica",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.content",
+  "pk": 1,
+  "fields": {
+    "moment": "2017-10-30T05:55:52.657Z",
+    "unit": 86,
+    "author": 1,
+    "title": "\u00bfCu\u00e1les son las caracter\u00edsticas del romanticismo literario?",
+    "summary": "El romanticismo fue un movimiento cultural y pol\u00edtico que naci\u00f3 a finales del siglo XVIII en Alemania y en el Reino Unido.",
+    "text": "[{\"schema\":\"text\",\"text\":\"El romanticismo fue un movimiento cultural y pol\u00edtico que naci\u00f3 a finales del siglo XVIII en Alemania y en el Reino Unido, desde donde se extendi\u00f3 a otros pa\u00edses. De marcada personalidad y esp\u00edritu transgresor, se opuso frontalmente a los estereotipos del clasicismo y el racionalismo, dejando un sello muy reconocible en el \u00e1mbito de la literatura. \u00bfSabes **cu\u00e1les son las caracter\u00edsticas del romanticismo literario**?\\n La llegada del romanticismo trajo consigo la aparici\u00f3n del **art\u00edculo de costumbres** y algunos g\u00e9neros como la **novela hist\u00f3rica**, la **novela g\u00f3tica o de terror** y **la leyenda**. Tambi\u00e9n empezaron a escribirse **novelas de aventuras** y **novelas por entregas**, se pusieron de moda las autobiograf\u00edas y resurgieron del medioevo f\u00f3rmulas literarias como la **balada** y el **romance**.\\nEl romanticismo va ligado sin duda a los **g\u00e9neros l\u00edrico y dram\u00e1tico**, as\u00ed como al **teatro**, veh\u00edculo de incontestable de expresi\u00f3n, y la **poes\u00eda**, m\u00e1s liberada que nunca.\\n\u00bfQu\u00e9 rasgos comunes tuvieron las manifestaciones anteriores? Enumeramos a continuaci\u00f3n algunas caracter\u00edsticas del romanticismo literario:\\n1. Presencia en las obras de un **estilo individualista**, de marcada **sensibilidad**, abundante **imaginaci\u00f3n** e innegable **rebeld\u00eda**.\\n2. Tendencia al **pesimismo**. La vida es poco menos que una tragedia; un contexto de melancol\u00eda y desasosiego.\\n3. Los **autores son inconformistas** por definici\u00f3n y se rebelan ante lo establecido.\\n4. Diarios y **confesiones \u00edntimas** est\u00e1n a la orden del d\u00eda.\\n5. Entre otros temas, destacan los relacionados con la historia nacional, las tradiciones, la mujer y los conflictos sociales.\\n\\n*Fuente*: [Saberia](http://www.saberia.com)\"}]",
+    "primitive": "abentura abundante alemania alguna alguno ambito ante anteriorez aparizion artikulo autobiografia autorez azebedo balada beikulo bida clazizizmo definizion dejando dezazoziego dezde deztakan diario donde dramatiko duda empezaron entre entrega enumeramo exprezion extendio ezcribirze ezpiritu eztablezido eztan eztereotipo eztilo finalez formula frontalmente fuente genero gleny gotika imajinazion indibidualizta inkonformizta inkonteztable innegable intima iztoria iztorika karacteri karacteriztika komo komunez konfezionez konflicto kontexto kontinuazion konzigo koztumbrez kualez kualez kultural leyenda liberada ligado liriko literaria literario literatura manifeztazionez markada medioebo melankolia meno mobimiento moda mujer nazio nazional nobela nobela nunka obra opuzo orden otro paizez perzonalidad pezimizmo poezia poko politiko prezenzia puzieron razgo razionalizmo rebelan rebeldia reino rekonozible relazionado rezurjieron romantizizmo romantizizmo romanze tambien teatro tema tendenzia teror tradizionez trajedia trajo tranzgrezor ttp tubieron unido xbiii yegada zaberia zaberia zabez zenzibilidad zeyo ziglo zozialez ztika"
+  }
+},
+{
+  "model": "material.content",
+  "pk": 2,
+  "fields": {
+    "moment": "2017-11-02T07:40:10.160Z",
+    "unit": 85,
+    "author": 1,
+    "title": "G\u00e9nero Narrativo",
+    "summary": "El g\u00e9nero narrativo es una expresi\u00f3n literaria que se caracteriza por historias relatadas ajena a los sentimientos del autor.",
+    "text": "[{\"schema\":\"text\",\"text\":\"El g\u00e9nero narrativo es una expresi\u00f3n literaria que se caracteriza porque se relatan historias imaginarias o ficticias **(sucesos o acontecimientos)** que constituyen una historia ajena a los sentimientos del autor. Aunque sea imaginaria, la historia literaria toma sus modelos del mundo real. Esta relaci\u00f3n entre imaginaci\u00f3n y experiencia, entre fantas\u00eda y vida es lo que le da un valor especial a la lectura en la formaci\u00f3n espiritual de la persona.\\nEl narrador es la persona que presenta la narraci\u00f3n; \u00e9l es el encargado de dar a conocer el mundo imaginario al lector, el cual est\u00e1 formado por personas que realizan acciones dentro de un espacio determinado y que suceden dentro de unos l\u00edmites temporales precisos.\\nLa diferencia fundamental entre el mundo real y el de la narraci\u00f3n, radica en el hecho de que nuestro mundo es evidente, en cambio en una narraci\u00f3n el mundo es tambi\u00e9n art\u00edsticamente real, pero no existe verdadera y exteriormente, sino que es creado a trav\u00e9s del lenguaje; es decir, el mundo narrativo es un mundo inventado. Este mundo creado est\u00e1 formado por personajes, acontecimientos, lugar y tiempo en que suceden los hechos.\\nPertenecen al g\u00e9nero narrativo obras tales como el **cuento**, la **novela**, la **f\u00e1bula**, la **leyenda** y otras. Todas ellas tienen como caracter\u00edstica fundamental el hecho de que existe un narrador que da a conocer los acontecimientos.\\n**Elementos del mundo narrado**: Son aquellos aspectos que pueden distinguirse en una obra narrativa, los cuales son:\\n- narrador\\n- personajes\\n- ambiente, lugar, tiempo\\n- acontecimientos\\n- di\u00e1logo\"}]",
+    "primitive": "aczionez ajena akeyo akontezimiento ambiente artiztikamente aunke autor azebedo azpecto balor berdadera bida creado dentro determinado dezir dialogo diferenzia diztinguirze ebidente eco eco elemento enkargado entre exizte experienzia exprezion exteriormente eya ezpazio ezpezial ezpiritual ezta ezta ezte fabula fantazia fictizia formado formazion fundamental genero genero gleny imajinaria imajinaria imajinario imajinazion inbentado iztoria iztoria kambio karacteriza karacteriztika komo konozer konztituyen kual kualez kuento lector lectura lenguaje leyenda limitez literaria lugar modelo mundo narado narador naratiba naratibo naratibo narazion nero nobela nueztro obra obra otra pero pertenezen perzona perzona perzonajez porke prezenta prezizo pueden radika real realizan relatada relatan relazion riko talez tambien temporalez tiempo tienen toda toma trabez uno zentimiento zino zuzeden zuzezo"
+  }
+},
+{
+  "model": "material.content",
+  "pk": 3,
+  "fields": {
+    "moment": "2017-11-02T07:42:16.889Z",
+    "unit": 30,
+    "author": 1,
+    "title": "Teorema de Pit\u00e1goras",
+    "summary": "En un tri\u00e1ngulo rect\u00e1ngulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los otros dos lados",
+    "text": "[{\"schema\":\"text\",\"text\":\"Hace a\u00f1os, un hombre llamado Pit\u00e1goras descubri\u00f3 un hecho asombroso sobre tri\u00e1ngulos:\\n\\nSi el tri\u00e1ngulo tiene un \u00e1ngulo recto (90\u00b0)...\\n\\n... y pones un cuadrado sobre cada uno de sus lados, entonces...\\n\\n... \u00a1el cuadrado m\u00e1s grande tiene exactamente la misma \u00e1rea que los otros dos cuadrados juntos!\\n \\nEl lado m\u00e1s largo del tri\u00e1ngulo se llama \\\\\\\"hipotenusa\\\\\\\", as\u00ed que la definici\u00f3n formal es:\\n\\nEn un tri\u00e1ngulo rect\u00e1ngulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los otros dos lados (llamamos \\\\\\\"tri\u00e1ngulo rect\u00e1ngulo\\\\\\\" a un tri\u00e1ngulo con un \u00e1ngulo recto)\\n\\n\\\\t\\nEntonces, el cuadrado de a (a\u00b2) m\u00e1s el cuadrado de b (b\u00b2) es igual al cuadrado de c (c\u00b2):\\n\\na2 + b2 = c2\\n\\n\u00bfSeguro... ?\\nVeamos si funciona con un ejemplo. Un tri\u00e1ngulo de lados \\\\\\\"3,4,5\\\\\\\" tiene un \u00e1ngulo recto, as\u00ed que la f\u00f3rmula deber\u00eda funcionar.\\n\\nTeorema de Pit\u00e1goras\\\\t\\nVeamos si las \u00e1reas son la misma:\\n32 + 42 = 52\\n\\nCalculando obtenemos:\\n9 + 16 = 25\\n\\n\u00a1s\u00ed, funciona!\\n\u00bfPor qu\u00e9 es \u00fatil esto?\\nSi sabemos las longitudes de dos lados de un tri\u00e1ngulo con un \u00e1ngulo recto, el Teorema de Pit\u00e1goras nos ayuda a encontrar la longitud del tercer lado. (\u00a1Pero recuerda que s\u00f3lo funciona en tri\u00e1ngulos rect\u00e1ngulos!)\"}]",
+    "primitive": "angulo ano area area ayuda aze azebedo azombrozo beamo deberia definizion dezkubrio eco ejemplo enkontrar entonz entonz exactamente ezto formal formula funziona funzionar gleny grande igual ipotenuza junto kada kalkulando kuadrado kuadrado lado lado largo lonjitud lonjitudez mizma obtenemo ombre otro pero pitagora ponez rectangulo rectangulo recto rekuerda teorema terzer tiene triangulo triangulo util yama yamado yamamo zabemo zeguro zobre zolo zuma"
+  }
+},
+{
+  "model": "material.guide",
+  "pk": 1,
+  "fields": {
+    "moment": "2017-11-02T09:18:18.103Z",
+    "private": true,
+    "author": 1,
+    "subject": 1,
+    "title": "Gu\u00eda 1",
+    "brief": "Primera gu\u00eda de ejercitaci\u00f3n del semestre",
+    "primitive": "azebedo ejerzitazion gleny guia guia matematika primera zemeztre"
+  }
+},
+{
+  "model": "material.guide",
+  "pk": 2,
+  "fields": {
+    "moment": "2017-11-02T09:20:37.789Z",
+    "private": true,
+    "author": 1,
+    "subject": 1,
+    "title": "Gu\u00eda 2",
+    "brief": "Segunda gu\u00eda de ejercitaci\u00f3n del semestre",
+    "primitive": "azebedo ejerzitazion gleny guia guia matematika zegunda zemeztre"
+  }
+},
+{
+  "model": "material.guide",
+  "pk": 3,
+  "fields": {
+    "moment": "2017-11-02T09:34:29.250Z",
+    "private": false,
+    "author": 4,
+    "subject": 1,
+    "title": "Gu\u00eda Matem\u00e1ticas 1ero Medio",
+    "brief": "Gu\u00eda con ejercicios variados para autoevaluarse",
+    "primitive": "1ero autoebaluarze bariado donald ejerzizio guia knut matematika medio para"
+  }
+},
+{
+  "model": "material.guide",
+  "pk": 4,
+  "fields": {
+    "moment": "2017-11-02T09:41:14.885Z",
+    "private": false,
+    "author": 3,
+    "subject": 1,
+    "title": "Gu\u00eda Matem\u00e1ticas Variada",
+    "brief": "Gu\u00eda para practicar con los n\u00fameros y geometr\u00eda",
+    "primitive": "anz bariada guia jeometria landa matematika numero para practikar"
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 1,
+  "fields": {
+    "guide": 1,
+    "content": 3,
+    "exercise": null,
+    "order": 0
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 2,
+  "fields": {
+    "guide": 1,
+    "content": null,
+    "exercise": 8,
+    "order": 1
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 3,
+  "fields": {
+    "guide": 2,
+    "content": null,
+    "exercise": 1,
+    "order": 0
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 4,
+  "fields": {
+    "guide": 2,
+    "content": null,
+    "exercise": 2,
+    "order": 1
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 5,
+  "fields": {
+    "guide": 2,
+    "content": null,
+    "exercise": 3,
+    "order": 3
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 6,
+  "fields": {
+    "guide": 3,
+    "content": 3,
+    "exercise": null,
+    "order": 0
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 7,
+  "fields": {
+    "guide": 3,
+    "content": null,
+    "exercise": 1,
+    "order": 1
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 8,
+  "fields": {
+    "guide": 3,
+    "content": null,
+    "exercise": 2,
+    "order": 2
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 9,
+  "fields": {
+    "guide": 3,
+    "content": null,
+    "exercise": 3,
+    "order": 3
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 10,
+  "fields": {
+    "guide": 3,
+    "content": null,
+    "exercise": 4,
+    "order": 5
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 11,
+  "fields": {
+    "guide": 4,
+    "content": null,
+    "exercise": 6,
+    "order": 0
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 12,
+  "fields": {
+    "guide": 4,
+    "content": null,
+    "exercise": 6,
+    "order": 1
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 13,
+  "fields": {
+    "guide": 4,
+    "content": null,
+    "exercise": 7,
+    "order": 2
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 14,
+  "fields": {
+    "guide": 4,
+    "content": null,
+    "exercise": 8,
+    "order": 3
+  }
+},
+{
+  "model": "material.guideitem",
+  "pk": 15,
+  "fields": {
+    "guide": 4,
+    "content": null,
+    "exercise": 9,
+    "order": 4
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 1,
+  "fields": {
+    "difficulty": 3,
+    "author": 1,
+    "unit": 3,
+    "moment": "2017-11-02T06:51:22.288Z",
+    "briefing": "Identificar m\u00faltiplos en ecuaci\u00f3n lineal con n\u00fameros naturales.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Determinar a qu\u00e9 conjuntos num\u00e9ricos pertenece la resoluci\u00f3n de la ecuaci\u00f3n $$ax + b = c$$, si las variables $$a$$,$$b$$ y $$c$$ representan n\u00fameros naturales, entre los siguientes casos:\"}]",
+    "content": "{\"schema\":\"trueorfalse\",\"sentences\":[\"$$b<c$$ y $$(b-c)$$ es m\u00faltiplo de $$a$$\",\"$$b>c$$ y $$(b-c)$$ es m\u00faltiplo de $$a$$\",\"$$b<c$$ y $$(b-c)$$ no es m\u00faltiplo de $$a$$\",\"$$b>c$$ y $$(b-c)$$ no es m\u00faltiplo de $$a$$\"]}",
+    "right_answer": "{\"schema\":\"trueorfalse\",\"choices\":[true,true,false,false]}",
+    "primitive": "azebedo ekuazion gleny identifikar lineal multiplo naturalez notablez numero producto"
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 2,
+  "fields": {
+    "difficulty": 1,
+    "author": 1,
+    "unit": 1,
+    "moment": "2017-11-02T06:56:59.542Z",
+    "briefing": "Identificar m\u00faltiplos en ecuaci\u00f3n lineal con n\u00fameros naturales.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Calcular, siguiendo la \\\"serpiente de operaciones\\\" de a continuaci\u00f3n:\"},{\"schema\":\"image\",\"url\":\"http://localhost:8000/media/opertrain.png\"},{\"schema\":\"text\",\"text\":\"partiendo del extremo izquierdo con -10.\"}]",
+    "content": "{\"schema\":\"alternatives\",\"alts\":[\"$$132/3$$\",\"$$297/4$$\",\"$$311/2$$\",\"$$3/5$$\"]}",
+    "right_answer": "{\"schema\":\"alternatives\",\"answer\":1}",
+    "primitive": "azebedo ekuazion gleny identifikar lineal multiplo naturalez numero operatoria razionalez"
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 3,
+  "fields": {
+    "difficulty": 2,
+    "author": 2,
+    "unit": 3,
+    "moment": "2017-11-02T07:17:20.576Z",
+    "briefing": "Reducir expresiones, considerando el \u00f3rden de las operaciones.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Reduzca la expresi\u00f3n num\u00e9rica compuesta de n\u00fameros enteros y potencias\\n\\r $$58-(47-69)+(13^2-80)$$\"}]",
+    "content": "{\"schema\":\"alternatives\",\"alts\":[\"256\",\"331\",\"111\",\"169\"]}",
+    "right_answer": "{\"schema\":\"alternatives\",\"answer\":3}",
+    "primitive": "alizia arteaga exprezionez konziderando notablez operazionez orden producto reduzir"
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 4,
+  "fields": {
+    "difficulty": 2,
+    "author": 2,
+    "unit": 3,
+    "moment": "2017-11-02T07:20:38.786Z",
+    "briefing": "Reducir expresiones, considerando el \u00f3rden de las operaciones.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Reduzca la expresi\u00f3n num\u00e9rica compuesta de n\u00fameros enteros y potencias\\n\\r $$(-4)^4-(-3)^4-(-2)^4-(-1)^4$$\"}]",
+    "content": "{\"schema\":\"alternatives\",\"alts\":[\"112\",\"158\",\"784\",\"514\"]}",
+    "right_answer": "{\"schema\":\"alternatives\",\"answer\":1}",
+    "primitive": "alizia arteaga exprezionez konziderando notablez operazionez orden producto reduzir"
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 5,
+  "fields": {
+    "difficulty": 2,
+    "author": 2,
+    "unit": 3,
+    "moment": "2017-11-02T07:24:51.116Z",
+    "briefing": "Traducir expresiones del lenguaje natural a matem\u00e1ticas.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Transforme las siguientes expresiones del lenguaje natural en expresiones num\u00e9ricas y calcule el n\u00famero correspondiente \\n\\r a) Resta el cuadrado del n\u00famero 5 al doble de la adici\u00f3n de 3 y 9. \\n\\r b) Divide el cuadrado de la diferencia entre 17 y 5 por el triple de la adici\u00f3n de 5 y 3. \\n\\r Eleva a tres la adici\u00f3n entre 0.7 y 2.3, y disminuye su resultado por el cu\u00e1druple de la diferencia entre 8,7 y 5,2.\"}]",
+    "content": "{\"schema\":\"written\"}",
+    "right_answer": "{\"schema\":\"written\",\"draft\":\"-1,6,13\"}",
+    "primitive": "alizia arteaga exprezionez lenguaje matematika natural notablez producto traduzir"
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 6,
+  "fields": {
+    "difficulty": 3,
+    "author": 2,
+    "unit": 1,
+    "moment": "2017-11-02T07:33:50.005Z",
+    "briefing": "Reducir la expresi\u00f3n num\u00e9rica compuesta de fracciones y n\u00fameros enteros.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Reduzca la siguiente expresi\u00f3n: \\n\\r $$\\\\left( 3- \\\\frac{3}{2} \\\\right)^2 - \\\\left( \\\\frac{1}{2} - \\\\frac{3}{2} : \\\\frac{2}{3} \\\\right)$$\"}]",
+    "content": "{\"schema\":\"alternatives\",\"alts\":[\"$$\\\\frac{9}{50}$$\",\"$$\\\\frac{43}{20}$$\",\"$$\\\\frac{4}{7}$$\",\"Ninguna de las anteriores\"]}",
+    "right_answer": "{\"schema\":\"alternatives\",\"answer\":3}",
+    "primitive": "alizia arteaga entero exprezion fraczionez kompuezta numerika numero operatoria razionalez reduzir"
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 7,
+  "fields": {
+    "difficulty": 2,
+    "author": 1,
+    "unit": 1,
+    "moment": "2017-11-02T07:33:50.005Z",
+    "briefing": "Cl\u00e1sico ejercicio de \u00f3rden de las operaciones publicado en Las Ultimas Noticias.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Este ejercicio divide a estudiantes chilenos: \\n\\r $$6/2(1+2)$$ \\n\\r \u00bfCu\u00e1nto vale?\"}]",
+    "content": "{\"schema\":\"alternatives\",\"alts\":[\"1\",\"1.5\",\"9\",\"4\"]}",
+    "right_answer": "{\"schema\":\"alternatives\",\"answer\":2}",
+    "primitive": "azebedo claziko ejerzizio gleny notizia numero operatoria operazionez orden publikado razionalez ultima"
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 8,
+  "fields": {
+    "difficulty": 2,
+    "author": 1,
+    "unit": 40,
+    "moment": "2017-11-02T07:33:50.005Z",
+    "briefing": "Relacionar ecuaciones con sus figuras en el gr\u00e1fico.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Une las f\u00f3rmulas con las figuras geom\u00e9tricas que representan:\"}]",
+    "content": "{\"schema\":\"matching\",\"sideA\":[\"$$y = x^2$$\",\"$$y = x$$\",\"$$y = 1/x$$\"],\"sideB\":[\"Recta\",\"C\u00edrculo\",\"Par\u00e1bola\",\"Hip\u00e9rbola\",\"Cono\"]}",
+    "right_answer": "{\"schema\":\"matching\",\"matchs\":[2,0,3]}",
+    "primitive": "azebedo ekuazionez figura gleny grafika grafiko relazionar ziztema"
+  }
+},
+{
+  "model": "exercises.automatedexercise",
+  "pk": 9,
+  "fields": {
+    "difficulty": 1,
+    "author": 1,
+    "unit": 30,
+    "moment": "2017-11-02T07:33:50.005Z",
+    "briefing": "Resolver la hipotenusa de un tr\u00edo pitag\u00f3rico.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Si los lados de un tr\u00edangulo son 3 y 4 \u00bfCu\u00e1l es la hipotenusa?\"}]",
+    "content": "{\"schema\":\"alternatives\",\"alts\":[\"$$5^2$$\",\"$$5$$\",\"$$3.4$$\"]}",
+    "right_answer": "{\"schema\":\"alternatives\",\"answer\":0}",
+    "primitive": "azebedo gleny ipotenuza pitagora pitagoriko rezolber teorema trio"
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 1,
+  "fields": {
+    "name": "3ero Medio Cient\u00edfico",
+    "teacher": 4,
+    "participants": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 2,
+  "fields": {
+    "name": "Curso Extraprogram\u00e1tico",
+    "teacher": 4,
+    "participants": [
+      1,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 3,
+  "fields": {
+    "name": "Curso 2do Medio ESM",
+    "teacher": 3,
+    "participants": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 4,
+  "fields": {
+    "name": "Preuniversitario",
+    "teacher": 3,
+    "participants": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 5,
+  "fields": {
+    "name": "Curso Particular Matem\u00e1ticas",
+    "teacher": 2,
+    "participants": [
+      2,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 6,
+  "fields": {
+    "name": "Curso Particular Lenguaje",
+    "teacher": 2,
+    "participants": [
+      1,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 7,
+  "fields": {
+    "name": "Humanistas Media",
+    "teacher": 1,
+    "participants": [
+      2,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "courses.courselink",
+  "pk": 1,
+  "fields": {
+    "course": 5,
+    "guide": 1
+  }
+},
+{
+  "model": "courses.courselink",
+  "pk": 2,
+  "fields": {
+    "course": 5,
+    "guide": 2
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$xoFzZYrj27Sb$thmskIj+QfnNolSHIBW66q82S3WRC0AOW30YGTRL+tw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "johny@kiddo.com",
+    "first_name": "Johny",
+    "last_name": "Kiddo",
+    "email": "johny@kiddo.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T05:34:31.333Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$nY9yKmz7kKyY$jSri0Hk3HmxgWFnZ0q49zmPXoBX4jDBB2AY4KjI8f/4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "juan@rodriguez.com",
+    "first_name": "Juan",
+    "last_name": "Rodriguez",
+    "email": "juan@rodriguez.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T05:36:15.655Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$rjIYOWhTY85w$xAJjMTs5gpcqAeukdRlRscsrvITxHUwhJe1kdgccOAY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "felix@arrieta.com",
+    "first_name": "Felix",
+    "last_name": "Arrieta",
+    "email": "felix@arrieta.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T05:38:04.642Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$iJSJ4oJuaZe2$nKVcTnQbk558IwdO6tRqZW7E3GLRnKQgdC3CIDTYfsE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "sergio@itau.com",
+    "first_name": "Sergio",
+    "last_name": "Itau",
+    "email": "sergio@itau.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T05:39:19.710Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$9nH9cjM6yQQ8$JyYDGtWSVDX8Vl+Hup/Yg73NfkCyI17F14jhfkFlk9k=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "mario@campos.cl",
+    "first_name": "Mario",
+    "last_name": "Campos",
+    "email": "mario@campos.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T05:41:37.943Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$YAkX4za80NrU$wqk7QAlU4FWH+4IQHp79LM7SQG9boC0qpK/8zQWI4r4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "fabi@retamal.cl",
+    "first_name": "Fabi",
+    "last_name": "Retamal",
+    "email": "fabi@retamal.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T05:43:56.546Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$e5Zubed4rK8V$ZWk9Q2tbkr2ZM3L3+dAoeXFoR9JeHGUUhyH9AZ/X0BU=",
+    "last_login": "2017-11-02T09:07:13.874Z",
+    "is_superuser": false,
+    "username": "gleny@acevedo.com",
+    "first_name": "Gleny",
+    "last_name": "Acevedo",
+    "email": "gleny@acevedo.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T06:23:21.083Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$xPMlupahNes0$rBwcVyhjf04RIfK/BiY1GmOBTkutafKKzg2CFN++Ck8=",
+    "last_login": "2017-11-02T09:05:28.647Z",
+    "is_superuser": false,
+    "username": "alicia@arteaga.com",
+    "first_name": "Alicia",
+    "last_name": "Arteaga",
+    "email": "alicia@arteaga.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T06:27:39.107Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$gw0Vdh7duc2G$Cwih8LjIOk6KpZrf3ujfdrgoYBCWOz5MWq/H/gBx16U=",
+    "last_login": "2017-11-02T09:39:51.144Z",
+    "is_superuser": false,
+    "username": "hans@landa.com",
+    "first_name": "Hans",
+    "last_name": "Landa",
+    "email": "hans@landa.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T06:30:26.068Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$KRDjMturmevu$LNHg3caV0AKU/BM17cKGeVgvs/Y3AqmMnLCqHPpMRx0=",
+    "last_login": "2017-11-02T09:33:36.793Z",
+    "is_superuser": false,
+    "username": "donald@knuth.com",
+    "first_name": "Donald",
+    "last_name": "Knuth",
+    "email": "donald@knuth.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-11-02T06:34:31.329Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$CyStEyuG5Yls$ZC7O3UUw7tgDryiCdvkzzAR+flj5P6RFsUEviIXsxkk=",
+    "last_login": "2017-11-02T09:48:02Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Alex",
+    "last_name": "Musso",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2017-11-02T09:47:30Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.appuntateacher",
+  "pk": 1,
+  "fields": {
+    "birth_date": "1980-05-05",
+    "institution": "Colegio San Mateo",
+    "avatar": "",
+    "user": 7,
+    "rut": "12.432.424-4",
+    "bio": "Profesora de mucha dedicaci\u00f3n capaz de sacar adelante a los alumnos.",
+    "approved": false
+  }
+},
+{
+  "model": "users.appuntateacher",
+  "pk": 2,
+  "fields": {
+    "birth_date": "1970-01-12",
+    "institution": "Colegio San Mateo",
+    "avatar": "",
+    "user": 8,
+    "rut": "10.848.400-2",
+    "bio": "Profesora de f\u00edsica, especialista en biof\u00edsica.",
+    "approved": false
+  }
+},
+{
+  "model": "users.appuntateacher",
+  "pk": 3,
+  "fields": {
+    "birth_date": "1920-04-12",
+    "institution": "Sicherheitsdienst College",
+    "avatar": "",
+    "user": 9,
+    "rut": "4.213.133-4",
+    "bio": "Profesor de lenguaje, detective de pasatiempo.",
+    "approved": false
+  }
+},
+{
+  "model": "users.appuntateacher",
+  "pk": 4,
+  "fields": {
+    "birth_date": "1938-01-10",
+    "institution": "Colegio de San Serriffe",
+    "avatar": "",
+    "user": 10,
+    "rut": "5.256.256-8",
+    "bio": "Profesor de matem\u00e1tica y computaci\u00f3n.",
+    "approved": false
+  }
+},
+{
+  "model": "users.appuntateacher",
+  "pk": 5,
+  "fields": {
+    "birth_date": "1980-04-04",
+    "institution": "Escuela de Administradores",
+    "avatar": "",
+    "user": 11,
+    "rut": "10.121.431-2",
+    "bio": "Administrador de Appunta.",
+    "approved": true
+  }
+},
+{
+  "model": "users.appuntastudent",
+  "pk": 1,
+  "fields": {
+    "birth_date": "2000-11-12",
+    "institution": "Colegio de Santiago de Chile",
+    "avatar": "",
+    "user": 1
+  }
+},
+{
+  "model": "users.appuntastudent",
+  "pk": 2,
+  "fields": {
+    "birth_date": "1999-10-15",
+    "institution": "Colegio de Santiago de Chile",
+    "avatar": "",
+    "user": 2
+  }
+},
+{
+  "model": "users.appuntastudent",
+  "pk": 3,
+  "fields": {
+    "birth_date": "2000-02-14",
+    "institution": "Colegio Adam Smith",
+    "avatar": "",
+    "user": 3
+  }
+},
+{
+  "model": "users.appuntastudent",
+  "pk": 4,
+  "fields": {
+    "birth_date": "2005-02-14",
+    "institution": "Liceo 24 Ita\u00fa",
+    "avatar": "",
+    "user": 4
+  }
+},
+{
+  "model": "users.appuntastudent",
+  "pk": 5,
+  "fields": {
+    "birth_date": "2003-02-14",
+    "institution": "Colegio de Cartagena",
+    "avatar": "",
+    "user": 5
+  }
+},
+{
+  "model": "users.appuntastudent",
+  "pk": 6,
+  "fields": {
+    "birth_date": "2006-02-14",
+    "institution": "Colegio de Cartagena",
+    "avatar": "",
+    "user": 6
+  }
+},
+{
+  "model": "gallery.gallery",
+  "pk": 1,
+  "fields": {
+    "user": 7,
+    "image": "opertrain.png"
+  }
+}
+]

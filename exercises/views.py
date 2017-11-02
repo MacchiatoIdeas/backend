@@ -12,7 +12,6 @@ from exercises.models import AutomatedExercise,AutomatedExerciseAnswer
 from users.permissions import *
 from .serializers import *
 
-
 import datetime
 
 import numpy as np
@@ -29,6 +28,7 @@ def autoexercise_recommended(request,subject_id):
 	subj = get_object_or_404(Subject,id=subject_id)
 	units = Unit.objects.filter(subject=subj)
 	#
+	nowt = datetime.datetime.now(datetime.timezone.utc)
 	unitscores = []
 	for uni in units:
 		#
@@ -36,7 +36,7 @@ def autoexercise_recommended(request,subject_id):
 		scores = []
 		unitansws = answs.filter(exercise__unit=uni)
 		for answ in unitansws.all():
-			deltats.append((datetime.datetime.now()-answ.moment).seconds)
+			deltats.append((nowt-answ.moment).seconds)
 			scores.append(answ.get_score() if answ.tscore is None else answ.tscore)
 		deltats = np.array([2592000.0*5]+deltats)
 		scores = np.array([1.0]+scores)
