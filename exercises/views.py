@@ -20,7 +20,7 @@ import numpy as np
 @api_view(['GET'])
 def autoexercise_recommended(request,subject):
 	# # Check if user is authenticated and has
-	if request.user.is_anonymous() or not hasattr(self.request.user,'student'):
+	if request.user.is_anonymous() or not hasattr(request.user,'student'):
 		answs = AutomatedExerciseAnswer.objects.none()
 	else:
 		answs = request.user.student.answers
