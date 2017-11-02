@@ -61,6 +61,12 @@ exercise_schema = {
 			},
 			"required": ["schema", "sentences"],
 			"additionalProperties": False,
+		}, {
+			"properties": {
+				"schema": {"type": "string", "pattern": "written"},
+			},
+			"required": ["schema"],
+			"additionalProperties": False,
 		},
 	],
 }
@@ -106,6 +112,13 @@ answer_schema = {
 			},
 			"required": ["schema", "choices"],
 			"additionalProperties": False,
+		}, {
+			"properties": {
+				"schema": {"type": "string", "pattern": "written"},
+				"draft": {"type": "string"},
+			},
+			"required": ["schema","draft"],
+			"additionalProperties": False,
 		},
 	],
 }
@@ -135,7 +148,9 @@ def check_right_answer_right(content, right_answer):
 	# Check if it is the same schema:
 	if ransw["schema"] != exerc["schema"]: return False
 	# Evaluate each different schema:
-	if ransw["schema"] == "alternatives":
+	if ransw["schema"] == "written":
+		return True
+	elif ransw["schema"] == "alternatives":
 		if ransw["answer"] < 0 or ransw["answer"] >= len(exerc["alts"]):
 			return False
 	elif ransw["schema"] == "matching":
@@ -219,7 +234,9 @@ class AutomatedExerciseAnswer(models.Model):
 		# Check if it is the same schema:
 		if answ["schema"] != ransw["schema"]: return 0
 		# Evaluate each different schema:
-		if ransw["schema"] == "alternatives":
+		if ransw["schema"] == "written":
+			return 1.0
+		elif ransw["schema"] == "alternatives":
 			return float(answ["answer"] == ransw["answer"])
 		elif ransw["schema"] == "matching":
 			ml = min(len(answ["matchs"]), len(ransw["matchs"]))
