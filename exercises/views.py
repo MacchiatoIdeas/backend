@@ -72,7 +72,7 @@ class AutomatedExerciseViewSet(viewsets.ModelViewSet):
 	queryset = AutomatedExercise.objects.all()
 	serializer_class = AutomatedExerciseSerializer
 
-	permission_classes = (AuthenticatedTeacher,)
+	permission_classes = [AuthenticatedTeacher,IsAuthor]
 
 	def perform_update(self, serializer):
 		instance = serializer.save(author=self.request.user.teacher)
@@ -101,7 +101,7 @@ class AutomatedExerciseAnswerViewSet(viewsets.ModelViewSet):
 	queryset = AutomatedExerciseAnswer.objects.all()
 	serializer_class = AutomatedExerciseAnswerSerializer
 
-	permission_classes = (AuthenticatedTeacherEdits,)
+	permission_classes = (AutomatedExerciseAnswerPermission,)
 
 	def get_serializer_class(self):
 		if self.action in ('create',):
@@ -116,6 +116,8 @@ class AutomatedExerciseAnswerViewSet(viewsets.ModelViewSet):
 class ExerciseCommentViewSet(viewsets.ModelViewSet):
 	queryset = ExerciseComment.objects.all()
 	serializer_class = ExerciseCommentSerializer
+
+	permission_classes = (AuthenticatedAppuntaUser,)
 
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)

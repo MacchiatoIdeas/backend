@@ -40,7 +40,7 @@ class ContentViewSet(viewsets.ModelViewSet):
 	queryset = Content.objects.all()
 	serializer_class = ContentSerializer
 
-	permission_classes = (AuthenticatedTeacher,)
+	permission_classes = (AuthenticatedTeacher,IsAuthor)
 
 	def perform_update(self, serializer):
 		instance = serializer.save(author=self.request.user.teacher)
@@ -71,6 +71,8 @@ class CommentViewSet(viewsets.ModelViewSet):
 	queryset = Comment.objects.all()
 	serializer_class = CommentSerializer
 
+	permission_classes = (AuthenticatedAppuntaUser,)
+
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
 
@@ -79,6 +81,8 @@ class FeedbackCommentViewSet(viewsets.ModelViewSet):
 	queryset = FeedbackComment.objects.all()
 	serializer_class = FeedbackCommentSerializer
 
+	permission_classes = (AuthenticatedAppuntaUser,)
+
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
 
@@ -86,7 +90,8 @@ class GuideItemViewSet(viewsets.ModelViewSet):
 	queryset = GuideItem.objects.all()
 	serializer_class = GuideItemInputSerializer
 
-	#TODO: Check ownership of the guide and another permissions!
+	permission_classes = (AuthenticatedTeacher,IsAuthor)
+
 	def perform_create(self, serializer):
 		if serializer.validated_data['order']<0:
 			gis = GuideItem.objects.filter(guide=serializer.validated_data['guide'])
@@ -100,7 +105,8 @@ class GuideViewSet(viewsets.ModelViewSet):
 	queryset = Guide.objects.all()
 	serializer_class = GuideSerializer
 
-	#TODO: Only a teacher should have permission to update or create.
+	permission_classes = (AuthenticatedTeacher,IsAuthor)
+
 	def perform_update(self, serializer):
 		instance = serializer.save(author=self.request.user.teacher)
 		instance.primitive = instance.make_primitive()

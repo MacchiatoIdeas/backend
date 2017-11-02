@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from rest_framework.viewsets import ModelViewSet
 
-from users.permissions import AuthenticatedTeacher
+from users.permissions import *
 
 from rest_framework import permissions
 from rest_framework import serializers
@@ -10,7 +10,7 @@ from rest_framework import serializers
 from .serializers import *
 
 class CourseViewSet(ModelViewSet):
-	permission_classes = [AuthenticatedTeacher,permissions.IsAuthenticated]
+	permission_classes = [AuthenticatedTeacher,IsMemberOfCourse]
 	serializer_class = CourseSerializer
 	queryset = Course.objects.all()
 
@@ -33,7 +33,7 @@ class CourseViewSet(ModelViewSet):
 		serializer.save(teacher=self.request.user.teacher)
 
 class CourseLinkViewSet(ModelViewSet):
-	permission_classes = [AuthenticatedTeacher]
+	permission_classes = [AuthenticatedTeacher,IsMemberOfCourse]
 	serializer_class = CourseLinkSerializer
 	queryset = CourseLink.objects.all()
 
