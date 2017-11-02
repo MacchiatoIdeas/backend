@@ -94,23 +94,23 @@ class ContentSerializer(serializers.ModelSerializer):
 		model = Content
 		fields = ('id', 'unit','title', 'summary', 'text', 'author', 'comments','moment')
 
-
-class ContentRetrieveSerializer(serializers.ModelSerializer):
-	author = TeacherSerializer(read_only=True)
-	unit = UnitWithSubjectRetrieveSerializer()
-	comments = CommentSerializer(many=True, read_only=True)
-
-	class Meta:
-		model = Content
-		fields = ('id', 'unit', 'title', 'summary', 'text', 'author', 'comments','moment')
-
-
 class FeedbackCommentSerializer(serializers.ModelSerializer):
 	user = GenericUserSerializer(read_only=True)
 
 	class Meta:
 		model = FeedbackComment
 		fields = '__all__'
+
+
+class ContentRetrieveSerializer(serializers.ModelSerializer):
+	author = TeacherSerializer(read_only=True)
+	unit = UnitWithSubjectRetrieveSerializer()
+	comments = CommentSerializer(many=True, read_only=True)
+	feedback_comments = FeedbackCommentSerializer(many=True,read_only=True)
+
+	class Meta:
+		model = Content
+		fields = ('id', 'unit', 'title', 'summary', 'text', 'author', 'comments','moment','feedback_comments')
 
 
 class ContentGuideSerializer(serializers.ModelSerializer):
