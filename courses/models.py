@@ -6,7 +6,7 @@ from exercises.models import AutomatedExerciseAnswer
 class Course(models.Model):
 	name = models.TextField(max_length=128)
 	teacher = models.ForeignKey(AppuntaTeacher, on_delete=models.CASCADE)
-	participants = models.ManyToManyField("users.AppuntaStudent")
+	participants = models.ManyToManyField("users.AppuntaStudent",related_name='courses')
 
 	def __str__(self):
 		return self.name

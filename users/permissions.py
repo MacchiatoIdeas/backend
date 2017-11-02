@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+from .models import *
 
 class AuthenticatedUserType(permissions.BasePermission):
 	def __init__(self, type_attr):
@@ -104,5 +105,20 @@ class IsAuthor(permissions.BasePermission):
 		if request.user.is_anonymous():
 			return False
 		if hasattr(request.user,'teacher') and obj.author==request.user.teacher:
+			return True
+		return False
+
+class NotPrivateOrRelated(permissions.BasePermission):
+	"""
+	If the object is private, only author teacher or students that are on a course with a courselink to that guide can do anything.
+	"""
+	def has_object_permission(self, request, view, obj):
+		if not hasattr(obj,'author'):
+			obj = obj.guide
+		if not obj.private:
+			return True
+		if hasattr(request.user,'teacher') and request.user.teacher == obj.author:
+			return True
+		if hasattr(request.user,'student') and request.user.student in AppuntaStudent.objects.filter(courses__clinks__guide=obj):
 			return True
 		return False

@@ -90,7 +90,7 @@ class GuideItemViewSet(viewsets.ModelViewSet):
 	queryset = GuideItem.objects.all()
 	serializer_class = GuideItemInputSerializer
 
-	permission_classes = (AuthenticatedTeacher,IsAuthor)
+	permission_classes = (AuthenticatedTeacher,IsAuthor,NotPrivateOrRelated)
 
 	def perform_create(self, serializer):
 		if serializer.validated_data['order']<0:
@@ -105,7 +105,7 @@ class GuideViewSet(viewsets.ModelViewSet):
 	queryset = Guide.objects.all()
 	serializer_class = GuideSerializer
 
-	permission_classes = (AuthenticatedTeacher,IsAuthor)
+	permission_classes = (AuthenticatedTeacher,IsAuthor,NotPrivateOrRelated)
 
 	def perform_update(self, serializer):
 		instance = serializer.save(author=self.request.user.teacher)

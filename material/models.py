@@ -214,7 +214,7 @@ class Guide(models.Model):
     moment = models.DateTimeField(auto_now_add=True)
 
     # Flag to indicate if the guide is private or not.
-    private = models.IntegerField(default=0)
+    private = models.BooleanField(default=False)
 
     # author! who wrote the Guide
     author = models.ForeignKey("users.AppuntaTeacher", related_name='guides', on_delete=models.CASCADE)
