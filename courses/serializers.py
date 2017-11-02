@@ -29,7 +29,7 @@ class CourseInputSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Course
-		fields = ('name','participants')
+		fields = ('id','name','participants')
 
 class CourseSerializer(serializers.ModelSerializer):
 	teacher = TeacherSerializer(read_only=True)
