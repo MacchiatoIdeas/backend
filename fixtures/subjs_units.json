@@ -772,5 +772,383 @@
     "name": "Construcci\u00f3n de intervalos de confianza",
     "academic_level": 4
   }
+},
+{
+  "model": "material.unit",
+  "pk": 85,
+  "fields": {
+    "subject": 2,
+    "name": "Elementos del género narrativo y género lírico",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 86,
+  "fields": {
+    "subject": 2,
+    "name": "Características del Romanticismo",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 87,
+  "fields": {
+    "subject": 2,
+    "name": "Debate como intercambio de ideas",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 89,
+  "fields": {
+    "subject": 2,
+    "name": "Estructura del género ensayo",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 90,
+  "fields": {
+    "subject": 2,
+    "name": "Escritura de un ensayo",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 91,
+  "fields": {
+    "subject": 2,
+    "name": "Recursos persuasivos en los textos argumentativos",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 92,
+  "fields": {
+    "subject": 2,
+    "name": "Características de la tragedia",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 93,
+  "fields": {
+    "subject": 2,
+    "name": "Representación teatral",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 94,
+  "fields": {
+    "subject": 2,
+    "name": "Relaciones intertextuales en obras literarias",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 95,
+  "fields": {
+    "subject": 2,
+    "name": "Estructura de la columna de opinión, reportaje y crónica",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 95,
+  "fields": {
+    "subject": 2,
+    "name": "Recursos usados en publicidad y propaganda",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 96,
+  "fields": {
+    "subject": 2,
+    "name": "Uso de la argumentación",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 97,
+  "fields": {
+    "subject": 2,
+    "name": "Narrativa",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 98,
+  "fields": {
+    "subject": 2,
+    "name": "Drama",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 99,
+  "fields": {
+    "subject": 2,
+    "name": "Textos no literarios",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 100,
+  "fields": {
+    "subject": 2,
+    "name": "Poesía",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 101,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 102,
+  "fields": {
+    "subject": 2,
+    "name": "Textos expositivos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 103,
+  "fields": {
+    "subject": 2,
+    "name": "Intertextualidad",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 104,
+  "fields": {
+    "subject": 2,
+    "name": "Género narrativo y lírico",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 105,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos avanzados",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 106,
+  "fields": {
+    "subject": 2,
+    "name": "Textos expositivos avanzados",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 107,
+  "fields": {
+    "subject": 2,
+    "name": "El ensayo",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 108,
+  "fields": {
+    "subject": 2,
+    "name": "Focalización",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 109,
+  "fields": {
+    "subject": 2,
+    "name": "La cohesión",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 110,
+  "fields": {
+    "subject": 2,
+    "name": "Personajes",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 111,
+  "fields": {
+    "subject": 2,
+    "name": "Conflicto dramático",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 112,
+  "fields": {
+    "subject": 2,
+    "name": "Argumentación",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 113,
+  "fields": {
+    "subject": 2,
+    "name": "Lectura dramatizada",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 114,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos-expositivos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 115,
+  "fields": {
+    "subject": 2,
+    "name": "Género dramático",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 116,
+  "fields": {
+    "subject": 2,
+    "name": "Variable distópica",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 117,
+  "fields": {
+    "subject": 2,
+    "name": "Focalización de narradores",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 118,
+  "fields": {
+    "subject": 2,
+    "name": "Ensayos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 119,
+  "fields": {
+    "subject": 2,
+    "name": "Textos líricos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 120,
+  "fields": {
+    "subject": 2,
+    "name": "Recursos literarios",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 121,
+  "fields": {
+    "subject": 2,
+    "name": "Discurso argumentativo",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 122,
+  "fields": {
+    "subject": 2,
+    "name": "Secuencia discursiva",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 123,
+  "fields": {
+    "subject": 2,
+    "name": "Telerrealidad",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 124,
+  "fields": {
+    "subject": 2,
+    "name": "Teatro del absurdo",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 125,
+  "fields": {
+    "subject": 2,
+    "name": "Intertextualidad avanzada",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 126,
+  "fields": {
+    "subject": 2,
+    "name": "Obra artística",
+    "academic_level": 4
+  }
 }
 ]

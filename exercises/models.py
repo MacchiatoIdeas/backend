@@ -210,7 +210,7 @@ class AutomatedExercise(models.Model):
 	primitive = models.TextField(blank=True)
 
 	def make_primitive(self):
-		return primitivize_string(" ".join([
+		return primitivize_string(" ".join([str(self.unit),
 			str(self.author), self.briefing]))
 
 

@@ -154,7 +154,7 @@ class Content(models.Model):
 
     def make_primitive(self):
         texts = self.parse_text()
-        return primitivize_string(" ".join([
+        return primitivize_string(" ".join([str(self.unit),
             str(self.author),self.title,self.summary,texts]))
 
 
@@ -235,7 +235,7 @@ class Guide(models.Model):
     primitive = models.TextField(blank=True)
 
     def make_primitive(self):
-        return primitivize_string(" ".join([
+        return primitivize_string(" ".join([str(self.subject),
             str(self.author),self.title,self.brief]))
 
 
