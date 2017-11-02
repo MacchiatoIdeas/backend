@@ -119,7 +119,7 @@ class AutomatedExerciseAnswerViewSet(viewsets.ModelViewSet):
 
 	def perform_create(self, serializer):
 		# TODO: Only allow an AppuntaStudent to create AutomatedExerciseAnswers
-		serializer.save(user=self.request.user.student)
+		serializer.save(student=self.request.user.student)
 
 
 class ExerciseCommentViewSet(viewsets.ModelViewSet):
