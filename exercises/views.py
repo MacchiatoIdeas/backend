@@ -69,7 +69,7 @@ def autoexercise_recommended(request,subject):
 
 @api_view(['GET'])
 def answers_to_exercise(request,exercise_id):
-	if request.user.is_anonymous() or not hasattr(self.request.user,'student'):
+	if request.user.is_anonymous() or not hasattr(request.user,'student'):
 		answs = AutomatedExerciseAnswer.objects.none()
 	else:
 		answs = request.user.student.answers.filter(exercise=exercise_id)
