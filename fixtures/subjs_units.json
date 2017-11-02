@@ -1,0 +1,776 @@
+[
+{
+  "model": "material.subject",
+  "pk": 1,
+  "fields": {
+    "name": "Matem\u00e1ticas",
+    "color": "#0000ff",
+    "thumbnail": "http://static.macchiato.cl/images/mathematics.jpg"
+  }
+},
+{
+  "model": "material.subject",
+  "pk": 2,
+  "fields": {
+    "name": "Lenguaje",
+    "color": "#ff0000",
+    "thumbnail": "http://static.macchiato.cl/images/language.jpg"
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 1,
+  "fields": {
+    "subject": 1,
+    "name": "Operatoria de n\u00fameros racionales",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 2,
+  "fields": {
+    "subject": 1,
+    "name": "Potencia de base racional y exponente entero",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 3,
+  "fields": {
+    "subject": 1,
+    "name": "Productos notables",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 4,
+  "fields": {
+    "subject": 1,
+    "name": "\u00c1rea de la superficie y volumen del cono",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 5,
+  "fields": {
+    "subject": 1,
+    "name": "Sistemas de ecuaciones lineales (2 x 2)",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 6,
+  "fields": {
+    "subject": 1,
+    "name": "Relaciones lineales en dos variables",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 7,
+  "fields": {
+    "subject": 1,
+    "name": "\u00c1rea y per\u00edmetro sectores y segmentos circulares",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 8,
+  "fields": {
+    "subject": 1,
+    "name": "Homotecia",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 9,
+  "fields": {
+    "subject": 1,
+    "name": "Teoremas de Thales",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 10,
+  "fields": {
+    "subject": 1,
+    "name": "Semejanza y sus propiedades",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 11,
+  "fields": {
+    "subject": 1,
+    "name": "Homotecia en el plano cartesiano",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 12,
+  "fields": {
+    "subject": 1,
+    "name": "Producto de un vector por un escalar",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 13,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuciones de dos caracter\u00edsticas distintas",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 14,
+  "fields": {
+    "subject": 1,
+    "name": "Separaci\u00f3n de la distribuci\u00f3n de dos poblaciones",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 15,
+  "fields": {
+    "subject": 1,
+    "name": "Reglas de las probabilidades",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 16,
+  "fields": {
+    "subject": 1,
+    "name": "Concepto de azar",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 17,
+  "fields": {
+    "subject": 1,
+    "name": "N\u00fameros irracionales y propiedades",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 18,
+  "fields": {
+    "subject": 1,
+    "name": "N\u00fameros reales y propiedades",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 19,
+  "fields": {
+    "subject": 1,
+    "name": "Operaciones aritm\u00e9ticas con n\u00fameros reales",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 20,
+  "fields": {
+    "subject": 1,
+    "name": "Potencias de exponente racional",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 21,
+  "fields": {
+    "subject": 1,
+    "name": "Propiedades de las potencias de exponente racional",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 22,
+  "fields": {
+    "subject": 1,
+    "name": "Ra\u00edces en\u00e9simas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 23,
+  "fields": {
+    "subject": 1,
+    "name": "Propiedades de las ra\u00edces en\u00e9simas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 24,
+  "fields": {
+    "subject": 1,
+    "name": "Logaritmos",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 25,
+  "fields": {
+    "subject": 1,
+    "name": "Propiedades de los logaritmos",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 26,
+  "fields": {
+    "subject": 1,
+    "name": "Semejanza de figuras planas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 27,
+  "fields": {
+    "subject": 1,
+    "name": "Criterios de semejanza de figuras planas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 28,
+  "fields": {
+    "subject": 1,
+    "name": "Trazos proporcionales",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 29,
+  "fields": {
+    "subject": 1,
+    "name": "Propiedades invariantes en modelos a escala",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 30,
+  "fields": {
+    "subject": 1,
+    "name": "Teorema de Pit\u00e1goras",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 31,
+  "fields": {
+    "subject": 1,
+    "name": "Teorema de Thales (Avanzado)",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 32,
+  "fields": {
+    "subject": 1,
+    "name": "Teorema de Euclides",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 33,
+  "fields": {
+    "subject": 1,
+    "name": "\u00c1ngulo del centro en la circunferencia",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 34,
+  "fields": {
+    "subject": 1,
+    "name": "\u00c1ngulo inscrito en una circunferencia",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 35,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n exponencial y representaci\u00f3n gr\u00e1fica",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 36,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n logar\u00edtmica y representaci\u00f3n gr\u00e1fica",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 37,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n ra\u00edz cuadrada y representaci\u00f3n gr\u00e1fica",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 38,
+  "fields": {
+    "subject": 1,
+    "name": "Sistemas de ecuaciones lineales con dos inc\u00f3gnitas",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 39,
+  "fields": {
+    "subject": 1,
+    "name": "Resoluci\u00f3n sistema ecuaciones lineales con 2 inc.",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 40,
+  "fields": {
+    "subject": 1,
+    "name": "Gr\u00e1fica de un sistema de ecuaciones",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 41,
+  "fields": {
+    "subject": 1,
+    "name": "Expresiones algebraicas fraccionarias",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 42,
+  "fields": {
+    "subject": 1,
+    "name": "Operaciones expresiones algebraicas fraccionarias",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 43,
+  "fields": {
+    "subject": 1,
+    "name": "Medidas de dispersi\u00f3n: desviaci\u00f3n est\u00e1ndar",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 44,
+  "fields": {
+    "subject": 1,
+    "name": "Variables aleatorias",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 45,
+  "fields": {
+    "subject": 1,
+    "name": "Media muestral",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 46,
+  "fields": {
+    "subject": 1,
+    "name": "Ley de los grandes n\u00fameros",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 47,
+  "fields": {
+    "subject": 1,
+    "name": "Pruebas independientes",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 48,
+  "fields": {
+    "subject": 1,
+    "name": "Eventos independientes",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 49,
+  "fields": {
+    "subject": 1,
+    "name": "Eventos mutuamente excluyentes",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 50,
+  "fields": {
+    "subject": 1,
+    "name": "C\u00e1lculo probabilidades eventos ind. y mut. excl.",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 51,
+  "fields": {
+    "subject": 1,
+    "name": "N\u00fameros complejos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 52,
+  "fields": {
+    "subject": 1,
+    "name": "Operaciones aritm\u00e9ticas con n\u00fameros complejos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 53,
+  "fields": {
+    "subject": 1,
+    "name": "Conjugado de un n\u00famero complejo",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 54,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n cuadr\u00e1tica",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 55,
+  "fields": {
+    "subject": 1,
+    "name": "Ecuaci\u00f3n de segundo grado",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 56,
+  "fields": {
+    "subject": 1,
+    "name": "Geometr\u00eda cartesiana",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 57,
+  "fields": {
+    "subject": 1,
+    "name": "Homotecia (Avanzado)",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 58,
+  "fields": {
+    "subject": 1,
+    "name": "Vector",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 59,
+  "fields": {
+    "subject": 1,
+    "name": "Producto por un escalar",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 60,
+  "fields": {
+    "subject": 1,
+    "name": "Sistemas 2x2 de ecuaciones lineales",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 61,
+  "fields": {
+    "subject": 1,
+    "name": "Probabilidad condicional",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 62,
+  "fields": {
+    "subject": 1,
+    "name": "Variable aleatoria discreta",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 63,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n de probabilidad",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 64,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuciones de probabilidad",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 65,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuci\u00f3n binomial",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 66,
+  "fields": {
+    "subject": 1,
+    "name": "Valor esperado de una distribuci\u00f3n binominal",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 67,
+  "fields": {
+    "subject": 1,
+    "name": "Varianza de una distribuci\u00f3n binominal",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 68,
+  "fields": {
+    "subject": 1,
+    "name": "Desviaci\u00f3n est\u00e1ndar de una distribuci\u00f3n binominal",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 69,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n potencia",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 70,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n inversa de una funci\u00f3n",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 71,
+  "fields": {
+    "subject": 1,
+    "name": "Sistemas de inecuaciones lineales",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 72,
+  "fields": {
+    "subject": 1,
+    "name": "Puntos en el espacio",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 73,
+  "fields": {
+    "subject": 1,
+    "name": "Ecuaci\u00f3n vectorial de la recta en el espacio",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 74,
+  "fields": {
+    "subject": 1,
+    "name": "Ecuaci\u00f3n cartesiana de la recta en el espacio",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 75,
+  "fields": {
+    "subject": 1,
+    "name": "Ecuaci\u00f3n vectorial del plano en el espacio",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 76,
+  "fields": {
+    "subject": 1,
+    "name": "Generaci\u00f3n de cuerpos por traslaci\u00f3n de figuras 2D",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 77,
+  "fields": {
+    "subject": 1,
+    "name": "Generaci\u00f3n de cuerpos por rotaci\u00f3n de figuras 2D",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 78,
+  "fields": {
+    "subject": 1,
+    "name": "Variable aleatoria continua",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 79,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuci\u00f3n de probabilidad de una variable aleat",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 80,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n de densidad de probabilidad de una variabl",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 81,
+  "fields": {
+    "subject": 1,
+    "name": "Distribuci\u00f3n normal",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 82,
+  "fields": {
+    "subject": 1,
+    "name": "Funci\u00f3n \u03a6 de distribuci\u00f3n acumulada",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 83,
+  "fields": {
+    "subject": 1,
+    "name": "Estimaci\u00f3n de medias poblacionales",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 84,
+  "fields": {
+    "subject": 1,
+    "name": "Construcci\u00f3n de intervalos de confianza",
+    "academic_level": 4
+  }
+}
+]

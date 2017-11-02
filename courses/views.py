@@ -15,12 +15,14 @@ class CourseViewSet(ModelViewSet):
 	queryset = Course.objects.all()
 
 	def get_queryset(self):
-		if hasattr(self.request.user, 'teacher'):
+		if self.request.user.is_anonymous():
+			return Course.objects.none()
+		elif hasattr(self.request.user, 'teacher'):
 			return Course.objects.filter(teacher=self.request.user.teacher)
 		elif hasattr(self.request.user, 'student'):
 			return Course.objects.filter(participants=self.request.user.student)
 		else:
-			return Course.objects.filter(participants=self.request.user)
+			return Course.objects.none()
 
 	def get_serializer_class(self):
 		if self.action in ('create','update'):
