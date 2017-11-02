@@ -1519,6 +1519,21 @@
   }
 },
 {
+  "model": "exercises.automatedexercise",
+  "pk": 10,
+  "fields": {
+    "difficulty": 3,
+    "author": 1,
+    "unit": 113,
+    "moment": "2017-11-02T10:16:13.321Z",
+    "briefing": "Ejercicio de completaci\u00f3n del Cantar del Mio Cid que hice para realizar pruebas.",
+    "text": "[{\"schema\":\"text\",\"text\":\"Complete las palabras faltantes de este verso de Cantar del M\u00edo Cid\"}]",
+    "content": "{\"schema\":\"completion\",\"text\":\"De los sus ?? tan fuertemente llorando, tornaba la cabeza y est\u00e1balos ??.\"}",
+    "right_answer": "{\"schema\":\"completion\",\"words\":[\"ojos\",\"catando\"]}",
+    "primitive": "azebedo dramatizada ejerzizio gleny ize kantar kompletazion lectura para prueba realizar"
+  }
+},
+{
   "model": "courses.course",
   "pk": 1,
   "fields": {
@@ -1741,7 +1756,7 @@
   "pk": 7,
   "fields": {
     "password": "pbkdf2_sha256$36000$e5Zubed4rK8V$ZWk9Q2tbkr2ZM3L3+dAoeXFoR9JeHGUUhyH9AZ/X0BU=",
-    "last_login": "2017-11-02T09:07:13.874Z",
+    "last_login": "2017-11-02T10:13:42.499Z",
     "is_superuser": false,
     "username": "gleny@acevedo.com",
     "first_name": "Gleny",
