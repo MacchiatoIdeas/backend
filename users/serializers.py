@@ -23,7 +23,7 @@ class TeacherSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = AppuntaTeacher
-		fields = ('id', 'first_name', 'last_name', 'email')
+		fields = ('id','avatar','first_name', 'last_name', 'email')
 
 
 class AppuntaTeacherSerializer(serializers.ModelSerializer):
@@ -32,7 +32,7 @@ class AppuntaTeacherSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = AppuntaTeacher
-		fields = ('id', 'user', 'institution', 'rut', 'bio', 'user_type')
+		fields = ('id','avatar','user', 'institution', 'rut', 'bio', 'user_type')
 
 	def get_user_type(self, _):
 		return 'teacher'
@@ -44,7 +44,7 @@ class AppuntaStudentSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = AppuntaStudent
-		fields = ('id', 'user', 'institution', 'user_type')
+		fields = ('id','avatar', 'user', 'institution', 'user_type')
 
 	def get_user_type(self, _):
 		return 'student'
@@ -79,7 +79,7 @@ class AppuntaTeacherRegisterSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = AppuntaTeacher
-		fields = ('id', 'user', 'first_name', 'last_name', 'password', 'email',
+		fields = ('id', 'avatar', 'user', 'first_name', 'last_name', 'password', 'email',
 		          'institution', 'birth_date', 'rut', 'bio')
 		write_only_fields = ('institution', 'birth_date', 'rut', 'bio')
 		read_only_fields = ('id', 'user')
@@ -100,7 +100,7 @@ class AppuntaStudentRegisterSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = AppuntaStudent
-		fields = ('id', 'user', 'first_name', 'last_name', 'password', 'email',
+		fields = ('id', 'avatar', 'user', 'first_name', 'last_name', 'password', 'email',
 		          'institution', 'birth_date')
 		write_only_fields = ('institution', 'birth_date')
 		read_only_fields = ('id', 'user')
