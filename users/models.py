@@ -19,6 +19,8 @@ class AppuntaTeacher(AppuntaUser):
     # CV - pendiente
     bio = models.CharField(max_length=140)
 
+    approved = models.BooleanField(default=False)
+
     def __str__(self):
         return self.user.get_full_name()
 
