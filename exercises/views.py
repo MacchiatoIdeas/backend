@@ -18,7 +18,7 @@ import datetime
 import numpy as np
 
 @api_view(['GET'])
-def autoexercise_recommended(request,subject):
+def autoexercise_recommended(request,subject_id):
 	# # Check if user is authenticated and has
 	if request.user.is_anonymous() or not hasattr(request.user,'student'):
 		answs = AutomatedExerciseAnswer.objects.none()
@@ -26,7 +26,7 @@ def autoexercise_recommended(request,subject):
 		answs = request.user.student.answers
 	n_answs = answs.count()
 	#
-	subj = get_object_or_404(Subject,name=subject)
+	subj = get_object_or_404(Subject,id=subject_id)
 	units = Unit.objects.filter(subject=subj)
 	#
 	unitscores = []

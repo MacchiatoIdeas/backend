@@ -10,6 +10,6 @@ router.register(r'comments', views.ExerciseCommentViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^recommended/(?P<subject>\w+)$', views.autoexercise_recommended),
+    url(r'^recommended/(?P<subject_id>[0-9]+)$', views.autoexercise_recommended),
     url(r'^myanswers/(?P<exercise_id>[0-9]+)$', views.answers_to_exercise),
 ]
