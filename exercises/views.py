@@ -20,7 +20,7 @@ import numpy as np
 @api_view(['GET'])
 def autoexercise_recommended(request,subject):
 	# # Check if user is authenticated and has
-	if request.user.is_anonymous():
+	if request.user.is_anonymous() or not hasattr(self.request.user,'student'):
 		answs = AutomatedExerciseAnswer.objects.none()
 	else:
 		answs = request.user.student.answers
@@ -65,6 +65,15 @@ def autoexercise_recommended(request,subject):
 		exercises[indx] = exercises[indx].exclude(pk=random_pk)
 		returned.append(exercise)
 	serializer = AutomatedExerciseListSerializer(returned,many=True)
+	return Response(serializer.data)
+
+@api_view(['GET'])
+def answers_to_exercise(request,exercise_id):
+	if request.user.is_anonymous() or not hasattr(self.request.user,'student'):
+		answs = AutomatedExerciseAnswer.objects.none()
+	else:
+		answs = request.user.student.answers.filter(exercise=exercise_id)
+	serializer = AutomatedExerciseAnswerSerializer(answs,many=True)
 	return Response(serializer.data)
 
 
