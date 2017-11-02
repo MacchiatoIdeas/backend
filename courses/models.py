@@ -19,5 +19,5 @@ class CourseLink(models.Model):
 
 	def get_answers(self):
 		return AutomatedExerciseAnswer.objects\
-			.filter(student__course=self.course)\
+			.filter(student__courses=self.course)\
 			.filter(exercise__guideitem__guide=self.guide)

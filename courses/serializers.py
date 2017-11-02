@@ -48,12 +48,6 @@ class EachLinkSerializer(serializers.ModelSerializer):
 		model = CourseLink
 		fields = ('guide', 'answers')
 
-	def get_answers(self, course_link):
-		query = AutomatedExerciseAnswer.objects\
-			.filter(student__course=course_link.course)\
-			.filter(exercise__guideitem__guide=course_link.guide)
-		return AutomatedExerciseAnswerSerializer(query, many=True).data
-
 
 class CourseWithGuidesSerializer(serializers.ModelSerializer):
 	teacher = AppuntaTeacherSerializer(read_only=True)
