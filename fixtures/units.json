@@ -774,164 +774,381 @@
   }
 },
 {
-  "model": "material.content",
-  "pk": 1,
+  "model": "material.unit",
+  "pk": 85,
   "fields": {
-    "moment": "2017-11-01T04:41:58.238Z",
-    "unit": 18,
-    "author": 2,
-    "title": "Los n\u00fameros naturales",
-    "summary": "Con los n\u00fameros naturales contamos los elementos de un conjunto. O bien expresamos la posici\u00f3n u orden que ocupa un elemento en un conjunto.",
-    "text": "[{\"schema\":\"text\",\"text\":\"Con los n\u00fameros naturales contamos los elementos de un conjunto (n\u00famero cardinal). O bien expresamos la posici\u00f3n u orden que ocupa un elemento en un conjunto (ordinal).\"}, {\"schema\":\"text\",\"text\":\"El conjunto de los n\u00fameros naturales est\u00e1 formado por: $$N = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9,...}$$\"}, {\"schema\":\"title\",\"title\":\"Recta\"}, {\"schema\":\"text\",\"text\":\"La suma y el producto de dos n\u00fameros naturales es otro n\u00famero natural. La diferencia de dos n\u00fameros naturales no siempre es un n\u00famero natural, s\u00f3lo ocurre cuando el minuendo es mayor que sustraendo.\"}, {\"schema\":\"text\",\"text\":\"Ejemplos: \\n $5 \u2212 3$ Pertenece Conjunto de los n\u00fameros naturales \\n $3 \u2212 5$ No pertenece Conjunto de los n\u00fameros naturales\"}, {\"schema\":\"text\",\"text\":\"El cociente de dos n\u00fameros naturales no siempre es un n\u00famero natural, s\u00f3lo ocurre cuando la divisi\u00f3n es exacta.\"}, {\"schema\":\"text\",\"text\":\"Ejemplos: \\n$6 : 2$ Pertenece Conjunto de los n\u00fameros naturales\\n$2 : 6$ No pertenece Conjunto de los n\u00fameros naturales\"}, {\"schema\":\"text\",\"text\":\"Podemos utilizar potencias, ya que es la forma abreviada de escribir un producto formado por varios factores iguales. La ra\u00edz de un n\u00famero natural no siempre es un n\u00famero natural, s\u00f3lo ocurre cuando la ra\u00edz es exacta.\"}]",
-    "primitive": "abrebiada alberto barioz bien dibizion diferenzia elemento elementoz exacta exprezamoz ezcribir ezta factorez forma formado igualez kardinal konjunto konjunto kontamoz koziente kuando mayor minuendo natural naturalez nejemploz npodemoz nrecta numero numeroz okupa okure orden ordinal otro perteneze perteneze potenziaz pozizion producto raiz utilizar ziempre zolo zuma zuniga zuztraendo"
+    "subject": 2,
+    "name": "Elementos del género narrativo y género lírico",
+    "academic_level": 1
   }
 },
 {
-  "model": "material.content",
-  "pk": 2,
+  "model": "material.unit",
+  "pk": 86,
   "fields": {
-    "moment": "2017-11-01T05:32:30.709Z",
-    "unit": 30,
-    "author": 1,
-    "title": "Teorema de Pit\u00e1goras",
-    "summary": "En un tri\u00e1ngulo rect\u00e1ngulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los otros dos lados",
-    "text": "[{\"schema\":\"text\",\"text\":\"Hace a\u00f1os, un hombre llamado Pit\u00e1goras descubri\u00f3 un hecho asombroso sobre tri\u00e1ngulos:\"}, {\"schema\":\"text\",\"text\":\"Si el tri\u00e1ngulo tiene un \u00e1ngulo recto ($90\u00b0$)...\\n... y pones un cuadrado sobre cada uno de sus lados, entonces...\\n... \u00a1el cuadrado m\u00e1s grande tiene exactamente la misma \u00e1rea que los otros dos cuadrados juntos!\"}, {\"schema\":\"text\",\"text\":\"El lado m\u00e1s largo del tri\u00e1ngulo se llama *hipotenusa*, as\u00ed que la definici\u00f3n formal es:\"}, {\"schema\":\"text\",\"text\":\"En un tri\u00e1ngulo rect\u00e1ngulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los otros dos lados (llamamos *tri\u00e1ngulo rect\u00e1ngulo* a un tri\u00e1ngulo con un \u00e1ngulo recto)\\nEntonces, el cuadrado de a ($a^2$) m\u00e1s el cuadrado de b ($b^2$) es igual al cuadrado de c ($c^2$): $$a^2 + b^2 = c^2$$\"}, {\"schema\":\"text\",\"text\":\"\u00bfSeguro... ?\\nVeamos si funciona con un ejemplo. Un tri\u00e1ngulo de lados $3, 4 , 5$ tiene un \u00e1ngulo recto, as\u00ed que la f\u00f3rmula deber\u00eda funcionar.\"}, {\"schema\":\"title\",\"title\":\"Teorema de Pit\u00e1goras\"}, {\"schema\":\"text\",\"text\":\"Veamos si las \u00e1reas son la misma: $$3^2 + 4^2 = 5^2$$\\nCalculando obtenemos:$$9 + 16 = 25$$\"}, {\"schema\":\"text\",\"text\":\"*\u00a1s\u00ed, funciona!*\\n\u00bfPor qu\u00e9 es \u00fatil esto? Si sabemos las longitudes de dos lados de un tri\u00e1ngulo con un \u00e1ngulo recto, el Teorema de Pit\u00e1goras nos ayuda a encontrar la longitud del tercer lado. (\u00a1Pero recuerda que s\u00f3lo funciona en tri\u00e1ngulos rect\u00e1ngulos!)\"}]",
-    "primitive": "alberto angulo anoz area areaz ayuda azombrozo deberia definizion dezkubrio eco ejemplo enkontrar entonzez exactamente ezto formal formula funziona funzionar grande igual ipotenuza juntoz kada kuadrado kuadradoz lado ladoz largo lonjitud lonjitudez mizma naze nbeamoz nentonzez nkalkulando nteorema obtenemoz ombre otroz pero pitagoraz ponez rectangulo rectanguloz recto rekuerda teorema terzer tiene triangulo trianguloz util yama yamado yamamoz zabemoz zeguro zobre zolo zuma zuniga"
+    "subject": 2,
+    "name": "Características del Romanticismo",
+    "academic_level": 1
   }
 },
 {
-  "model": "exercises.automatedexercise",
-  "pk": 1,
+  "model": "material.unit",
+  "pk": 87,
   "fields": {
-    "difficulty": 2,
-    "author": 3,
-    "unit": 56,
-    "moment": "2017-11-01T05:48:25.311Z",
-    "briefing": "Une las f\u00f3rmulas con las figuras geom\u00e9tricas...",
-    "text": "[{\"schema\":\"text\",\"text\":\"Une las f\u00f3rmulas con las figuras geom\u00e9tricas que representan:\"}]",
-    "content": "{\"schema\":\"matching\",\"sideA\":[\"y = x^2\",\"y = x\",\"y = 1/x\"],\"sideB\":[\"Recta\",\"C\u00edrculo\",\"Par\u00e1bola\",\"Hip\u00e9rbola\",\"Cono\"]}",
-    "right_answer": "{\"schema\":\"matching\",\"matchs\":[2,0,3]}",
-    "primitive": "profezor figuraz formulaz jeometrikaz reprezentan zuniga"
+    "subject": 2,
+    "name": "Debate como intercambio de ideas",
+    "academic_level": 1
   }
 },
 {
-  "model": "exercises.automatedexercise",
-  "pk": 2,
+  "model": "material.unit",
+  "pk": 89,
   "fields": {
-    "difficulty": 1,
-    "author": 1,
-    "unit": 30,
-    "moment": "2017-11-01T05:49:52.513Z",
-    "briefing": "Si los lados de un cateto son 3 y 4...",
-    "text": "[{\"schema\":\"text\",\"text\":\"Si los lados de un cateto son $3$ y $4$ \u00bfCu\u00e1l es la hipotenusa?\"}]",
-    "content": "{\"schema\":\"alternatives\",\"alts\":[\"5^2\",\"5\",\"3.4\"]}",
-    "right_answer": "{\"schema\":\"alternatives\",\"answer\":0}",
-    "primitive": "alberto ipotenuza kateto kual ladoz zuniga"
+    "subject": 2,
+    "name": "Estructura del género ensayo",
+    "academic_level": 1
   }
 },
 {
-  "model": "exercises.automatedexercise",
-  "pk": 3,
+  "model": "material.unit",
+  "pk": 90,
   "fields": {
-    "difficulty": 2,
-    "author": 2,
-    "unit": 18,
-    "moment": "2017-11-01T05:52:17.114Z",
-    "briefing": "Este ejercicio divide a estudiantes chilenos...",
-    "text": "[{\"schema\":\"text\",\"text\":\"Este ejercicio divide a estudiantes chilenos: $$6/2(1+2)$$ \u00bfCu\u00e1nto vale?\"}]",
-    "content": "{\"schema\":\"alternatives\",\"alts\":[\"1\",\"1.5\",\"9\",\"4\"]}",
-    "right_answer": "{\"schema\":\"alternatives\",\"answer\":2}",
-    "primitive": "alberto bale dibide ejerzizio ezte eztudiantez kuanto zilenoz zuniga"
+    "subject": 2,
+    "name": "Escritura de un ensayo",
+    "academic_level": 1
   }
 },
 {
-  "model": "auth.user",
-  "pk": 1,
+  "model": "material.unit",
+  "pk": 91,
   "fields": {
-    "password": "pbkdf2_sha256$36000$vpAu44inTNkl$V0HQrUZSPNegTWCPYrIYdKTlRnavhIKQHbTvu6baPvE=",
-    "last_login": "2017-10-31T05:50:04Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "Alberto",
-    "last_name": "Z\u00fa\u00f1iga",
-    "email": "admin@appunta.cl",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2017-10-31T02:58:07Z",
-    "groups": [],
-    "user_permissions": []
+    "subject": 2,
+    "name": "Recursos persuasivos en los textos argumentativos",
+    "academic_level": 1
   }
 },
 {
-  "model": "auth.user",
-  "pk": 2,
+  "model": "material.unit",
+  "pk": 92,
   "fields": {
-    "password": "pbkdf2_sha256$36000$SGPnCh52sQob$sRM7TucY30tlHfw89yb5BbjfNgumxfRDxmoMgiSeaUg=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "jperez",
-    "first_name": "Juan",
-    "last_name": "P\u00e9rez",
-    "email": "jperez@gmail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2017-10-31T02:58:07Z",
-    "groups": [],
-    "user_permissions": []
+    "subject": 2,
+    "name": "Características de la tragedia",
+    "academic_level": 1
   }
 },
 {
-  "model": "auth.user",
-  "pk": 3,
+  "model": "material.unit",
+  "pk": 93,
   "fields": {
-    "password": "pbkdf2_sha256$36000$CeWhAyJPABoT$II1n86iJoj2y2+gTS+dS23lljidoBe8MODO+cBC4DwQ=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "profesor",
-    "first_name": "Jaime",
-    "last_name": "Guzm\u00e1n",
-    "email": "profesor@appunta.cl",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2017-10-31T02:58:07Z",
-    "groups": [],
-    "user_permissions": []
+    "subject": 2,
+    "name": "Representación teatral",
+    "academic_level": 1
   }
 },
 {
-  "model": "users.appuntateacher",
-  "pk": 1,
+  "model": "material.unit",
+  "pk": 94,
   "fields": {
-    "birth_date": "1994-10-16",
-    "institution": "Colegio Champagnat",
-    "avatar": "",
-    "user": 1,
-    "rut": "18955078-2",
-    "bio": "Soy un estudiante que se dedica a hacer clases privadas. Me gusta ense\u00f1ar y sentir que puedo aportar en la formaci\u00f3n de alguien."
+    "subject": 2,
+    "name": "Relaciones intertextuales en obras literarias",
+    "academic_level": 1
   }
 },
 {
-  "model": "users.appuntateacher",
-  "pk": 2,
+  "model": "material.unit",
+  "pk": 95,
   "fields": {
-    "birth_date": "1989-10-15",
-    "institution": "Colegio Champagnat",
-    "avatar": "",
-    "user": 2,
-    "rut": "14462199-9",
-    "bio": "Soy muy perseverante, y la satisfacci\u00f3n que siento por mi trabajo es impagable."
+    "subject": 2,
+    "name": "Estructura de la columna de opinión, reportaje y crónica",
+    "academic_level": 1
   }
 },
 {
-  "model": "users.appuntateacher",
-  "pk": 3,
+  "model": "material.unit",
+  "pk": 95,
   "fields": {
-    "birth_date": "1980-11-09",
-    "institution": "UTFSM",
-    "avatar": "",
-    "user": 3,
-    "rut": "13514788-5",
-    "bio": "Profesor en\u00e9rgico y siempre dispuesto a aprender nuevos m\u00e9todos de ense\u00f1anza."
+    "subject": 2,
+    "name": "Recursos usados en publicidad y propaganda",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 96,
+  "fields": {
+    "subject": 2,
+    "name": "Uso de la argumentación",
+    "academic_level": 1
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 97,
+  "fields": {
+    "subject": 2,
+    "name": "Narrativa",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 98,
+  "fields": {
+    "subject": 2,
+    "name": "Drama",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 99,
+  "fields": {
+    "subject": 2,
+    "name": "Textos no literarios",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 100,
+  "fields": {
+    "subject": 2,
+    "name": "Poesía",
+    "academic_level": 2
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 101,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 102,
+  "fields": {
+    "subject": 2,
+    "name": "Textos expositivos",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 103,
+  "fields": {
+    "subject": 2,
+    "name": "Intertextualidad",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 104,
+  "fields": {
+    "subject": 2,
+    "name": "Género narrativo y lírico",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 105,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos avanzados",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 106,
+  "fields": {
+    "subject": 2,
+    "name": "Textos expositivos avanzados",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 107,
+  "fields": {
+    "subject": 2,
+    "name": "El ensayo",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 108,
+  "fields": {
+    "subject": 2,
+    "name": "Focalización",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 109,
+  "fields": {
+    "subject": 2,
+    "name": "La cohesión",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 110,
+  "fields": {
+    "subject": 2,
+    "name": "Personajes",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 111,
+  "fields": {
+    "subject": 2,
+    "name": "Conflicto dramático",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 112,
+  "fields": {
+    "subject": 2,
+    "name": "Argumentación",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 113,
+  "fields": {
+    "subject": 2,
+    "name": "Lectura dramatizada",
+    "academic_level": 3
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 114,
+  "fields": {
+    "subject": 2,
+    "name": "Textos argumentativos-expositivos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 115,
+  "fields": {
+    "subject": 2,
+    "name": "Género dramático",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 116,
+  "fields": {
+    "subject": 2,
+    "name": "Variable distópica",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 117,
+  "fields": {
+    "subject": 2,
+    "name": "Focalización de narradores",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 118,
+  "fields": {
+    "subject": 2,
+    "name": "Ensayos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 119,
+  "fields": {
+    "subject": 2,
+    "name": "Textos líricos",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 120,
+  "fields": {
+    "subject": 2,
+    "name": "Recursos literarios",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 121,
+  "fields": {
+    "subject": 2,
+    "name": "Discurso argumentativo",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 122,
+  "fields": {
+    "subject": 2,
+    "name": "Secuencia discursiva",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 123,
+  "fields": {
+    "subject": 2,
+    "name": "Telerrealidad",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 124,
+  "fields": {
+    "subject": 2,
+    "name": "Teatro del absurdo",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 125,
+  "fields": {
+    "subject": 2,
+    "name": "Intertextualidad avanzada",
+    "academic_level": 4
+  }
+},
+{
+  "model": "material.unit",
+  "pk": 126,
+  "fields": {
+    "subject": 2,
+    "name": "Obra artística",
+    "academic_level": 4
   }
 }
 ]
