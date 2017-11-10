@@ -86,7 +86,7 @@ class AppuntaTeacherRegisterSerializer(serializers.ModelSerializer):
 
 	def create(self, validated_data):
 		user = create_user(validated_data)
-		teacher_data = {k: validated_data[k] for k in ('institution', 'birth_date', 'rut', 'bio')}
+		teacher_data = {k: validated_data[k] for k in ('avatar', 'institution', 'birth_date', 'rut', 'bio')}
 		teacher = AppuntaTeacher.objects.create(**teacher_data, user=user)
 		return teacher
 
@@ -107,6 +107,6 @@ class AppuntaStudentRegisterSerializer(serializers.ModelSerializer):
 
 	def create(self, validated_data):
 		user = create_user(validated_data)
-		student_data = {k: validated_data[k] for k in ('institution', 'birth_date')}
+		student_data = {k: validated_data[k] for k in ('avatar', 'institution', 'birth_date')}
 		student = AppuntaStudent.objects.create(**student_data, user=user)
 		return student
