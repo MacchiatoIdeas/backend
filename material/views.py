@@ -139,5 +139,6 @@ class GuideViewSet(viewsets.ModelViewSet):
 				query = query.filter(author=self.request.user.teacher)
 			else:
 				query = query.filter(author_id__exact=byuser)
-
+		if self.action in ('list',):
+			query = [x for x in query if x.not_priv_or_related(self.request.user)]
 		return query

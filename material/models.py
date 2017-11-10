@@ -5,6 +5,8 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 from primitivizer import primitivize_string
 
+from users.models import AppuntaStudent
+
 import json
 import jsonschema
 
@@ -241,6 +243,16 @@ class Guide(models.Model):
     def make_primitive(self):
         return primitivize_string(" ".join([str(self.subject),
             str(self.author),self.title,self.brief]))
+
+    def not_priv_or_related(self, user):
+        if not self.private:
+            return True
+        if hasattr(user,'teacher') and user.teacher == self.author:
+            return True
+        if hasattr(user,'student') and user.student in AppuntaStudent.objects.filter(courses__clinks__guide=self):
+            return True
+        return False
+
 
 
 class GuideItem(models.Model):
