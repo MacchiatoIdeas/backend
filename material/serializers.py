@@ -27,7 +27,7 @@ class GuideListSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Guide
-		fields = ('id', 'author', 'title', 'brief', 'moment', 'subject')
+		fields = ('id', 'author', 'title', 'brief', 'moment', 'subject','private')
 
 
 class SubjectListSerializer(serializers.ModelSerializer):
@@ -71,11 +71,18 @@ class UnitListSerializer(serializers.ModelSerializer):
 
 class SubjectRetrieveSerializer(serializers.ModelSerializer):
 	units = UnitListSerializer(many=True, read_only=True)
-	guides = GuideListSerializer(source='guide_set', many=True, read_only=True)
+	guides = serializers.SerializerMethodField()
 
 	class Meta:
 		model = Subject
 		fields = ('id', 'name', 'units', 'color', 'thumbnail', 'guides')
+
+	def get_guides(self, obj):
+		query = obj.guide_set.all()
+		query = [x for x in query if x.not_priv_or_related(self.context['request'].user)]
+		seri = GuideListSerializer(query, many=True)
+		return seri.data
+
 
 
 class CommentSerializer(serializers.ModelSerializer):

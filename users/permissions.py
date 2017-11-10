@@ -114,7 +114,6 @@ class NotPrivateOrRelated(permissions.BasePermission):
 	"""
 
 	def has_object_permission(self, request, view, obj):
-		print("called on %s"%str(obj))
 		if not hasattr(obj,'author'):
 			obj = obj.guide
 		return obj.not_priv_or_related(request.user)
