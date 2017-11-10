@@ -1,5 +1,21 @@
 [
 {
+  "model": "oauth2_provider.application",
+  "pk": 2,
+  "fields": {
+    "client_id": "MQy0HbWZMBHIdVE5k166JyH5aEJxbvyDw7fJW4bP",
+    "user": 11,
+    "redirect_uris": "",
+    "client_type": "confidential",
+    "authorization_grant_type": "password",
+    "client_secret": "7ET876Ce8mhVygDciw5MulUJeSbwfLMa7El2i5Oh7iVjDQZx9syQpbJbLVfJWcx5IsZMlD4PeMIP5sd2wVuSKxr7ZjolNOh7gSSCvX2qZd5uxZJAlJ97Z0A4zVqUAzz7",
+    "name": "Appunta",
+    "skip_authorization": false,
+    "created": "2017-11-02T10:59:13.633Z",
+    "updated": "2017-11-02T10:59:13.633Z"
+  }
+},
+{
   "model": "material.subject",
   "pk": 1,
   "fields": {
@@ -1182,45 +1198,6 @@
   }
 },
 {
-  "model": "material.content",
-  "pk": 4,
-  "fields": {
-    "moment": "2017-11-10T05:05:24.582Z",
-    "unit": 3,
-    "author": 1,
-    "title": "\u00bfQu\u00e9 son los Productos Notables?",
-    "summary": "Sabemos que se llama producto al resultado de una multiplicaci\u00f3n. Tambi\u00e9n sabemos que los valores que se multiplican se llaman factores.",
-    "text": "[{\"schema\":\"title\",\"title\":\"Productos Notables\"},{\"schema\":\"text\",\"text\":\"Sabemos que se llama **producto** al resultado de una multiplicaci\u00f3n. Tambi\u00e9n sabemos que los valores que se multiplican se llaman **factores**.\\n\\nSe llama **productos notables** a ciertas **expresiones algebraicas** que se encuentran frecuentemente y que es preciso saber factorizarlas a simple vista; es decir, sin necesidad de hacerlo paso por paso.\\n\\nSe les llama *productos notables* (tambi\u00e9n *productos especiales* ) precisamente porque son muy utilizados en los ejercicios.\"},{\"schema\":\"title\",\"title\":\"Cuadrado de la suma de dos cantidades o binomio cuadrado\"},{\"schema\":\"text\",\"text\":\"A continuaci\u00f3n veremos algunas **expresiones algebraicas** y del lado derecho de la igualdad se muestra la forma de factorizarlas (mostrada como un *producto notable*):\"},{\"schema\":\"text\",\"text\":\"$$a^2 + 2ab + b^2 = (a + b)^2$$\"},{\"schema\":\"title\",\"title\":\"Cuadrado de la diferencia de dos cantidades\"},{\"schema\":\"text\",\"text\":\"$$a^2 - 2ab + b^2 = (a - b)^2$$\"},{\"schema\":\"title\",\"title\":\"Producto de la suma por la diferencia de dos cantidades\"},{\"schema\":\"text\",\"text\":\"$$(a + b)(a - b) = a^2 - b^2$$\"},{\"schema\":\"title\",\"title\":\"Producto de dos binomios con un t\u00e9rmino com\u00fan\"},{\"schema\":\"text\",\"text\":\"$$x^2 + (a + b)x + ab = (x + a)(x + b)$$\"},{\"schema\":\"text\",\"text\":\"*Fuente*: [Profesor en l\u00ednea](http://www.profesorenlinea.cl)\"}]",
-    "primitive": "alguna aljebraika azebedo azerlo balor beremo bizta dereco dezir ejerzizio enkuentran exprezion ezpezial factor factorizarla forma frekuentemente fuente gleny igualdad komo kontinuazion lado linea moztrada mueztra multiplikan multiplikazion nezezidad notabl notabl notable pazo porke prezizamente prezizo producto producto producto profezor profezorenlinea rezultado tambien tambien ttp utilizado yama yaman zabemo zabemo zaber zierta zimple"
-  }
-},
-{
-  "model": "material.content",
-  "pk": 5,
-  "fields": {
-    "moment": "2017-11-10T05:16:10.274Z",
-    "unit": 1,
-    "author": 1,
-    "title": "Las operaciones de N\u00fameros Racionales",
-    "summary": "Aqu\u00ed vamos a discutir las operaciones de n\u00fameros racionales como la suma, resta, multiplicaci\u00f3n, divisi\u00f3n, potenciaci\u00f3n y sacar su factor com\u00fan.",
-    "text": "[{\"schema\":\"title\",\"title\":\"Suma de n\u00fameros racionales\"},{\"schema\":\"text\",\"text\":\"Para sumar y restar n\u00fameros racionales existen dos casos diferentes con los cuales podemos tratar, el primero es cuando poseen un denominador distinto entre los sumandos, y el otro es cuando tienen un denominador de igual valor y es por este por el que vamos a empezar.\\n\\nCuando resolvemos la adici\u00f3n de n\u00fameros racionales y la sustracci\u00f3n de n\u00fameros racionales con igual denominador, simplemente se mantiene el mismo denominador (que es el valor ubicado en la parte inferior de la fracci\u00f3n) y sumamos o restamos los numeradores (en la parte superior de la fracci\u00f3n) seg\u00fan sea el caso:\"},{\"schema\":\"text\",\"text\":\"$$\\\\frac{6}{5} + \\\\frac{3}{5} = \\\\frac{6 + 3}{5} = \\\\frac{9}{5}$$\"},{\"schema\":\"title\",\"title\":\"Multiplicaci\u00f3n de n\u00fameros racionales\"},{\"schema\":\"text\",\"text\":\"La multiplicaci\u00f3n entre fracciones es sencilla si se sabe c\u00f3mo hacer. En primer lugar, se multiplican los numeradores de todos los factores y a continuaci\u00f3n el producto resultante se lo utiliza como numerador, luego se multiplican los denominadores y al resultado se lo ubica como denominador sin importar si el valor es igual o distinto, de esta manera:\"},{\"schema\":\"text\",\"text\":\"$$\\\\frac{4}{3} \\\\times \\\\frac{5}{6} \\\\times \\\\frac{1}{2} = \\\\frac{4\\\\times5\\\\times1}{3 \\\\times 6 \\\\times 2} = \\\\frac{20}{36} = \\\\frac{10}{18} = \\\\frac{5}{9}$$\"},{\"schema\":\"title\",\"title\":\"Divisi\u00f3n de n\u00fameros racionales\"},{\"schema\":\"text\",\"text\":\"Para dividir los n\u00fameros racionales, tomamos el numerador de la primera fracci\u00f3n y se lo multiplica por el denominador de la segunda fracci\u00f3n y este resultado ser\u00e1 utilizado como numerador; a continuaci\u00f3n se toma el denominador de la primera fracci\u00f3n y se lo multiplica por el numerador de la segunda fracci\u00f3n, y a ese resultado se lo ubica como denominador. Por lo tanto en el caso de la divisi\u00f3n, el orden de los cocientes si altera el resultado, veamos el siguiente ejemplo:\"},{\"schema\":\"text\",\"text\":\"$$\\\\frac{5}{4} \\\\div \\\\frac{2}{3} = \\\\frac{5\\\\times3}{4\\\\times2} = \\\\frac{15}{8}$$\"},{\"schema\":\"title\",\"title\":\"Potenciaci\u00f3n de n\u00fameros racionales\"},{\"schema\":\"text\",\"text\":\"Para la potenciaci\u00f3n de un n\u00famero racional, se deben seguir estas simples reglas:\\nSi el n\u00famero racional posee distintas potencias para distinto numerador y el denominador, solo se procede a potenciar cada cociente y simplificar si es posible:\"},{\"schema\":\"text\",\"text\":\"$$\\\\frac{2^3}{3^2} = \\\\frac{8}{9}$$\"}]",
-    "primitive": "adizion aki altera azebedo azer balor bamo beamo deben denominador denominador dibidir dibizion diferent dizkutir diztinta diztinto ejemplo empezar entre exizten ezta ezta ezte factor factor frac fraczion fraczion gleny igual importar inferior kada kazo kazo komo komo komun kontinuazion kozient koziente kual kuando kuando luego lugar manera mantiene mizmo multiplika multiplikan multiplikazion numerador numerador numero numero numero operatoria operazion orden otro para para parte podemo potenzia potenziar potenziazion pozee pozeen pozible primer primera primero producto prozede razional razional razional regla rezolbemo rezta reztamo reztar rezultado rezultante tanto tienen tim timez1 timez2 timez3 timez5 todo toma tomamo tratar ubika ubikado utiliza utilizado zabe zakar zeguir zegun zegunda zenziya zera ziguiente zimpl zimplemente zimplifikar zolo zuma zumamo zumando zumar zuperior zuztraczion"
-  }
-},
-{
-  "model": "material.content",
-  "pk": 6,
-  "fields": {
-    "moment": "2017-11-10T05:27:35.373Z",
-    "unit": 2,
-    "author": 1,
-    "title": "Potencias de Base Racional",
-    "summary": "Una potencia es una multiplicaci\u00f3n sucesiva de un mismo n\u00famero.",
-    "text": "[{\"schema\":\"title\",\"title\":\"POTENCIAS DE BASE RACIONAL Y EXPONENTE ENTERO\"},{\"schema\":\"text\",\"text\":\"Una potencia es una multiplicaci\u00f3n sucesiva de un mismo n\u00famero. El n\u00famero que se multiplica por s\u00ed mismo se denomina base y el n\u00famero de veces que se multiplica la base se denomina exponente.\"},{\"schema\":\"text\",\"text\":\"**Ejemplos**:\"},{\"schema\":\"text\",\"text\":\"Si a y b son n\u00fameros enteros y b   0, entonces se tienen las siguientes igualdades:\"},{\"schema\":\"text\",\"text\":\"$$\\\\left( \\\\frac{a}{b} \\\\right)^1 = \\\\frac{a}{b}$$\"},{\"schema\":\"text\",\"text\":\"$$\\\\left( \\\\frac{a}{b} \\\\right)^0 = 1$$\"},{\"schema\":\"text\",\"text\":\"$$\\\\left( \\\\frac{a}{b} \\\\right)^{-1} = \\\\frac{b}{a}$$\"},{\"schema\":\"text\",\"text\":\"$$\\\\left( \\\\frac{a}{b} \\\\right)^{-n} = \\\\left(\\\\frac{a}{b}\\\\right)^n$$\"}]",
-    "primitive": "azebedo baze baze bec denomina ejemplo entero entero entonc exponente frac gleny igualdad left mizmo multiplika multiplikazion numero numero potenzia potenzia potenzia razional razional rigt tienen ziguient zuzeziba"
-  }
-},
-{
   "model": "material.guide",
   "pk": 1,
   "fields": {
@@ -1570,62 +1547,6 @@
     "content": "{\"schema\":\"completion\",\"text\":\"De los sus ?? tan fuertemente llorando, tornaba la cabeza y est\u00e1balos ??.\"}",
     "right_answer": "{\"schema\":\"completion\",\"words\":[\"ojos\",\"catando\"]}",
     "primitive": "azebedo dramatizada ejerzizio gleny ize kantar kompletazion lectura para prueba realizar"
-  }
-},
-{
-  "model": "exercises.automatedexercise",
-  "pk": 11,
-  "fields": {
-    "difficulty": 2,
-    "author": 1,
-    "unit": 2,
-    "moment": "2017-11-10T05:45:02.955Z",
-    "briefing": "Practicando potencias.",
-    "text": "[{\"schema\":\"text\",\"text\":\"\u00bfCu\u00e1l es el resultado de la siguiente operaci\u00f3n?:\"},{\"schema\":\"text\",\"text\":\"$$\\\\frac{2}{10} + \\\\frac{6}{10}$$\"}]",
-    "content": "{\"schema\":\"alternatives\",\"alts\":[\"$\\\\frac{4}{5}$\",\"$\\\\frac{1}{10}$\",\"$\\\\frac{4}{8}$\",\"$\\\\frac{1}{2}$\"]}",
-    "right_answer": "{\"schema\":\"alternatives\",\"answer\":0}",
-    "primitive": "azebedo baze entero exponente gleny potenzia potenzia practikando razional"
-  }
-},
-{
-  "model": "exercises.automatedexercise",
-  "pk": 12,
-  "fields": {
-    "difficulty": 2,
-    "author": 1,
-    "unit": 85,
-    "moment": "2017-11-10T05:56:27.609Z",
-    "briefing": "Tipos de narradores",
-    "text": "[]",
-    "content": "{\"schema\":\"completion\",\"text\":\"En el extracto \u201cPor qu\u00e9 iba a tener miedo. Le daba, s\u00ed, una especie de verg\u00fcenza la idea de trepar a ellos, cansados como estaban...\u201d, se habla de un narrador ??.\"}",
-    "right_answer": "{\"schema\":\"completion\",\"words\":[\"omnisciente\"]}",
-    "primitive": "azebedo elemento gleny narador naratibo nero riko tipo"
-  }
-},
-{
-  "model": "exercises.automatedexercise",
-  "pk": 13,
-  "fields": {
-    "difficulty": 1,
-    "author": 1,
-    "unit": 86,
-    "moment": "2017-11-10T06:00:32.409Z",
-    "briefing": "Sobre el romanticismo.",
-    "text": "[{\"schema\":\"text\",\"text\":\"El romanticismo se caracteriza por:\"}]",
-    "content": "{\"schema\":\"trueorfalse\",\"sentences\":[\"Tener una tendencia al optimismo.\",\"Tener autores inconformistas.\",\"Tener diarios y confesiones \u00edntimas.\",\"Tender al pesimismo.\"]}",
-    "right_answer": "{\"schema\":\"trueorfalse\",\"choices\":[false,true,true,true]}",
-    "primitive": "azebedo gleny karacteri romantizizmo romantizizmo zobre ztika"
-  }
-},
-{
-  "model": "exercises.automatedexerciseanswer",
-  "pk": 1,
-  "fields": {
-    "student": 1,
-    "exercise": 12,
-    "answer": "{\"schema\":\"completion\",\"words\":[\"hola\"]}",
-    "tscore": null,
-    "moment": "2017-11-10T06:06:49.747Z"
   }
 },
 {
@@ -2067,122 +1988,6 @@
   "fields": {
     "user": 7,
     "image": "opertrain.png"
-  }
-},
-{
-  "model": "oauth2_provider.application",
-  "pk": 2,
-  "fields": {
-    "client_id": "MQy0HbWZMBHIdVE5k166JyH5aEJxbvyDw7fJW4bP",
-    "user": 11,
-    "redirect_uris": "",
-    "client_type": "confidential",
-    "authorization_grant_type": "password",
-    "client_secret": "7ET876Ce8mhVygDciw5MulUJeSbwfLMa7El2i5Oh7iVjDQZx9syQpbJbLVfJWcx5IsZMlD4PeMIP5sd2wVuSKxr7ZjolNOh7gSSCvX2qZd5uxZJAlJ97Z0A4zVqUAzz7",
-    "name": "Appunta",
-    "skip_authorization": false,
-    "created": "2017-11-02T10:59:13.633Z",
-    "updated": "2017-11-02T10:59:13.633Z"
-  }
-},
-{
-  "model": "oauth2_provider.accesstoken",
-  "pk": 1,
-  "fields": {
-    "user": 7,
-    "token": "CPYkVjRS9LY7MWZR2p3gCWt660Gy4d",
-    "application": 2,
-    "expires": "2017-11-10T15:00:04.310Z",
-    "scope": "read write groups",
-    "created": "2017-11-10T05:00:04.310Z",
-    "updated": "2017-11-10T05:00:04.310Z"
-  }
-},
-{
-  "model": "oauth2_provider.accesstoken",
-  "pk": 2,
-  "fields": {
-    "user": 7,
-    "token": "QZeUaSApNmPD3M4hAtcaGGHJWJOgcU",
-    "application": 2,
-    "expires": "2017-11-10T15:59:22.125Z",
-    "scope": "read write groups",
-    "created": "2017-11-10T05:59:22.125Z",
-    "updated": "2017-11-10T05:59:22.125Z"
-  }
-},
-{
-  "model": "oauth2_provider.accesstoken",
-  "pk": 3,
-  "fields": {
-    "user": 1,
-    "token": "oEzlS4Xt0yYm1IYxdoIrgOZzLxbM06",
-    "application": 2,
-    "expires": "2017-11-10T16:00:57.853Z",
-    "scope": "read write groups",
-    "created": "2017-11-10T06:00:57.854Z",
-    "updated": "2017-11-10T06:00:57.854Z"
-  }
-},
-{
-  "model": "oauth2_provider.accesstoken",
-  "pk": 4,
-  "fields": {
-    "user": 1,
-    "token": "GFoUJIdvxrzBHB2jVJmi6VWOcfW9JA",
-    "application": 2,
-    "expires": "2017-11-10T16:28:06.800Z",
-    "scope": "read write groups",
-    "created": "2017-11-10T06:28:06.801Z",
-    "updated": "2017-11-10T06:28:06.801Z"
-  }
-},
-{
-  "model": "oauth2_provider.refreshtoken",
-  "pk": 1,
-  "fields": {
-    "user": 7,
-    "token": "htuhLEMJ11JGwUcw6XobUEM3XBYvba",
-    "application": 2,
-    "access_token": 1,
-    "created": "2017-11-10T05:00:04.311Z",
-    "updated": "2017-11-10T05:00:04.311Z"
-  }
-},
-{
-  "model": "oauth2_provider.refreshtoken",
-  "pk": 2,
-  "fields": {
-    "user": 7,
-    "token": "JLoKFJwDVSRBM0mSVRjO8qMbacPhJb",
-    "application": 2,
-    "access_token": 2,
-    "created": "2017-11-10T05:59:22.127Z",
-    "updated": "2017-11-10T05:59:22.127Z"
-  }
-},
-{
-  "model": "oauth2_provider.refreshtoken",
-  "pk": 3,
-  "fields": {
-    "user": 1,
-    "token": "RnAyWmCneqd1SwBubEnsEeTV38sjsD",
-    "application": 2,
-    "access_token": 3,
-    "created": "2017-11-10T06:00:57.855Z",
-    "updated": "2017-11-10T06:00:57.855Z"
-  }
-},
-{
-  "model": "oauth2_provider.refreshtoken",
-  "pk": 4,
-  "fields": {
-    "user": 1,
-    "token": "mL3q6vM4P29Qkv1PPxGh4rajHLCBQh",
-    "application": 2,
-    "access_token": 4,
-    "created": "2017-11-10T06:28:06.805Z",
-    "updated": "2017-11-10T06:28:06.805Z"
   }
 }
 ]
