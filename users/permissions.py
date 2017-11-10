@@ -37,7 +37,7 @@ class AutomatedExerciseAnswerPermission(permissions.BasePermission):
 			return hasattr(request.user, 'teacher')
 		return True
 
-	def has_object_permission(self,request,view,obj):
+	def has_permission(self,request,view,obj):
 		if request.user.is_anonymous():
 			return False
 		return (hasattr(request.user, 'teacher') or (hasattr(request.user, 'student') and request.user.student == obj.student))
@@ -82,7 +82,7 @@ class IsMemberOfCourse(permissions.BasePermission):
 	Only members can do anything, and only the teacher can do unsafe things.
 	"""
 
-	def has_object_permission(self, request, view, obj):
+	def has_permission(self, request, view, obj):
 		# NOTE: Ugly way of swap to the course if it is not one.
 		if not hasattr(obj,'teacher'):
 			obj = obj.course
@@ -97,7 +97,7 @@ class IsAuthor(permissions.BasePermission):
 	"""
 	Only the author can do unsafe things.
 	"""
-	def has_object_permission(self, request, view, obj):
+	def has_permission(self, request, view, obj):
 		if not hasattr(obj,'author'):
 			obj = obj.guide
 		if request.method in permissions.SAFE_METHODS:
@@ -112,7 +112,7 @@ class NotPrivateOrRelated(permissions.BasePermission):
 	"""
 	If the object is private, only author teacher or students that are on a course with a courselink to that guide can do anything.
 	"""
-	def has_object_permission(self, request, view, obj):
+	def has_permission(self, request, view, obj):
 		if not hasattr(obj,'author'):
 			obj = obj.guide
 		if not obj.private:
