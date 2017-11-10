@@ -87,7 +87,6 @@ class Subject(models.Model):
     def __str__(self):
         return self.name
 
-
 class Unit(models.Model):
     """
     Unit of a particular field of study, for example Differential equations.
@@ -106,6 +105,11 @@ class Unit(models.Model):
     def __str__(self):
         return self.name
 
+    def nexercises(self):
+        return self.exercises.count()
+
+    def ncontents(self):
+        return self.contents.count()
 
 class Content(models.Model):
     """

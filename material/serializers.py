@@ -61,9 +61,12 @@ class UnitWithSubjectRetrieveSerializer(serializers.ModelSerializer):
 
 # TODO: Considerate to destroy UnitListSerializer and replace it with UnitSerializer wherever it appears.
 class UnitListSerializer(serializers.ModelSerializer):
+	nexercises = serializers.ReadOnlyField()
+	ncontents = serializers.ReadOnlyField()
+
 	class Meta:
 		model = Unit
-		fields = ('id', 'subject', 'name', 'academic_level')
+		fields = ('id', 'subject', 'name', 'academic_level','nexercises','ncontents')
 
 
 class SubjectRetrieveSerializer(serializers.ModelSerializer):
