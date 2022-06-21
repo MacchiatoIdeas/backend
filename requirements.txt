@@ -18,4 +18,4 @@ requests==2.18.4
 urllib3==1.22
 whitenoise==3.3.0
 jsonschema==2.6.0
-numpy==1.11.2
+numpy==1.22.0
